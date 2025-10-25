@@ -21,14 +21,18 @@ This repository provides infrastructure for creating new HAP Learning Labs on an
 
 ### Local development
 
-```bash
-# Start local server (required for JSON loading to work)
-live-server --port=3000
+**Local server setup**: VS Code Live Server extension is used (runs on port 5500 by default).
 
-# Then open http://localhost:3000 in browser
-```
+- User starts Live Server through VS Code UI (not command line)
+- Server runs at `http://localhost:5500` or `http://127.0.0.1:5500`
+- Do NOT attempt to start live-server via command line
 
 **Important**: Direct file opening (`file://` protocol) won't work due to CORS restrictions on JSON loading for the easter egg feature.
+
+**Testing URLs**:
+- Hub page: `http://localhost:5500/index.html`
+- Stations: `http://localhost:5500/stations/station1.html`
+- Demos: `http://localhost:5500/demos/demo-name.html`
 
 ### Testing with Lighthouse
 
