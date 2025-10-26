@@ -1232,6 +1232,11 @@ h4 {
   box-shadow: var(--shadow-md);
 }
 
+.center-image {
+  display: block;
+  margin: 0 auto;
+}
+
 .image-caption {
   text-align: center;
   margin-top: 1rem;
