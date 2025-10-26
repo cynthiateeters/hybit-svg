@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HAP's Learning Lab - Station 1: SVG Structure & Coordinate Systems</title>
+
+    <meta name="description"
+        content="Join HAP as he discovers how SVG coordinate systems work and why viewBox confused him at first. Learn the foundation of understanding SVG.">
+
+    <!-- OPTIONAL: Add Open Graph image for social sharing -->
+    <meta property="og:image"
+        content="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_1200,c_fill,g_auto/v1759495998/hap-laptop_xiewar.jpg">
+
+    <!-- Standard HAP favicon (do not modify) -->
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_16,h_16/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_32,h_32/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_180,h_180/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_192,h_192/v1759596416/hap-favicon-h_gosgur.jpg">
+
+    <!-- Preconnect for Cloudinary CDN (improves image loading) -->
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+
+    <!-- HAP Design System (required) -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Syntax highlighting theme (optional - only if showing code) -->
+    <link href="../css/prism-hap-theme.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Accessibility skip link (required) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header with HAP avatar and introduction (required) -->
+    <header class="header">
+        <div class="header-content">
+            <div class="hybit-welcome">
+                <div class="hybit-avatar">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_200,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                        alt="HAP looking confused while studying a map of coordinates" width="200" height="200" decoding="async"
+                        fetchpriority="high">
+                </div>
+                <div>
+                    <h1>HAP's Learning Lab: SVG Structure & Coordinate Systems</h1>
+
+                    <p class="subtitle">Understanding how SVG "thinks" before diving into code</p>
+                </div>
+            </div>
+
+            <div class="intro-box">
+                <p><strong>Welcome to Station 1!</strong> I'll be honest—when I first looked at SVG code, I thought those numbers in viewBox were just random! Prof. Teeters laughed when I tried to change them "to make the graphic bigger" and everything disappeared. She taught me that SVG has its own coordinate system, and understanding it is like learning the rules of a new game. Once I got viewBox, everything else made sense! 🟠</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top navigation (required) -->
+    <nav aria-label="Page navigation" class="page-navigation top-nav">
+        <a href="../index.html" class="nav-link hub-link">🏠 Back to Hub</a>
+
+        <div class="page-position" data-page="1">Station 1 of 6</div>
+    </nav>
+
+    <!-- Main content area -->
+    <main id="main-content" class="content-container">
+
+        <!-- SECTION 1: What You'll Learn (required) -->
+        <section class="content-section">
+            <h2 class="section-heading-centered">What You'll Learn at This Station</h2>
+
+            <div class="intro-box">
+                <p><strong>HAP's Discovery:</strong> I spent THREE HOURS trying to figure out why my perfectly good circle kept getting cut off! I kept making width and height bigger and bigger, but the circle stayed half-hidden. Prof. Teeters looked at my code and pointed to viewBox—I had it set to "0 0 50 50" when my circle was at coordinates (100, 100). My circle was literally off the map! That's when I learned: viewBox is like the camera view, not the display size. Mind blown! 🤯</p>
+            </div>
+
+            <div class="overview-grid mt-2">
+                <div class="insight-card">
+                    <h3><span class="insight-icon">📐</span> SVG is Math, Not Pixels</h3>
+                    <p class="stat-large">Infinitely Scalable</p>
+                    <p>I learned that SVG graphics are defined by mathematical formulas, not pixels. That's why they stay crisp at any size—from a tiny icon to a billboard! Prof. Teeters showed me how one 2KB SVG file could replace six different PNG files I was using.</p>
+                </div>
+
+                <div class="insight-card">
+                    <h3><span class="insight-icon">🎯</span> The Coordinate System</h3>
+                    <p class="stat-large stat-teal">(0,0) is Top-Left</p>
+                    <p>This confused me so much! In math class, (0,0) was bottom-left. But in SVG, it's top-left, and Y increases going DOWN. Once I drew myself a grid, it clicked. Every shape uses these coordinates to know where to appear.</p>
+                </div>
+
+                <div class="insight-card">
+                    <h3><span class="insight-icon">📷</span> viewBox is Your Camera</h3>
+                    <p class="stat-large stat-brown">The "What You See" Control</p>
+                    <p>Prof. Teeters explained viewBox as a camera looking at your canvas. It defines WHICH part of the coordinate space you see, while width/height define how BIG it displays. This is the secret to responsive SVGs!</p>
+                </div>
+            </div>
+
+            <div class="hap-note-callout">
+                <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                    alt="HAP looking confused while studying a coordinate map" width="150" height="150" class="hap-note-image"
+                    decoding="async" loading="lazy">
+                <div class="hap-note-content">
+                    <h3>HAP's Confession:</h3>
+                    <p>I made SO many mistakes when I first started with SVG! I thought width="200" meant "200 units in my coordinate system" (nope—it's display size in pixels). I tried to position a circle at negative coordinates and couldn't figure out why it was invisible. I kept changing the wrong numbers trying to make things bigger. I even copied an SVG from online and deleted the viewBox because "it looked unnecessary." Everything broke! Prof. Teeters patiently walked me through all of it, and now I actually understand what I'm doing.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: First Major Topic -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>What Makes SVG Different from Regular Images?</h2>
+
+                <p class="mb-2">When I first heard about SVG, I thought it was just another image format like JPEG or PNG. Wrong! Prof. Teeters explained that SVG is fundamentally different—it's defined by math, not pixels. That's why you can zoom in infinitely and it stays crisp! 🤯</p>
+
+                <div class="analysis-grid">
+                    <div class="analysis-point">
+                        <h3>📐 Vector vs Raster</h3>
+                        <p><strong>Raster images (JPEG, PNG):</strong> Made of pixels in a grid. Great for photos, but they get blurry when you zoom in or make them bigger. I learned this in the Images lab when I saw pixelation!</p>
+                        <p class="mt-1"><strong>Vector images (SVG):</strong> Defined by mathematical formulas. A circle is just "center point + radius" not thousands of colored pixels. Scales perfectly to any size!</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>🎯 When I Use Each</h3>
+                        <p><strong>SVG is perfect for:</strong> Logos, icons, diagrams, illustrations—anything with clean shapes and solid colors. One file works for every screen size!</p>
+                        <p class="mt-1"><strong>Stick with PNG/JPEG for:</strong> Photographs and complex images with lots of colors and gradients. Prof. Teeters showed me that a photo converted to SVG would be HUGE!</p>
+                    </div>
+                </div>
+
+                <div class="warning-box mt-2">
+                    <h3>🟠 HAP's Old Way vs. What I Learned</h3>
+
+                    <p><strong class="text-error">❌ WRONG: Trying to use SVG like a raster image</strong></p>
+                    <pre><code class="language-html">&lt;!-- I thought I could just use SVG like any image --&gt;
+&lt;img src="logo.svg" width="500" height="500"&gt;
+&lt;!-- Why does it look weird on small screens? --&gt;</code></pre>
+
+                    <p><strong class="text-success">✅ RIGHT: What I Learned</strong></p>
+                    <pre><code class="language-html">&lt;!-- SVG scales automatically with viewBox! --&gt;
+&lt;svg viewBox="0 0 100 100" width="100%" height="auto"&gt;
+  &lt;circle cx="50" cy="50" r="40" fill="orange" /&gt;
+&lt;/svg&gt;
+&lt;!-- Now it's responsive and stays perfect at any size! --&gt;</code></pre>
+
+                    <p class="mt-1">Notice how I used width="100%" and let viewBox handle the scaling? Prof. Teeters taught me that SVG is smart about sizing when you set it up right!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Second Major Topic -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>Understanding the SVG Coordinate System</h2>
+
+                <p class="mb-2">This totally threw me off at first! In math class, I learned that (0,0) was in the bottom-left corner. But in SVG, it's top-left, and Y increases going DOWN instead of up. Prof. Teeters drew me a grid and it finally clicked!</p>
+
+                <div class="analysis-grid">
+                    <div class="analysis-point">
+                        <h3>📍 The Origin Point</h3>
+                        <p><strong>(0,0) is at the top-left:</strong> This is where your coordinate system starts. Move right for positive X, move down for positive Y.</p>
+                        <p class="mt-1">I kept trying to put things at negative Y values thinking they'd go "up"—nope! They went off the visible area!</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>📏 How Coordinates Work</h3>
+                        <p><strong>X increases to the right:</strong> This part matched my math class expectations!</p>
+                        <p class="mt-1"><strong>Y increases DOWNWARD:</strong> This is the part that confused me. A circle at cy="100" is BELOW a circle at cy="50".</p>
+                    </div>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Simple coordinate example:</div>
+                    <pre><code class="language-svg">&lt;svg viewBox="0 0 200 200" width="300" height="300"&gt;
+  &lt;!-- Circle at top-left area --&gt;
+  &lt;circle cx="50" cy="50" r="20" fill="orange" /&gt;
+
+  &lt;!-- Circle at bottom-right area --&gt;
+  &lt;circle cx="150" cy="150" r="20" fill="teal" /&gt;
+
+  &lt;!-- Note: Higher cy value = lower on screen! --&gt;
+&lt;/svg&gt;</code></pre>
+                    <p class="code-comment mt-1">I learned to think of coordinates like reading a book: start at top-left, move right and down!</p>
+                </div>
+
+                <div class="interactive-demo mt-2">
+                    <h3>Try This: Visualize the Coordinate Grid</h3>
+                    <p>Prof. Teeters told me to imagine an invisible grid over my SVG canvas:</p>
+                    <ul class="mt-1">
+                        <li>Draw a simple SVG with viewBox="0 0 100 100"</li>
+                        <li>Place a circle at cx="25" cy="25"—it appears in the top-left quadrant</li>
+                        <li>Place another at cx="75" cy="75"—it appears in the bottom-right quadrant</li>
+                        <li>Try cx="50" cy="50"—right in the center!</li>
+                    </ul>
+                    <p class="mt-1">Once I visualized this grid, positioning shapes became so much easier!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Third Major Topic -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>The viewBox Attribute: Your SVG Camera</h2>
+
+                <p class="mb-2">This was THE concept that unlocked everything for me! Prof. Teeters explained viewBox as a camera looking at your canvas—it controls WHAT you see, while width and height control HOW BIG it displays. Once I understood this, SVG stopped being confusing!</p>
+
+                <div class="analysis-grid">
+                    <div class="analysis-point">
+                        <h3>📷 What viewBox Does</h3>
+                        <p><strong>Format:</strong> viewBox="min-x min-y width height"</p>
+                        <p class="mt-1">The first two numbers (min-x, min-y) define where your "camera" starts looking. The last two (width, height) define how much of the coordinate space you see.</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>📺 Width/Height vs viewBox</h3>
+                        <p><strong>width and height:</strong> These are the display size on your webpage (in pixels or percentages)</p>
+                        <p class="mt-1"><strong>viewBox:</strong> This is the coordinate system INSIDE your SVG. Think of it as the "world coordinates" your shapes live in!</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>🎯 The Magic of viewBox</h3>
+                        <p><strong>Automatic scaling:</strong> viewBox lets your SVG scale perfectly! Same viewBox, different width/height = responsive graphics.</p>
+                        <p class="mt-1">This is how one SVG file works on phone screens AND desktop monitors!</p>
+                    </div>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">viewBox in action:</div>
+                    <pre><code class="language-svg">&lt;!-- Same circle, different viewBox values --&gt;
+
+&lt;!-- Example 1: Normal view --&gt;
+&lt;svg viewBox="0 0 100 100" width="200" height="200"&gt;
+  &lt;circle cx="50" cy="50" r="40" fill="orange" /&gt;
+&lt;/svg&gt;
+
+&lt;!-- Example 2: Zoomed in (smaller viewBox) --&gt;
+&lt;svg viewBox="25 25 50 50" width="200" height="200"&gt;
+  &lt;circle cx="50" cy="50" r="40" fill="orange" /&gt;
+  &lt;!-- Same circle, but viewBox "zooms in" on it! --&gt;
+&lt;/svg&gt;
+
+&lt;!-- Example 3: Responsive (width="100%") --&gt;
+&lt;svg viewBox="0 0 100 100" width="100%" height="auto"&gt;
+  &lt;circle cx="50" cy="50" r="40" fill="orange" /&gt;
+  &lt;!-- Scales to fit any container! --&gt;
+&lt;/svg&gt;</code></pre>
+                    <p class="code-comment mt-1">The viewBox stays the same, but changing width/height or the viewBox numbers themselves creates completely different results!</p>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit,a_hflip/v1759331571/HyBit_holding_a_paintbrush_ycfapu.jpg"
+                        alt="HAP excited after his breakthrough moment" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's Breakthrough Moment:</h3>
+                        <p>My "aha!" moment came when Prof. Teeters made me draw two identical circles with different viewBox settings. The SAME circle code looked totally different! One was zoomed way in, one was zoomed way out. That's when I realized: viewBox doesn't change your shapes—it changes what portion of your coordinate space you're looking at. It's like using a camera zoom! I literally yelled "I GET IT!" in the lab. 🎉</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Quick Reference / Tips (required) -->
+        <section class="content-section">
+            <div class="tips-container">
+                <h2 class="section-heading-centered">🎓 HyBit's Quick Reference</h2>
+
+                <div class="tip-card">
+                    <div class="tip-number">1</div>
+                    <div>
+                        <h3>Start with a Simple viewBox</h3>
+                        <p>I learned to always use nice round numbers like viewBox="0 0 100 100" or "0 0 200 200" when starting. Makes positioning so much easier! You can always adjust it later once your shapes are in place.</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">2</div>
+                    <div>
+                        <h3>Remember: Y Goes Down!</h3>
+                        <p>This trips everyone up at first. In SVG, increasing Y moves DOWN the screen, not up like in math class. When positioning goes wrong, check your Y values first!</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">3</div>
+                    <div>
+                        <h3>Use width="100%" for Responsive SVGs</h3>
+                        <p>Prof. Teeters taught me to use width="100%" and height="auto" with a proper viewBox. This makes SVGs automatically resize to fit their container—perfect for responsive designs!</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">4</div>
+                    <div>
+                        <h3>Don't Delete the viewBox!</h3>
+                        <p>I made this mistake when cleaning up AI-generated SVGs. The viewBox might look "optional" but it's usually critical! Without it, your SVG might not scale properly. Test before you delete!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bottom navigation -->
+    <nav aria-label="Station pagination" class="page-navigation bottom-nav">
+        <a href="../index.html" class="nav-link hub-link">🏠 Hub</a>
+        <a href="station2.html" class="nav-link next-link">Next: Station 2 - Reading SVG Code →</a>
+    </nav>
+
+    <!-- Footer (required - do not modify) -->
+    <footer class="footer">
+        <p><strong>HAP's Learning Lab</strong> | An AI-Enhanced Educational Experience by Prof. Cynthia Teeters</p>
+
+        <p class="footer-reminder">
+            Remember: viewBox is your camera, width/height is your display size. Once you get this, everything else makes sense! 🟠 — HAP
+        </p>
+
+        <div class="footer-copyright">
+            <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_80,c_limit/v1759497938/HAP-learner_dvehmt.jpg"
+                alt="HAP the apprentice learner with his study book and tools" class="footer-hybit" width="80"
+                height="80" decoding="async" loading="lazy">
+            <div>
+                <p>HAP&trade; Educational Content &copy; 2025 Cynthia Teeters. All rights reserved.</p>
+                <p>HyBit A. ProtoBot&trade; (HAP&trade;) character and the apprentice learning methodology are
+                    proprietary educational innovations.</p>
+                <p>Character concept, teaching methodology, and all written content created by Prof. Cynthia Teeters.
+                    Visual elements created with AI assistance.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Easter egg system (required) -->
+    <script src="../js/easter-egg.js"></script>
+
+    <!-- Syntax highlighting (optional - only if showing code) -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"
+        integrity="sha384-MXybTpajaBV0AkcBaCPT4KIvo0FzoCiWXgcihYsw4FUkEz0Pv3JGV6tk2G8vJtDc"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"
+        integrity="sha384-HkMr0bZB9kBW4iVtXn6nd35kO/L/dQtkkUBkL9swzTEDMdIe5ExJChVDSnC79aNA"
+        crossorigin="anonymous"></script>
+
+    <!-- Copy button functionality (optional - only if showing code) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add copy buttons to all code blocks in .prompt-box
+            document.querySelectorAll('.prompt-box pre').forEach(pre => {
+                const button = document.createElement('button');
+                button.className = 'copy-button';
+                button.textContent = 'Copy';
+                button.setAttribute('aria-label', 'Copy code to clipboard');
+
+                button.addEventListener('click', async () => {
+                    const code = pre.querySelector('code').textContent;
+                    try {
+                        await navigator.clipboard.writeText(code);
+                        button.classList.add('copied');
+                        button.textContent = 'Copied';
+                        setTimeout(() => {
+                            button.classList.remove('copied');
+                            button.textContent = 'Copy';
+                        }, 2000);
+                    } catch (err) {
+                        console.error('Failed to copy:', err);
+                    }
+                });
+
+                pre.appendChild(button);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+
+<!--
+HAP™ Educational Content © 2025 Cynthia Teeters. All rights reserved.
+HyBit A. ProtoBot™ (HAP™) character and the apprentice learning methodology are proprietary educational innovations.
+Character concept, teaching methodology, and all written content created by Prof. Cynthia Teeters.
+Visual elements created with AI assistance.
+-->
