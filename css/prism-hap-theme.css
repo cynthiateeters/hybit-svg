@@ -8,32 +8,42 @@
   --code-tag: var(--warm-orange);
   --code-attr: var(--teal-accent);
   --code-value: var(--soft-orange);
-  --code-comment: hsl(32, 35%, 88%); /* 5.1:1 contrast on lightest gradient */
+  --code-comment: hsl(32, 35%, 88%);
+  /* 5.1:1 contrast on lightest gradient */
   --code-punctuation: hsl(30, 20%, 72%);
 }
 
 .warning-box {
   --code-text: var(--dark-brown);
-  --code-tag: hsl(32, 62%, 47%); /* Darker orange for yellow background */
-  --code-attr: hsl(172, 33%, 36%); /* Darker teal for yellow background */
-  --code-value: hsl(33, 66%, 54%); /* Darker soft orange */
-  --code-comment: hsl(30, 18%, 36%); /* 4.5:1 contrast on yellow */
+  --code-tag: hsl(32, 62%, 47%);
+  /* Darker orange for yellow background */
+  --code-attr: hsl(172, 33%, 36%);
+  /* Darker teal for yellow background */
+  --code-value: hsl(33, 66%, 54%);
+  /* Darker soft orange */
+  --code-comment: hsl(30, 18%, 36%);
+  /* 4.5:1 contrast on yellow */
   --code-punctuation: hsl(30, 14%, 48%);
 }
 
 .tip-card {
   --code-text: var(--cream-white);
   --code-tag: var(--soft-orange);
-  --code-attr: hsl(45, 100%, 81%); /* Yellow instead of teal (teal on teal invisible) */
-  --code-value: hsl(45, 100%, 91%); /* Light yellow */
-  --code-comment: hsl(0, 0%, 100%); /* 3.53:1 on darkest teal - passes WCAG AA Large Text (3:1) */
+  --code-attr: hsl(45, 100%, 81%);
+  /* Yellow instead of teal (teal on teal invisible) */
+  --code-value: hsl(45, 100%, 91%);
+  /* Light yellow */
+  --code-comment: hsl(0, 0%, 100%);
+  /* 3.53:1 on darkest teal - passes WCAG AA Large Text (3:1) */
   --code-punctuation: var(--peach-background);
 }
 
 /* Increase comment size in .tip-card to meet WCAG "large text" definition */
 .tip-card .token.comment {
-  font-size: 1em; /* Same as regular code, making it 14pt+ which qualifies as large text */
-  font-weight: 500; /* Slightly bolder for better visibility */
+  font-size: 1em;
+  /* Same as regular code, making it 14pt+ which qualifies as large text */
+  font-weight: 500;
+  /* Slightly bolder for better visibility */
 }
 
 /* Base styles */
@@ -42,7 +52,7 @@ pre[class*="language-"] {
   color: var(--code-text);
   background: none;
   font-family: "Source Code Pro", Consolas, Monaco, monospace;
-  font-size: clamp(0.8rem, 1.5vw, 0.85rem);
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
   text-align: left;
   white-space: pre;
   word-spacing: normal;

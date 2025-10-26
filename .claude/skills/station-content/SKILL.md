@@ -249,6 +249,50 @@ Check each section uses correct HAP components from style.css.
 </div>
 ```
 
+**IMPORTANT: Copy button JavaScript requirement**
+
+All stations with code blocks in `.prompt-box` or `.solution-content` MUST include the copy button JavaScript at the end of the page (before `</body>`).
+
+**Reference implementation**: See `stations/station1.html` lines 724-752
+
+**Required script pattern**:
+```html
+<!-- Copy button functionality (optional - only if showing code) -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Add copy buttons to all code blocks in .prompt-box
+        document.querySelectorAll('.prompt-box pre').forEach(pre => {
+            const button = document.createElement('button');
+            button.className = 'copy-button';
+            button.textContent = 'Copy';
+            button.setAttribute('aria-label', 'Copy code to clipboard');
+
+            button.addEventListener('click', async () => {
+                const code = pre.querySelector('code').textContent;
+                try {
+                    await navigator.clipboard.writeText(code);
+                    button.classList.add('copied');
+                    button.textContent = 'Copied';
+                    setTimeout(() => {
+                        button.classList.remove('copied');
+                        button.textContent = 'Copy';
+                    }, 2000);
+                } catch (err) {
+                    console.error('Failed to copy:', err);
+                }
+            });
+
+            pre.appendChild(button);
+        });
+    });
+</script>
+```
+
+**For dynamically revealed content** (like solution buttons in challenges):
+- Add copy button when content is revealed
+- Check station1.html for complete pattern
+- Ensure copy button is added AFTER Prism.highlightAll() completes
+
 **Pattern D: Quick reference tips**:
 ```html
 <section class="content-section">
@@ -271,6 +315,7 @@ Check each section uses correct HAP components from style.css.
 - [ ] Each section uses `content-section` class
 - [ ] Headings follow hierarchy: h2 → h3 (no skipped levels)
 - [ ] Code examples use Prism.js syntax highlighting
+- [ ] Copy button JavaScript is present (check station1.html for reference implementation)
 - [ ] HAP note callouts use first-person voice
 - [ ] Images below fold have `loading="lazy"`
 
