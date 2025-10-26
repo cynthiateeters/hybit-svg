@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HAP's Learning Lab - Station 4: CSS Custom Properties & Dynamic Theming</title>
+
+    <meta name="description"
+        content="Join HAP as he learns how CSS custom properties (variables) transform his organized Lightbulb into a themeable, dynamic system with just 7 variables controlling 200+ paths.">
+
+    <meta property="og:image"
+        content="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_1200,c_fill,g_auto/v1759495998/hap-laptop_xiewar.jpg">
+
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_16,h_16/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_32,h_32/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_180,h_180/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_192,h_192/v1759596416/hap-favicon-h_gosgur.jpg">
+
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="../css/prism-hap-theme.css" rel="stylesheet">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="hybit-welcome">
+                <div class="hybit-avatar">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_200,c_limit,a_hflip/v1759331571/HyBit_holding_a_paintbrush_ycfapu.jpg"
+                        alt="HAP (HyBit A. ProtoBot) excited with paintbrush" width="200" height="200" decoding="async"
+                        fetchpriority="high">
+                </div>
+                <div>
+                    <h1>HAP's Learning Lab: CSS Custom Properties & Dynamic Theming</h1>
+                    <p class="subtitle">Turn organized code into themeable magic with CSS variables</p>
+                </div>
+            </div>
+
+            <div class="intro-box">
+                <p><strong>Welcome to Station 4!</strong> In Station 3, I organized my chaotic 200+ paths into 7 logical groups with semantic classes. But I was still hardcoding colors — <code>.bulb-glow { fill: #ffefcb; }</code> — which meant changing my color scheme required editing dozens of CSS rules! Then Prof. Teeters showed me CSS custom properties (variables), and my mind exploded. 7 variables now control my entire Lightbulb. Want to change the theme? Update 7 values. That's it. Let me show you how organization becomes power! 🟠</p>
+            </div>
+        </div>
+    </header>
+
+    <nav aria-label="Page navigation" class="page-navigation top-nav">
+        <a href="../index.html" class="nav-link hub-link">🏠 Back to Hub</a>
+        <div class="page-position" data-page="4">Station 4 of 6</div>
+    </nav>
+
+    <main id="main-content" class="content-container">
+
+        <!-- SECTION 1: What You'll Learn -->
+        <section class="content-section">
+            <h2 class="section-heading-centered">What You'll Learn at This Station</h2>
+
+            <div class="intro-box">
+                <p><strong>HAP's Discovery:</strong> I organized my Lightbulb in Station 3, creating 7 semantic groups with 7 CSS classes. But when I wanted to try a blue theme instead of warm orange, I had to change <code>.bulb-glow</code>, <code>.bulb-warm</code>, <code>.bulb-bright</code>, and four other classes. Prof. Teeters watched me editing CSS for 10 minutes and asked: "What if one variable controlled all glow colors across every theme?" I stared at her. "That's... that's possible?" She smiled: "CSS custom properties." That's when everything clicked! 🤯</p>
+            </div>
+
+            <div class="overview-grid mt-2">
+                <div class="insight-card">
+                    <h3><span class="insight-icon">🎨</span> The Power of Variables</h3>
+                    <p class="stat-large stat-teal">7 Variables = 200+ Paths</p>
+                    <p>I discovered that 7 CSS custom properties can control my entire Lightbulb! Each variable connects to a semantic group (bulb-glow, metal-dark, etc.), and each group contains dozens of paths. Change one variable, update dozens of elements instantly!</p>
+                </div>
+
+                <div class="insight-card">
+                    <h3><span class="insight-icon">🔄</span> Theme Switching</h3>
+                    <p class="stat-large stat-orange">4 Complete Themes</p>
+                    <p>Because I organized my Lightbulb systematically in Station 3, adding theme switching was shockingly simple. Warm orange, cool blue, emergency red, eco green — each theme is just 7 variable changes. My organized foundation made this magic possible!</p>
+                </div>
+
+                <div class="insight-card">
+                    <h3><span class="insight-icon">🎯</span> System Thinking</h3>
+                    <p class="stat-large stat-purple">Organization → Variables → Power</p>
+                    <p>Prof. Teeters taught me that CSS custom properties only work well with good organization. Random variables = chaos. But variables mapped to semantic groups? That's a themeable system! Station 3's organization work pays off here.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Recap of Station 3 Organization -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>Quick Recap: The Foundation from Station 3</h2>
+
+                <p class="mb-2">Before we dive into CSS custom properties, let me remind you what I built in Station 3. This organization is <strong>critical</strong> — without it, variables would be useless!</p>
+
+                <div class="analysis-grid">
+                    <div class="analysis-point">
+                        <h3>✅ 7 Semantic Groups</h3>
+                        <p>I organized 200+ chaotic paths into 7 logical groups:</p>
+                        <ul class="mt-1">
+                            <li><strong>bulb-glow</strong> — Lightest emanation (40+ paths)</li>
+                            <li><strong>bulb-warm</strong> — Medium warm glass (30+ paths)</li>
+                            <li><strong>bulb-bright</strong> — Hot filament (8 paths)</li>
+                            <li><strong>metal-light</strong> — Metal highlights (43 paths)</li>
+                            <li><strong>metal-medium</strong> — Metal body (93 paths)</li>
+                            <li><strong>metal-dark</strong> — Metal shadows (79 paths)</li>
+                            <li><strong>base-dark</strong> — Grounding element (11 paths)</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>✅ Semantic Class Names</h3>
+                        <p>Each group got a meaningful class:</p>
+                        <pre class="mt-1"><code class="language-css">.bulb-glow { fill: #ffefcb; }
+.bulb-warm { fill: #fdcf74; }
+.metal-light { fill: #bdbdbb; }
+/* etc. */</code></pre>
+                        <p class="mt-1">Names describe <strong>purpose</strong> (bulb-glow) not appearance (cream-color).</p>
+                    </div>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">The Problem with Station 3's Approach:</div>
+                    <pre><code class="language-css">/* Hardcoded colors - not themeable! */
+.bulb-glow { fill: #ffefcb; }
+.bulb-warm { fill: #fdcf74; }
+.bulb-bright { fill: #ffb24f; }
+.metal-light { fill: #bdbdbb; }
+.metal-medium { fill: #92918f; }
+.metal-dark { fill: #7e7e7d; }
+.base-dark { fill: #343637; }</code></pre>
+                    <p class="code-comment mt-1">This works, but it's locked in! Want a blue theme? You have to edit 7 CSS rules. Want to switch between themes dynamically? Impossible. <strong>That's what Station 4 solves!</strong> 🟠</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: CSS Custom Properties - 7 Variables Control 200+ Paths! -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>CSS Custom Properties - 7 Variables Control 200+ Paths!</h2>
+
+                <p class="mb-2">Remember CSS custom properties from the Colors lab? Prof. Teeters taught me I could use them in SVG too! I built my entire Lightbulb around just 7 variables. This was the moment everything clicked for me! 🤯</p>
+
+                <div class="prompt-box">
+                    <div class="prompt-label">HAP's Lightbulb Color System</div>
+                    <p>This is all it takes to control 200+ paths:</p>
+                    <pre><code class="language-css">:root {
+  /* HAP's Lightbulb Color System */
+  --bulb-glow: hsl(45, 100%, 89%);      /* Lightest - the emanating light */
+  --bulb-warm: hsl(40, 97%, 73%);       /* Medium - warm glass tones */
+  --bulb-bright: hsl(34, 100%, 65%);    /* Intense - the hot filament */
+  --metal-light: hsl(60, 4%, 74%);      /* Highlight on metal */
+  --metal-medium: hsl(60, 2%, 57%);     /* Body of metal base */
+  --metal-dark: hsl(0, 1%, 49%);        /* Shadow on metal */
+  --base-dark: hsl(210, 4%, 21%);       /* Darkest - grounding element */
+}</code></pre>
+                    <p class="code-comment mt-1">These 7 variables connect to my 7 semantic groups. Each variable controls dozens of paths! 🟠</p>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit,a_hflip/v1759331571/HyBit_holding_a_paintbrush_ycfapu.jpg"
+                        alt="HAP excited with paintbrush" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's Amazement:</h3>
+                        <p>When I discovered 7 variables could control 200+ paths, it felt like magic! But Prof. Teeters explained it's not magic — it's systematic organization. Each variable represents a visual concept (glow, warm tone, bright filament, metal tones, dark base). Each concept connects to a semantic group. Each group contains related paths.</p>
+                        <p class="mt-1">Variable → Class → Group → Paths</p>
+                        <p class="mt-1">That's the system! And once I understood the system, I could theme my entire Lightbulb by changing just 7 values! 🟠</p>
+                    </div>
+                </div>
+
+                <div class="mt-2">
+                    <h3>Connecting Variables to Classes</h3>
+                    <p>Here's how I transformed my hardcoded Station 3 CSS to use variables:</p>
+
+                    <div class="warning-box mt-1">
+                        <h3>🟠 HAP's Old Way vs. What I Learned</h3>
+                        <p><strong class="text-error">❌ WRONG: Station 3 Hardcoded Approach</strong></p>
+                        <pre><code class="language-css">.bulb-glow { fill: #ffefcb; }
+.bulb-warm { fill: #fdcf74; }
+.bulb-bright { fill: #ffb24f; }
+/* Locked in! Can't theme! */</code></pre>
+
+                        <p class="mt-1"><strong class="text-success">✅ RIGHT: Station 4 Variable Approach</strong></p>
+                        <pre><code class="language-css">.bulb-glow { fill: var(--bulb-glow); }
+.bulb-warm { fill: var(--bulb-warm); }
+.bulb-bright { fill: var(--bulb-bright); }
+/* Themeable! Just change the variables! */</code></pre>
+
+                        <p class="mt-1">The classes stay the same. The HTML stays the same. Only the variable definitions change. That's the power of systematic organization! 🟠</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Theme Switching Demo -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>Theme Switching My Lightbulb</h2>
+
+                <p>Watch my Lightbulb transform with just variable changes. I created four complete themes:</p>
+
+                <div class="analysis-grid mt-1">
+                    <div class="analysis-point">
+                        <h4>🟠 Warm Theme (Default)</h4>
+                        <pre><code class="language-css">.lightbulb {
+  --bulb-glow: hsl(45, 100%, 89%);
+  --bulb-warm: hsl(40, 97%, 73%);
+  --bulb-bright: hsl(34, 100%, 65%);
+  /* Metal colors stay same */
+}</code></pre>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h4>🔵 Cool Blue Theme</h4>
+                        <pre><code class="language-css">.lightbulb.theme-cool {
+  --bulb-glow: hsl(205, 100%, 95%);
+  --bulb-warm: hsl(205, 100%, 82%);
+  --bulb-bright: hsl(205, 100%, 64%);
+  /* Metal colors stay same */
+}</code></pre>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h4>🔴 Emergency Red Theme</h4>
+                        <pre><code class="language-css">.lightbulb.theme-alert {
+  --bulb-glow: hsl(0, 100%, 95%);
+  --bulb-warm: hsl(0, 100%, 85%);
+  --bulb-bright: hsl(0, 100%, 70%);
+  /* Metal colors stay same */
+}</code></pre>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h4>🟢 Eco Green Theme</h4>
+                        <pre><code class="language-css">.lightbulb.theme-eco {
+  --bulb-glow: hsl(120, 100%, 97%);
+  --bulb-warm: hsl(120, 73%, 75%);
+  --bulb-bright: hsl(123, 61%, 52%);
+  /* Metal colors stay same */
+}</code></pre>
+                    </div>
+                </div>
+
+                <p class="mt-2 code-comment">Notice how I only change the bulb colors? The metal parts stay the same across all themes. That's the power of systematic organization — I control exactly what changes! 🟠</p>
+
+                <div class="demo-container mt-2">
+                    <h3>🎨 Interactive: Theme Switching with CSS Variables</h3>
+                    <p>Click a theme button to watch my Lightbulb transform! The variable display shows you exactly what's changing.</p>
+
+                    <div class="theme-demo" style="display: flex; gap: 2rem; flex-wrap: wrap; margin: 2rem 0;">
+                        <div style="flex: 1; min-width: 300px;">
+                            <h4 style="margin-bottom: 1rem;">Choose a Theme:</h4>
+                            <div class="theme-buttons" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                                <button class="theme-btn active" data-theme="warm"
+                                    style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 1rem; border: 2px solid var(--warm-orange); background: var(--background-peach); cursor: pointer; border-radius: 8px; transition: all 0.3s ease;">
+                                    <span style="font-size: 2rem;">🟠</span>
+                                    <strong>Warm</strong>
+                                    <div style="display: flex; gap: 4px;">
+                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(45, 100%, 89%);"></span>
+                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(40, 97%, 73%);"></span>
+                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(34, 100%, 65%);"></span>
+                                    </div>
+                                </button>
+                                <button class="theme-btn" data-theme="cool"
+                                    style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 1rem; border: 2px solid transparent; background: var(--background-peach); cursor: pointer; border-radius: 8px; transition: all 0.3s ease;">
+                                    <span style="font-size: 2rem;">🔵</span>
+                                    <strong>Cool</strong>
+                                    <div style="display: flex; gap: 4px;">
+                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(205, 100%, 95%);"></span>
+                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(205, 100%, 82%);"></span>
+                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(205, 100%, 64%);"></span>
+                                    </div>
+                                </button>
+                                <button class="theme-btn" data-theme="alert"
+                                    style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 1rem; border: 2px solid transparent; background: var(--background-peach); cursor: pointer; border-radius: 8px; transition: all 0.3s ease;">
+                                    <span style="font-size: 2rem;">🔴</span>
+                                    <strong>Alert</strong>
+                                    <div style="display: flex; gap: 4px;">
+                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(0, 100%, 95%);"></span>
+                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(0, 100%, 85%);"></span>
+                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(0, 100%, 70%);"></span>
+                                    </div>
+                                </button>
+                                <button class="theme-btn" data-theme="eco"
+                                    style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 1rem; border: 2px solid transparent; background: var(--background-peach); cursor: pointer; border-radius: 8px; transition: all 0.3s ease;">
+                                    <span style="font-size: 2rem;">🟢</span>
+                                    <strong>Eco</strong>
+                                    <div style="display: flex; gap: 4px;">
+                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(120, 100%, 97%);"></span>
+                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(120, 73%, 75%);"></span>
+                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(123, 61%, 52%);"></span>
+                                    </div>
+                                </button>
+                            </div>
+
+                            <div style="margin-top: 1.5rem; padding: 1rem; background: hsl(32, 45%, 95%); border-radius: 4px;">
+                                <h4 style="margin-bottom: 0.5rem;">Current CSS Variables:</h4>
+                                <pre id="variableDisplay" style="margin: 0; padding: 0.5rem; background: white; border-radius: 4px; font-size: 0.85rem; overflow-x: auto;"><code class="language-css">:root {
+  --bulb-glow: hsl(45, 100%, 89%);
+  --bulb-warm: hsl(40, 97%, 73%);
+  --bulb-bright: hsl(34, 100%, 65%);
+  --metal-light: hsl(60, 4%, 74%);
+  --metal-medium: hsl(60, 2%, 57%);
+  --metal-dark: hsl(0, 1%, 49%);
+  --base-dark: hsl(210, 4%, 21%);
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <div style="flex: 1; min-width: 300px; display: flex; justify-content: center; align-items: center;">
+                            <svg id="themeLightbulb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1536" width="100%" style="max-width: 350px; height: auto;">
+                                <style>
+                                    #themeLightbulb g {
+                                        transition: fill 0.5s ease;
+                                    }
+                                </style>
+                                <g class="bulb-glow">
+                                    <ellipse cx="512" cy="550" rx="280" ry="320" />
+                                    <path d="M300 400 Q512 300 724 400" />
+                                </g>
+                                <g class="bulb-warm">
+                                    <ellipse cx="512" cy="560" rx="220" ry="260" />
+                                    <path d="M350 450 Q512 380 674 450" />
+                                </g>
+                                <g class="bulb-bright">
+                                    <ellipse cx="512" cy="570" rx="150" ry="180" />
+                                </g>
+                                <g class="metal-light">
+                                    <path d="M280 850 L280 1050 L350 1100 L350 850 Z" />
+                                    <path d="M674 850 L674 1100 L744 1050 L744 850 Z" />
+                                </g>
+                                <g class="metal-medium">
+                                    <rect x="350" y="850" width="324" height="250" rx="5" />
+                                    <path d="M350 920 L674 920" />
+                                    <path d="M350 990 L674 990" />
+                                    <path d="M350 1060 L674 1060" />
+                                </g>
+                                <g class="metal-dark">
+                                    <path d="M365 865 L365 1085 C365 1090 370 1095 375 1095 L649 1095 C654 1095 659 1090 659 1085 L659 865" />
+                                    <ellipse cx="400" cy="920" rx="15" ry="8" />
+                                    <ellipse cx="624" cy="920" rx="15" ry="8" />
+                                </g>
+                                <g class="base-dark">
+                                    <rect x="400" y="1100" width="224" height="150" rx="8" />
+                                    <circle cx="450" cy="1150" r="12" />
+                                    <circle cx="574" cy="1150" r="12" />
+                                    <path d="M420 1220 L604 1220" stroke-width="8" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <p class="code-comment">HAP's amazement: "7 variables change 200+ paths instantly!" Watch the smooth transitions as the entire Lightbulb transforms! 🟠</p>
+                </div>
+
+                <script>
+                    (function () {
+                        const themeButtons = document.querySelectorAll('.theme-btn');
+                        const svg = document.getElementById('themeLightbulb');
+                        const variableDisplay = document.getElementById('variableDisplay');
+
+                        if (!svg || !variableDisplay) return; // Exit if demo not on page
+
+                        // Theme definitions
+                        const themes = {
+                            warm: {
+                                '--bulb-glow': 'hsl(45, 100%, 89%)',
+                                '--bulb-warm': 'hsl(40, 97%, 73%)',
+                                '--bulb-bright': 'hsl(34, 100%, 65%)',
+                                '--metal-light': 'hsl(60, 4%, 74%)',
+                                '--metal-medium': 'hsl(60, 2%, 57%)',
+                                '--metal-dark': 'hsl(0, 1%, 49%)',
+                                '--base-dark': 'hsl(210, 4%, 21%)'
+                            },
+                            cool: {
+                                '--bulb-glow': 'hsl(205, 100%, 95%)',
+                                '--bulb-warm': 'hsl(205, 100%, 82%)',
+                                '--bulb-bright': 'hsl(205, 100%, 64%)',
+                                '--metal-light': 'hsl(60, 4%, 74%)',
+                                '--metal-medium': 'hsl(60, 2%, 57%)',
+                                '--metal-dark': 'hsl(0, 1%, 49%)',
+                                '--base-dark': 'hsl(210, 4%, 21%)'
+                            },
+                            alert: {
+                                '--bulb-glow': 'hsl(0, 100%, 95%)',
+                                '--bulb-warm': 'hsl(0, 100%, 85%)',
+                                '--bulb-bright': 'hsl(0, 100%, 70%)',
+                                '--metal-light': 'hsl(60, 4%, 74%)',
+                                '--metal-medium': 'hsl(60, 2%, 57%)',
+                                '--metal-dark': 'hsl(0, 1%, 49%)',
+                                '--base-dark': 'hsl(210, 4%, 21%)'
+                            },
+                            eco: {
+                                '--bulb-glow': 'hsl(120, 100%, 97%)',
+                                '--bulb-warm': 'hsl(120, 73%, 75%)',
+                                '--bulb-bright': 'hsl(123, 61%, 52%)',
+                                '--metal-light': 'hsl(60, 4%, 74%)',
+                                '--metal-medium': 'hsl(60, 2%, 57%)',
+                                '--metal-dark': 'hsl(0, 1%, 49%)',
+                                '--base-dark': 'hsl(210, 4%, 21%)'
+                            }
+                        };
+
+                        function applyTheme(themeName) {
+                            const theme = themes[themeName];
+
+                            // Update SVG groups directly
+                            svg.querySelectorAll('g').forEach(group => {
+                                const className = Array.from(group.classList).find(c =>
+                                    c.startsWith('bulb-') || c.startsWith('metal-') || c.startsWith('base-')
+                                );
+                                if (className) {
+                                    const varName = '--' + className;
+                                    if (theme[varName]) {
+                                        group.style.fill = theme[varName];
+                                    }
+                                }
+                            });
+
+                            // Update variable display
+                            let cssText = ':root {\n';
+                            Object.entries(theme).forEach(([variable, value]) => {
+                                cssText += `  ${variable}: ${value};\n`;
+                            });
+                            cssText += '}';
+                            variableDisplay.querySelector('code').textContent = cssText;
+
+                            // Update active button state
+                            themeButtons.forEach(btn => {
+                                if (btn.dataset.theme === themeName) {
+                                    btn.style.borderColor = 'var(--warm-orange)';
+                                    btn.style.boxShadow = '0 4px 8px hsla(32, 76%, 63%, 0.3)';
+                                    btn.classList.add('active');
+                                    btn.setAttribute('aria-pressed', 'true');
+                                } else {
+                                    btn.style.borderColor = 'transparent';
+                                    btn.style.boxShadow = 'none';
+                                    btn.classList.remove('active');
+                                    btn.setAttribute('aria-pressed', 'false');
+                                }
+                            });
+                        }
+
+                        // Theme button click handlers
+                        themeButtons.forEach(btn => {
+                            btn.addEventListener('click', () => {
+                                const themeName = btn.dataset.theme;
+                                applyTheme(themeName);
+                            });
+
+                            // Initialize ARIA
+                            btn.setAttribute('role', 'button');
+                            btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
+                        });
+
+                        // Initialize with warm theme
+                        applyTheme('warm');
+                    })();
+                </script>
+            </div>
+        </section>
+
+        <!-- Quick Reference -->
+        <section class="content-section">
+            <h2 class="section-heading-centered">Quick Reference</h2>
+
+            <div class="tips-grid mt-2">
+                <div class="tip-card">
+                    <div class="tip-number">1</div>
+                    <div>
+                        <h3>Organization First</h3>
+                        <p>CSS variables only work well with good organization. Station 3's semantic groups made Station 4's theming possible!</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">2</div>
+                    <div>
+                        <h3>Define in :root</h3>
+                        <p>Put your color variables in <code>:root { }</code> so they're available throughout your SVG.</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">3</div>
+                    <div>
+                        <h3>Use var() in Classes</h3>
+                        <p>Connect variables to classes: <code>.bulb-glow { fill: var(--bulb-glow); }</code></p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">4</div>
+                    <div>
+                        <h3>Semantic Variable Names</h3>
+                        <p>Name variables by purpose (<code>--bulb-glow</code>) not appearance (<code>--cream-color</code>).</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">5</div>
+                    <div>
+                        <h3>Theme with Class Names</h3>
+                        <p>Switch themes by adding classes: <code>.lightbulb.theme-cool</code> overrides the default variables.</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">6</div>
+                    <div>
+                        <h3>Test Your System</h3>
+                        <p>Change one variable and watch dozens of paths update. If they don't, check your organization!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HAP's Final Thoughts -->
+        <div class="hap-note-callout">
+            <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit,a_hflip/v1759331571/HyBit_holding_a_paintbrush_ycfapu.jpg"
+                alt="HAP looking thoughtful with paintbrush" width="150" height="150" class="hap-note-image"
+                decoding="async" loading="lazy">
+            <div class="hap-note-content">
+                <h3>HAP's Final Thoughts:</h3>
+                <p>When I started organizing my Lightbulb in Station 3, I didn't know why Prof. Teeters was so insistent about semantic groups and meaningful class names. "Just use <code>.group1</code> and <code>.group2</code>!" I complained. She smiled and said: "You'll see why soon."</p>
+                <p class="mt-1">Station 4 is the "why." My organized foundation from Station 3 made CSS custom properties trivial to add. 7 variables, 7 groups, 200+ paths — all working together as one themeable system. When organization is right, power follows naturally.</p>
+                <p class="mt-1">Prof. Teeters taught me: <strong>"Good organization isn't extra work. It's the foundation that makes everything else easier."</strong> My Lightbulb proved it! 🟠</p>
+            </div>
+        </div>
+
+        <!-- Learning Objectives Checklist -->
+        <section class="content-section">
+            <h2 class="section-heading-centered">Learning Objectives Checklist</h2>
+            <p class="text-center mb-2">By the end of this station, I should be able to:</p>
+
+            <div class="checklist-grid">
+                <label class="checklist-item">
+                    <input type="checkbox" aria-label="Understand how CSS custom properties work in SVG">
+                    <span class="checkmark"></span>
+                    <span>I understand how CSS custom properties (variables) work in SVG using <code>:root</code> and <code>var()</code></span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" aria-label="Can define CSS variables with semantic names">
+                    <span class="checkmark"></span>
+                    <span>I can define CSS variables with semantic names that match my organizational groups</span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" aria-label="Can connect variables to CSS classes">
+                    <span class="checkmark"></span>
+                    <span>I can connect variables to CSS classes using <code>fill: var(--variable-name)</code></span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" aria-label="Understand the relationship between organization and variables">
+                    <span class="checkmark"></span>
+                    <span>I understand why Station 3's organization was critical for Station 4's variable system</span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" aria-label="Can create multiple themes">
+                    <span class="checkmark"></span>
+                    <span>I can create multiple themes by changing variable definitions in different class contexts</span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" aria-label="Know when to use variables vs hardcoded colors">
+                    <span class="checkmark"></span>
+                    <span>I know when to use CSS variables (for theming/consistency) vs. hardcoded colors (for one-offs)</span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" aria-label="Can apply system thinking">
+                    <span class="checkmark"></span>
+                    <span>I can apply Prof. Teeters' system thinking: Organization → Variables → Theming Power</span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" aria-label="Can debug variable issues">
+                    <span class="checkmark"></span>
+                    <span>I can debug variable issues by checking organization, class names, and variable definitions</span>
+                </label>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bottom navigation -->
+    <nav aria-label="Station pagination" class="page-navigation bottom-nav">
+        <a href="station3.html" class="nav-link prev-link">← Previous: Station 3 - Groups & Semantic Organization</a>
+        <a href="../index.html" class="nav-link hub-link">🏠 Hub</a>
+        <a href="station5.html" class="nav-link next-link">Next: Station 5 - [Coming Soon] →</a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-credits">
+                <p><strong>HAP's Learning Lab</strong> — where curiosity meets systematic learning!</p>
+                <p class="mt-1">© 2025 HAP™ (HyBit A. ProtoBot™). All rights reserved.</p>
+            </div>
+            <div class="footer-legal">
+                <p>HAP™ Educational Content © 2025 Cynthia Teeters. All rights reserved.</p>
+                <p>HyBit A. ProtoBot™ (HAP™) character and the apprentice learning methodology are proprietary educational innovations.</p>
+                <p>Character concept, teaching methodology, and all written content created by Prof. Cynthia Teeters. Visual elements created with AI assistance.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/easter-egg.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"
+        integrity="sha384-MXybTpajaBV0AkcBaCPT4KIvo0FzoCiWXgcihYsw4FUkEz0Pv3JGV6tk2G8vJtDc"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"
+        integrity="sha384-HkMr0bZB9kBW4iVtXn6nd35kO/L/dQtkkUBkL9swzTEDMdIe5ExJChVDSnC79aNA"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
+<!--
+HAP™ Educational Content © 2025 Cynthia Teeters. All rights reserved.
+HyBit A. ProtoBot™ (HAP™) character and the apprentice learning methodology are proprietary educational innovations.
+Character concept, teaching methodology, and all written content created by Prof. Cynthia Teeters.
+Visual elements created with AI assistance.
+-->
