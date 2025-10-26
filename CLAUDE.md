@@ -395,14 +395,15 @@ Visual elements created with AI assistance.
 
 1. **Don't use Write tool on existing files** - Use Edit instead
 2. **Don't break HAP's voice** - First-person, humble, references Prof. Teeters
-3. **Don't skip performance testing** - Use DevTools MCP or Lighthouse to maintain 99+ scores
-4. **Don't use hex/rgb colors** - Use hsl() format exclusively
-5. **Don't create new files unnecessarily** - Use templates provided
-6. **Don't forget width/height on images** - Causes layout shift
-7. **Don't use color alone** - Pair with icons/text for accessibility
-8. **Don't commit without testing locally** - Ensure JSON loads, images display
-9. **Don't skip Skills validation** - Each Skill prevents specific problems
-10. **Don't use title case in markdown** - Sentence case for `.md` files
+3. **Don't reorder sections from Station 1 pattern** - All stations must follow identical section ordering for consistency. Validate with `grep -n "SECTION [0-9]" stations/station1.html stations/station[N].html` before completion. Pattern: What You'll Learn → Main Content → Try It Yourself → Quick Reference → Additional Sections
+4. **Don't skip performance testing** - Use DevTools MCP or Lighthouse to maintain 99+ scores
+5. **Don't use hex/rgb colors** - Use hsl() format exclusively
+6. **Don't create new files unnecessarily** - Use templates provided
+7. **Don't forget width/height on images** - Causes layout shift
+8. **Don't use color alone** - Pair with icons/text for accessibility
+9. **Don't commit without testing locally** - Ensure JSON loads, images display
+10. **Don't skip Skills validation** - Each Skill prevents specific problems
+11. **Don't use title case in markdown** - Sentence case for `.md` files
 
 ## Getting help
 

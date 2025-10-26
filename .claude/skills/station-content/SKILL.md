@@ -30,6 +30,66 @@ Every station MUST have these 6 sections in order:
 - [ ] No missing sections
 - [ ] No extra/custom sections outside this structure
 
+### Step 1.5: Content section ordering validation (CRITICAL)
+
+**All stations MUST follow identical section ordering** for consistency across the learning lab. Section order was inconsistent in Station 2 initial implementation and had to be corrected.
+
+**Required section order pattern**:
+
+1. **What You'll Learn** (3 insight cards)
+2. **Main Teaching Sections** (2-6 sections explaining core concepts)
+3. **Try It Yourself Challenge** (interactive practice section)
+4. **Quick Reference** (tips/summary cards)
+5. **Additional Sections** (HAP's Mistake Museum, Learning Objectives Checklist, etc.)
+
+**Example from Station 1**:
+```
+Section 1: What You'll Learn
+Section 2: SVG vs. Raster Images
+Section 3: The ViewBox Coordinate System
+Section 4: Resolution Independence
+Section 5: Try It Yourself Challenge
+Section 6: Quick Reference
+(unnumbered): Common Mistakes Checklist
+```
+
+**Example from Station 2**:
+```
+Section 1: What You'll Learn
+Section 2: Opening Up an SVG File
+Section 3: Recognizing Basic Shapes
+Section 4: Recognizing Paths and Text
+Section 5: Attributes and Safe Modifications
+Section 6: Try It Yourself Challenge
+Section 7: Quick Reference
+(unnumbered): HAP's Mistake Museum
+(unnumbered): Learning Objectives Checklist
+```
+
+**Key ordering rules**:
+
+- "What You'll Learn" is ALWAYS first
+- Main teaching content comes BEFORE "Try It Yourself"
+- "Try It Yourself" comes BEFORE "Quick Reference"
+- "Quick Reference" comes BEFORE additional sections (Mistake Museum, Checklists)
+- Learning objectives/checklists are ALWAYS the final section
+
+**Validation command** (compare new station to Station 1):
+
+```bash
+grep -n "SECTION [0-9]" stations/station1.html stations/station[N].html
+```
+
+Compare the output to ensure section ordering matches the pattern.
+
+**Validation checklist**:
+- [ ] "What You'll Learn" is Section 1
+- [ ] Main teaching sections are Sections 2 through N
+- [ ] "Try It Yourself" comes after all teaching sections
+- [ ] "Quick Reference" comes after "Try It Yourself"
+- [ ] Additional sections (Mistake Museum, Checklist) come after "Quick Reference"
+- [ ] Used grep to compare against Station 1 ordering
+
 ### Step 2: Component usage validation
 
 Check each section uses correct HAP components from style.css.
@@ -377,19 +437,24 @@ From Colors project station analysis:
    - Issue: Stations without prev/next links
    - Fix: Always include bottom navigation (except special cases for station 1/6)
 
-4. **Inconsistent HAP voice**
+4. **Inconsistent section ordering**
+   - Issue: Sections in different order than Station 1 (e.g., Quick Reference before Try It Yourself)
+   - Fix: Use grep to compare against Station 1 pattern: `grep -n "SECTION [0-9]" stations/station1.html stations/station[N].html`
+   - Pattern: What You'll Learn → Main Content → Try It Yourself → Quick Reference → Additional Sections
+
+5. **Inconsistent HAP voice**
    - Issue: Switching from first-person to instructional mid-station
    - Fix: Use hap-voice Skill to validate all content
 
-5. **Wrong Prism language**
+6. **Wrong Prism language**
    - Issue: `<code class="language-markup">` instead of `language-html`
    - Fix: Use correct language: `language-css`, `language-html`, `language-javascript`
 
-6. **Missing aria-labels**
+7. **Missing aria-labels**
    - Issue: Navigation without descriptive labels
    - Fix: Top nav = "Page navigation", Bottom nav = "Station pagination"
 
-7. **Empty headings**
+8. **Empty headings**
    - Issue: `<h3></h3>` tags with no content
    - Fix: Remove empty headings or add content
 

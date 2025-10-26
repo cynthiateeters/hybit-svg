@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HAP's Learning Lab - Station 2: Reading SVG Code</title>
+
+    <meta name="description"
+        content="Join HAP as he learns to read and recognize SVG elements, turning alphabet soup into understandable patterns.">
+
+    <meta property="og:image"
+        content="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_1200,c_fill,g_auto/v1759495998/hap-laptop_xiewar.jpg">
+
+    <!-- Standard HAP favicon -->
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_16,h_16/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_32,h_32/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_180,h_180/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_192,h_192/v1759596416/hap-favicon-h_gosgur.jpg">
+
+    <!-- Preconnect for Cloudinary CDN -->
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+
+    <!-- HAP Design System -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Syntax highlighting theme -->
+    <link href="../css/prism-hap-theme.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Accessibility skip link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header with HAP avatar and introduction -->
+    <header class="header">
+        <div class="header-content">
+            <div class="hybit-welcome">
+                <div class="hybit-avatar">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_200,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                        alt="HAP (HyBit A. ProtoBot) looking confused while studying a map" width="200" height="200" decoding="async"
+                        fetchpriority="high">
+                </div>
+                <div>
+                    <h1>HAP's Learning Lab: Reading SVG Code</h1>
+                    <p class="subtitle">Station 2: Understanding the Building Blocks</p>
+                </div>
+            </div>
+
+            <div class="intro-box">
+                <p><strong>Welcome to Station 2!</strong> When Prof. Teeters first asked me to open an SVG file in my code editor, I thought I'd broken something—it looked like alphabet soup! Letters, numbers, angle brackets everywhere. But then she said, "HAP, you're not looking at code—you're looking at a recipe. You don't need to invent recipes to follow them!" That changed everything for me. I learned to recognize patterns, not memorize syntax. Now I can open any SVG, spot the elements I recognize, and confidently modify what I need. Let me show you what I learned! 🟠</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top navigation -->
+    <nav aria-label="Page navigation" class="page-navigation top-nav">
+        <a href="../index.html" class="nav-link hub-link">🏠 Back to Hub</a>
+        <div class="page-position" data-page="2">Station 2 of 6</div>
+    </nav>
+
+    <!-- Main content area -->
+    <main id="main-content" class="content-container">
+
+        <!-- SECTION 1: What You'll Learn -->
+        <section class="content-section">
+            <h2 class="section-heading-centered">What You'll Learn at This Station</h2>
+
+            <div class="intro-box">
+                <p><strong>HAP's Discovery:</strong> I'll never forget the first time I tried to change the text in an AI-generated badge. I stared at hundreds of lines of code, terrified to touch anything. Prof. Teeters showed me where the `&lt;text&gt;` element was hiding—literally just the word "text" with angle brackets. I changed "Sample" to "HAP" in 2 seconds and felt like a genius! That's when I realized: I don't need to understand EVERYTHING to modify SOMETHING. 🤯</p>
+            </div>
+
+            <!-- 3 insight cards -->
+            <div class="overview-grid mt-2">
+                <div class="insight-card">
+                    <h3><span class="insight-icon">🔍</span> Recognizing Basic Shapes</h3>
+                    <p class="stat-large">Easy Mode</p>
+                    <p>I learned that when I see `&lt;circle&gt;`, `&lt;rect&gt;`, or `&lt;ellipse&gt;`, those are EASY to modify! Prof. Teeters taught me that the attribute names are obvious: `cx` is center-x, `r` is radius. Change the numbers, change the shape. Nothing breaks! This gave me so much confidence.</p>
+                </div>
+
+                <div class="insight-card">
+                    <h3><span class="insight-icon">🛤️</span> Working With Paths</h3>
+                    <p class="stat-large stat-teal">Don't Panic!</p>
+                    <p>When I first saw `&lt;path d="M150 0 L75 200...">`, I panicked. Why are there so many numbers? Prof. Teeters calmed me down: "You don't need to understand every command in a path. Here's what you CAN do..." She was right! I can style them, copy them, and reuse them. I just don't modify the `d` attribute itself.</p>
+                </div>
+
+                <div class="insight-card">
+                    <h3><span class="insight-icon">✅</span> Knowing What to Change</h3>
+                    <p class="stat-large stat-brown">Safe vs. Scary</p>
+                    <p>I learned which attributes are safe to modify (position, size, colors) and which need careful handling. Prof. Teeters gave me a simple rule: "If the attribute name makes sense in English, it's probably safe to change." Text content? Safe. Fill color? Safe. Path data? Use a tool for that!</p>
+                </div>
+            </div>
+
+            <!-- HAP's confession -->
+            <div class="hap-note-callout">
+                <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                    alt="HAP looking confused while trying to read a complex map" width="150" height="150" class="hap-note-image"
+                    decoding="async" loading="lazy">
+                <div class="hap-note-content">
+                    <h3>HAP's Confession:</h3>
+                    <p>I made SO many mistakes learning to read SVG! I changed a circle's `cx` to 5000 and couldn't figure out why it disappeared (it was outside the viewBox!). I tried to modify numbers inside a path's `d` attribute and the whole shape went bonkers. I spent 20 minutes looking for the text in an SVG before realizing it was drawn with path elements, not a `&lt;text&gt;` tag. I even deleted an entire `&lt;defs&gt;` section because I thought it was "unnecessary code"—everything broke! Prof. Teeters patiently showed me how to recognize patterns and what's safe to modify. Now I can read SVG code without panicking!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Opening Up an SVG File -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>Opening Up an SVG File: It's Just Text!</h2>
+
+                <p class="mb-2">The first thing Prof. Teeters taught me was that SVG isn't some magical binary format—it's just text! You can open it in any code editor and read it. When I first tried this with an icon I downloaded, I thought something was wrong with the file. All those angle brackets and attributes looked overwhelming! But Prof. Teeters said, "HAP, you already know how to read HTML. SVG is just XML, which works the same way." Let's look at a real example together. 🟠</p>
+
+                <!-- SVG Code Explorer Demo -->
+                <div class="interactive-demo mt-2">
+                    <h3>🟠 See It In Action: Real SVG Code</h3>
+                    <p>Here's an actual SVG with different element types. This is what the code looks like when you open an SVG file in your editor—not scary, just patterns to recognize!</p>
+
+                    <!-- The actual SVG visual -->
+                    <div style="border: 2px solid hsl(32, 76%, 63%); padding: 1rem; margin-top: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
+                        <svg viewBox="0 0 200 100" width="400" height="200" role="img" aria-label="Example SVG showing circle, rectangle, and text elements">
+                            <circle cx="50" cy="50" r="30" fill="hsl(32, 76%, 63%)" />
+                            <rect x="120" y="20" width="60" height="60" rx="8" fill="hsl(172, 45%, 55%)" />
+                            <text x="100" y="95" text-anchor="middle" fill="hsl(32, 45%, 45%)" font-size="14" font-weight="bold">HAP</text>
+                        </svg>
+                    </div>
+
+                    <!-- The actual code -->
+                    <div class="prompt-box mt-2">
+                        <div class="prompt-label">The Code Behind This SVG:</div>
+                        <pre><code class="language-svg">&lt;svg viewBox="0 0 200 100" width="400" height="200"&gt;
+    &lt;!-- Circle: Perfect round shape --&gt;
+    &lt;circle
+        cx="50"                      &lt;!-- Center X: moves it left/right --&gt;
+        cy="50"                      &lt;!-- Center Y: moves it up/down --&gt;
+        r="30"                       &lt;!-- Radius: makes it bigger/smaller --&gt;
+        fill="hsl(32, 76%, 63%)" /&gt; &lt;!-- Color: HAP orange --&gt;
+
+    &lt;!-- Rectangle: Four-sided shape --&gt;
+    &lt;rect
+        x="120"                       &lt;!-- Top-left X position --&gt;
+        y="20"                        &lt;!-- Top-left Y position --&gt;
+        width="60"                    &lt;!-- How wide it is --&gt;
+        height="60"                   &lt;!-- How tall it is --&gt;
+        rx="8"                        &lt;!-- Rounded corners! --&gt;
+        fill="hsl(172, 45%, 55%)" /&gt; &lt;!-- Color: teal --&gt;
+
+    &lt;!-- Text: Easiest thing to modify! --&gt;
+    &lt;text
+        x="100"                       &lt;!-- X position --&gt;
+        y="95"                        &lt;!-- Y position --&gt;
+        text-anchor="middle"          &lt;!-- Center the text --&gt;
+        fill="hsl(32, 45%, 45%)"&gt;HAP&lt;/text&gt; &lt;!-- The actual text --&gt;
+&lt;/svg&gt;</code></pre>
+                        <p class="code-comment mt-1">See? Each line has a purpose! The circle defines a circle shape, the rect creates a rectangle, and the text adds the word "HAP". Once I learned to recognize these patterns, SVG code stopped looking like alphabet soup! 🎨</p>
+                    </div>
+                </div>
+
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>What I Look For First</h3>
+                        <p><strong>The opening `&lt;svg&gt;` tag:</strong> This is the container. I check the viewBox to understand the coordinate system (remember Station 1?). Then I scan for element names I recognize: circle, rect, text, path. Prof. Teeters taught me that element names tell you WHAT it is, and attributes tell you WHERE and HOW.</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Reading vs. Memorizing</h3>
+                        <p><strong>I don't memorize syntax!</strong> Instead, I learned to recognize patterns. When I see `cx` and `cy`, I know it's about center position. When I see `width` and `height`, I know it's about size. Prof. Teeters says, "Understanding patterns beats memorizing commands." She's right—I can figure out unfamiliar attributes by context!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Recognizing Basic Shapes -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>Recognizing Basic Shapes: The Easy Ones!</h2>
+
+                <p class="mb-2">When I started reading SVG files, Prof. Teeters told me to look for basic shapes first. These are your friends! They have obvious names like `&lt;circle&gt;` and `&lt;rect&gt;`, and their attributes make sense in plain English. These are the EASIEST elements to modify, and they're everywhere in real SVG graphics. Let me show you what I mean! 🟠</p>
+
+                <!-- Visual comparison of basic shapes -->
+                <div class="interactive-demo mt-2">
+                    <h3>🟠 Basic Shapes Side-by-Side</h3>
+                    <p>Here are the three shapes I see most often in SVG files. Look how simple their code is!</p>
+
+                    <div style="border: 2px solid hsl(32, 76%, 63%); padding: 1.5rem; margin-top: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
+                        <svg viewBox="0 0 300 100" width="600" height="200" role="img" aria-label="Comparison of three basic SVG shapes: circle, rectangle, and ellipse">
+                            <!-- Circle -->
+                            <circle cx="50" cy="50" r="30" fill="hsl(32, 76%, 63%)" />
+                            <text x="50" y="95" text-anchor="middle" font-size="12" fill="hsl(0, 0%, 30%)">circle</text>
+
+                            <!-- Rectangle -->
+                            <rect x="120" y="20" width="60" height="60" rx="8" fill="hsl(172, 45%, 55%)" />
+                            <text x="150" y="95" text-anchor="middle" font-size="12" fill="hsl(0, 0%, 30%)">rect</text>
+
+                            <!-- Ellipse -->
+                            <ellipse cx="240" cy="50" rx="40" ry="25" fill="hsl(32, 45%, 45%)" />
+                            <text x="240" y="95" text-anchor="middle" font-size="12" fill="hsl(0, 0%, 30%)">ellipse</text>
+                        </svg>
+                    </div>
+
+                    <div class="prompt-box mt-2">
+                        <div class="prompt-label">The Code for These Shapes:</div>
+                        <pre><code class="language-svg">&lt;!-- Circle: Perfect round shape --&gt;
+&lt;circle cx="50" cy="50" r="30" fill="hsl(32, 76%, 63%)" /&gt;
+
+&lt;!-- Rectangle: Four-sided shape (rx makes corners rounded!) --&gt;
+&lt;rect x="120" y="20" width="60" height="60" rx="8" fill="hsl(172, 45%, 55%)" /&gt;
+
+&lt;!-- Ellipse: Oval shape with different radii for x and y --&gt;
+&lt;ellipse cx="240" cy="50" rx="40" ry="25" fill="hsl(32, 45%, 45%)" /&gt;</code></pre>
+                        <p class="code-comment mt-1">Notice how the attribute names tell you exactly what they do? `cx` = center x-position, `r` = radius, `width` = width! Prof. Teeters taught me that if I can read English, I can understand these attributes. 🎨</p>
+                    </div>
+                </div>
+
+                <div class="warning-box mt-2">
+                    <h3>🟠 What Each Attribute Means</h3>
+
+                    <p><strong>For `&lt;circle&gt;` (the simplest!):</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>`cx` and `cy` = center position (like coordinates on a map)</li>
+                        <li>`r` = radius (how big the circle is)</li>
+                        <li>`fill` = interior color</li>
+                    </ul>
+                    <p class="mt-1 code-comment">I can change ANY of these numbers and the circle moves or grows—nothing breaks! This is what gave me confidence.</p>
+
+                    <p class="mt-2"><strong>For `&lt;rect&gt;` (rectangles and squares):</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>`x` and `y` = top-left corner position</li>
+                        <li>`width` and `height` = size of the rectangle</li>
+                        <li>`rx` and `ry` = rounded corners (optional)</li>
+                    </ul>
+                    <p class="mt-1 code-comment">Prof. Teeters showed me that `rx="8"` creates those nice rounded corners I see everywhere!</p>
+
+                    <p class="mt-2"><strong>For `&lt;ellipse&gt;` (ovals):</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>`cx` and `cy` = center position (same as circle)</li>
+                        <li>`rx` = radius in x-direction (horizontal)</li>
+                        <li>`ry` = radius in y-direction (vertical)</li>
+                    </ul>
+                    <p class="mt-1 code-comment">If `rx` and `ry` are the same, you get a circle. Different values = oval. Makes sense!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Recognizing Paths and Text -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>Paths and Text: The Complex and The Simple</h2>
+
+                <p class="mb-2">After I got comfortable with basic shapes, Prof. Teeters showed me the two extremes in SVG files: paths (complex custom shapes) and text (the EASIEST thing ever). I learned that I don't need to understand paths to use them, and I learned that text elements are my best friend when I want to customize graphics. Let me share what I discovered! 🟠</p>
+
+                <!-- Path comparison -->
+                <div class="warning-box mt-2">
+                    <h3>🛤️ Understanding Paths (Don't Panic!)</h3>
+
+                    <p>When I see `&lt;path d="M150 0 L75 200 L225 200 Z"&gt;`, I used to panic. Why are there letters? Why so many numbers? What does this even draw?</p>
+
+                    <p class="mt-1"><strong>Prof. Teeters' Wisdom:</strong> "HAP, you don't need to understand every command in a path. Here's what you CAN do with paths, and what's better left to tools."</p>
+
+                    <div class="analysis-grid mt-2">
+                        <div class="analysis-point">
+                            <h3>✅ What I CAN Do With Paths</h3>
+                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li><strong>Copy the entire path</strong> to reuse it elsewhere</li>
+                                <li><strong>Change its fill and stroke colors</strong> just like shapes</li>
+                                <li><strong>Apply transforms</strong> to move/scale it as a unit</li>
+                                <li><strong>Use with `&lt;use&gt;`</strong> to repeat it (we'll cover this in Station 5!)</li>
+                            </ul>
+                            <p class="mt-1 code-comment">I can do ALL of this without understanding the `d` attribute!</p>
+                        </div>
+
+                        <div class="analysis-point">
+                            <h3>🔴 What's HARD With Paths</h3>
+                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <li><strong>Modifying the shape itself</strong> (changing the `d` attribute)</li>
+                                <li><strong>Drawing new paths from scratch</strong> without a tool</li>
+                                <li><strong>Understanding complex curves</strong> (cubic Bezier, arcs, etc.)</li>
+                            </ul>
+                            <p class="mt-1 code-comment">Prof. Teeters said: "For these, use a vector editor like Figma or Illustrator. Don't try to hand-code them!"</p>
+                        </div>
+                    </div>
+
+                    <!-- Example: Path vs Shape making same result -->
+                    <div class="interactive-demo mt-2">
+                        <h3>Why Paths Look Scary</h3>
+                        <p>Here's the same triangle drawn two ways. As a user/modifier of SVG, I care about the RESULT, not how it's coded!</p>
+
+                        <div style="border: 2px solid hsl(172, 45%, 55%); padding: 1rem; margin-top: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
+                            <svg viewBox="0 0 400 150" width="400" height="150" role="img" aria-label="Comparison showing a triangle drawn with polygon (simple) versus path (complex)">
+                                <!-- Simple way: polygon -->
+                                <polygon points="75,20 25,120 125,120" fill="hsl(32, 76%, 63%)" />
+                                <text x="75" y="145" text-anchor="middle" font-size="11" fill="hsl(0, 0%, 30%)">polygon (simple!)</text>
+
+                                <!-- Complex way: path -->
+                                <path d="M 275 20 L 225 120 L 325 120 Z" fill="hsl(172, 45%, 55%)" />
+                                <text x="275" y="145" text-anchor="middle" font-size="11" fill="hsl(0, 0%, 30%)">path (complex!)</text>
+                            </svg>
+                        </div>
+
+                        <p class="mt-1 code-comment">Both draw triangles! But I can style BOTH, move BOTH, recolor BOTH. I don't need to understand the path syntax to use it! 🎨</p>
+                    </div>
+                </div>
+
+                <!-- Text elements -->
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">🎉 Text Elements: My Favorite!</div>
+                    <p class="mt-1">This is the EASIEST thing to modify in any SVG! When Prof. Teeters showed me `&lt;text&gt;` elements, I finally felt like an expert. The text content is right there between the tags—just change it!</p>
+
+                    <pre><code class="language-svg">&lt;!-- Original AI-generated badge --&gt;
+&lt;text x="100" y="50" font-size="24"&gt;Sample&lt;/text&gt;
+
+&lt;!-- What I changed it to --&gt;
+&lt;text x="100" y="50" font-size="24"&gt;HAP&lt;/text&gt;</code></pre>
+
+                    <p class="mt-1"><strong>Easy modifications I can make:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Change the words between the tags</li>
+                        <li>Change `font-size` to make it bigger/smaller</li>
+                        <li>Change `x` and `y` to move it around</li>
+                        <li>Change `fill` to change the color</li>
+                        <li>Add `font-weight="bold"` to make it bold</li>
+                    </ul>
+
+                    <p class="mt-1 code-comment">Prof. Teeters says: "Text elements are the gateway drug to SVG modification—easy wins that build confidence!" She's totally right. 🟠</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Attributes and Safe Modifications -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>Understanding Attributes: What's Safe to Change?</h2>
+
+                <p class="mb-2">One question I kept asking Prof. Teeters was: "Which parts can I actually change without breaking everything?" She taught me to categorize attributes by how easy or risky they are to modify. This system saved me SO much trial-and-error! Now when I open any SVG, I can quickly scan for the safe stuff and confidently make changes. 🟠</p>
+
+                <!-- Safe to Modify Chart -->
+                <div class="analysis-grid">
+                    <div class="analysis-point">
+                        <h3>🟢 EASY (Safe to Change)</h3>
+                        <p><strong>Position & Size:</strong></p>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li>`x`, `y` = position</li>
+                            <li>`cx`, `cy` = center position</li>
+                            <li>`r` = radius</li>
+                            <li>`width`, `height` = dimensions</li>
+                            <li>`rx`, `ry` = rounded corners or ellipse radii</li>
+                        </ul>
+                        <p class="mt-1"><strong>Colors & Style:</strong></p>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li>`fill` = interior color</li>
+                            <li>`stroke` = outline color</li>
+                            <li>`opacity` = transparency</li>
+                        </ul>
+                        <p class="mt-1"><strong>Text:</strong></p>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li>The text content itself</li>
+                            <li>`font-size` = text size</li>
+                            <li>`font-weight` = boldness</li>
+                        </ul>
+                        <p class="mt-1 code-comment">Prof. Teeters' rule: "If the name makes sense in English, it's probably safe!"</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>🟡 MEDIUM (Be Careful)</h3>
+                        <p><strong>These can work, but watch for side effects:</strong></p>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li>`transform` = moving/rotating/scaling (can get complex)</li>
+                            <li>`points` = polygon/polyline coordinates (many numbers to manage)</li>
+                            <li>`stroke-width` = outline thickness (can affect overall look)</li>
+                            <li>`viewBox` = coordinate system (we covered this in Station 1!)</li>
+                        </ul>
+                        <p class="mt-1 code-comment">I can change these, but I need to understand what they do first. Test small changes!</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>🔴 HARD (Use Tools)</h3>
+                        <p><strong>Better to use a vector editor for these:</strong></p>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li>`d` = path data (complex shape definition)</li>
+                            <li>Complex `transform` chains</li>
+                            <li>Filter and gradient definitions (until Station 5!)</li>
+                            <li>Clip paths and masks</li>
+                        </ul>
+                        <p class="mt-1 code-comment">Prof. Teeters: "Don't hand-edit these unless you really know what you're doing. Let tools handle the math!"</p>
+                    </div>
+                </div>
+
+                <!-- Real example with modifications -->
+                <div class="interactive-demo mt-2">
+                    <h3>🟠 Live Attribute Editor</h3>
+                    <p>Try changing these "safe" attributes and watch the SVG update in real-time! This is how I practiced recognizing what each attribute does.</p>
+
+                    <!-- SVG to modify -->
+                    <div style="border: 2px solid hsl(32, 76%, 63%); padding: 1rem; margin-top: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
+                        <svg id="liveEditorSVG" viewBox="0 0 200 200" width="300" height="300" style="display: block; margin: 0 auto;" role="img" aria-label="Interactive SVG for experimenting with circle and text attributes">
+                            <circle id="liveCircle" cx="100" cy="80" r="40" fill="hsl(32, 76%, 63%)" />
+                            <text id="liveText" x="100" y="150" text-anchor="middle" font-size="20" font-weight="bold" fill="hsl(32, 45%, 45%)">HAP</text>
+                        </svg>
+                    </div>
+
+                    <!-- Controls -->
+                    <div style="margin-top: 1.5rem; padding: 1rem; background: hsl(32, 35%, 95%); border-radius: 8px;">
+                        <p style="font-weight: bold; margin-bottom: 1rem; color: hsl(32, 76%, 40%);">Adjust Circle Attributes:</p>
+
+                        <div style="margin-bottom: 1rem;">
+                            <label for="circleCX" style="display: block; margin-bottom: 0.25rem; font-weight: bold;">Circle center X: <span id="circleCXValue">100</span></label>
+                            <input type="range" id="circleCX" min="40" max="160" value="100" step="10" style="width: 100%;"
+                                aria-label="Adjust circle center X position" aria-valuemin="40" aria-valuemax="160" aria-valuenow="100">
+                        </div>
+
+                        <div style="margin-bottom: 1rem;">
+                            <label for="circleCY" style="display: block; margin-bottom: 0.25rem; font-weight: bold;">Circle center Y: <span id="circleCYValue">80</span></label>
+                            <input type="range" id="circleCY" min="40" max="120" value="80" step="10" style="width: 100%;"
+                                aria-label="Adjust circle center Y position" aria-valuemin="40" aria-valuemax="120" aria-valuenow="80">
+                        </div>
+
+                        <div style="margin-bottom: 1rem;">
+                            <label for="circleR" style="display: block; margin-bottom: 0.25rem; font-weight: bold;">Circle radius: <span id="circleRValue">40</span></label>
+                            <input type="range" id="circleR" min="20" max="60" value="40" step="5" style="width: 100%;"
+                                aria-label="Adjust circle radius" aria-valuemin="20" aria-valuemax="60" aria-valuenow="40">
+                        </div>
+
+                        <p style="font-weight: bold; margin-bottom: 1rem; margin-top: 1.5rem; color: hsl(32, 76%, 40%);">Modify Text:</p>
+
+                        <div style="margin-bottom: 1rem;">
+                            <label for="textContent" style="display: block; margin-bottom: 0.25rem; font-weight: bold;">Text content:</label>
+                            <input type="text" id="textContent" value="HAP" style="width: 100%; padding: 0.5rem; font-size: 1rem; border: 2px solid hsl(32, 76%, 63%); border-radius: 4px;"
+                                aria-label="Edit text content">
+                        </div>
+
+                        <div style="margin-bottom: 1rem;">
+                            <label for="textSize" style="display: block; margin-bottom: 0.25rem; font-weight: bold;">Font size: <span id="textSizeValue">20</span></label>
+                            <input type="range" id="textSize" min="12" max="36" value="20" step="2" style="width: 100%;"
+                                aria-label="Adjust text font size" aria-valuemin="12" aria-valuemax="36" aria-valuenow="20">
+                        </div>
+
+                        <button type="button" id="resetEditor" style="padding: 0.5rem 1rem; background: hsl(32, 76%, 63%); color: hsl(0, 0%, 100%); border: none; border-radius: 4px; font-weight: bold; cursor: pointer; margin-top: 0.5rem;"
+                            aria-label="Reset all attributes to default values">
+                            Reset to Defaults
+                        </button>
+                    </div>
+
+                    <p class="mt-1 code-comment">See how easy it is to modify these attributes? This is exactly what Prof. Teeters meant about "safe" changes. Change the numbers, see the results—nothing breaks! 🎨</p>
+                </div>
+
+                <script>
+                    (function() {
+                        const circle = document.getElementById('liveCircle');
+                        const text = document.getElementById('liveText');
+                        const circleCX = document.getElementById('circleCX');
+                        const circleCY = document.getElementById('circleCY');
+                        const circleR = document.getElementById('circleR');
+                        const textContent = document.getElementById('textContent');
+                        const textSize = document.getElementById('textSize');
+                        const resetButton = document.getElementById('resetEditor');
+
+                        function updateCircle() {
+                            const cx = circleCX.value;
+                            const cy = circleCY.value;
+                            const r = circleR.value;
+
+                            circle.setAttribute('cx', cx);
+                            circle.setAttribute('cy', cy);
+                            circle.setAttribute('r', r);
+
+                            document.getElementById('circleCXValue').textContent = cx;
+                            document.getElementById('circleCYValue').textContent = cy;
+                            document.getElementById('circleRValue').textContent = r;
+
+                            circleCX.setAttribute('aria-valuenow', cx);
+                            circleCY.setAttribute('aria-valuenow', cy);
+                            circleR.setAttribute('aria-valuenow', r);
+                        }
+
+                        function updateText() {
+                            const content = textContent.value;
+                            const size = textSize.value;
+
+                            text.textContent = content;
+                            text.setAttribute('font-size', size);
+
+                            document.getElementById('textSizeValue').textContent = size;
+                            textSize.setAttribute('aria-valuenow', size);
+                        }
+
+                        function resetEditor() {
+                            circleCX.value = 100;
+                            circleCY.value = 80;
+                            circleR.value = 40;
+                            textContent.value = 'HAP';
+                            textSize.value = 20;
+                            updateCircle();
+                            updateText();
+                        }
+
+                        circleCX.addEventListener('input', updateCircle);
+                        circleCY.addEventListener('input', updateCircle);
+                        circleR.addEventListener('input', updateCircle);
+                        textContent.addEventListener('input', updateText);
+                        textSize.addEventListener('input', updateText);
+                        resetButton.addEventListener('click', resetEditor);
+                    })();
+                </script>
+            </div>
+        </section>
+
+        <!-- SECTION 6: Try It Yourself Challenge -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>🟠 Try It Yourself: SVG Detective Challenge</h2>
+
+                <p class="mb-2">Prof. Teeters always gives me little challenges to practice, so I made one for you! This is how I learned to read SVG code—by analyzing real examples and identifying the elements. Try the challenge before looking at the hints or solution! 🔍</p>
+
+                <div class="prompt-box">
+                    <div class="prompt-label">Your Challenge:</div>
+                    <p class="mt-1">Below is a robot badge SVG (similar to what I created for my projects!). Can you identify:</p>
+                    <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>How many basic shapes (circle, rect) are used?</li>
+                        <li>Which element creates the antenna?</li>
+                        <li>Where is the text element, and what does it say?</li>
+                        <li>Which attributes would you change to make the badge orange instead of teal?</li>
+                    </ol>
+                </div>
+
+                <!-- The challenge SVG -->
+                <div style="border: 2px solid hsl(172, 45%, 55%); padding: 1.5rem; margin-top: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%); text-align: center;">
+                    <svg viewBox="0 0 100 100" width="200" height="200" style="display: inline-block;" role="img" aria-label="Robot badge SVG for detective challenge">
+                        <!-- Badge background -->
+                        <circle cx="50" cy="50" r="45" fill="hsl(172, 45%, 55%)" />
+
+                        <!-- Robot head -->
+                        <rect x="35" y="35" width="30" height="25" rx="3" fill="hsl(0, 0%, 100%)" />
+
+                        <!-- Eyes -->
+                        <circle cx="42" cy="45" r="3" fill="hsl(172, 45%, 40%)" />
+                        <circle cx="58" cy="45" r="3" fill="hsl(172, 45%, 40%)" />
+
+                        <!-- Antenna -->
+                        <line x1="50" y1="35" x2="50" y2="25" stroke="hsl(0, 0%, 100%)" stroke-width="2" />
+                        <circle cx="50" cy="25" r="3" fill="hsl(32, 76%, 63%)" />
+
+                        <!-- Text -->
+                        <text x="50" y="78" text-anchor="middle" fill="hsl(0, 0%, 100%)" font-size="14" font-weight="bold">BOT</text>
+                    </svg>
+                </div>
+
+                <!-- Hints section -->
+                <div class="warning-box mt-2">
+                    <h3>💡 HAP's Hints (if you need them!)</h3>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li><strong>Hint 1:</strong> Count the `&lt;circle&gt;` and `&lt;rect&gt;` tags. Don't forget the small circles!</li>
+                        <li><strong>Hint 2:</strong> A line element looks like `&lt;line x1="" y1="" x2="" y2="" /&gt;`</li>
+                        <li><strong>Hint 3:</strong> Text is always between `&lt;text&gt;` and `&lt;/text&gt;` tags</li>
+                        <li><strong>Hint 4:</strong> The `fill` attribute controls the color of shapes</li>
+                    </ul>
+                </div>
+
+                <!-- Revealable solution -->
+                <button type="button" id="toggleChallengeSolution" style="padding: 0.75rem 1.5rem; background: hsl(32, 76%, 63%); color: hsl(0, 0%, 100%); border: none; border-radius: 4px; font-weight: bold; cursor: pointer; margin-top: 1rem; font-size: 1rem;"
+                    aria-expanded="false" aria-controls="challengeSolutionContent">
+                    Show Solution & Code
+                </button>
+
+                <div id="challengeSolutionContent" style="display: none; margin-top: 1rem;">
+                    <div class="prompt-box">
+                        <div class="prompt-label">The Complete Code:</div>
+                        <pre><code class="language-svg">&lt;svg viewBox="0 0 100 100" width="200" height="200"&gt;
+    &lt;!-- Badge background (1 circle) --&gt;
+    &lt;circle cx="50" cy="50" r="45" fill="hsl(172, 45%, 55%)" /&gt;
+
+    &lt;!-- Robot head (1 rectangle) --&gt;
+    &lt;rect x="35" y="35" width="30" height="25" rx="3" fill="hsl(0, 0%, 100%)" /&gt;
+
+    &lt;!-- Eyes (2 circles) --&gt;
+    &lt;circle cx="42" cy="45" r="3" fill="hsl(172, 45%, 40%)" /&gt;
+    &lt;circle cx="58" cy="45" r="3" fill="hsl(172, 45%, 40%)" /&gt;
+
+    &lt;!-- Antenna (1 line + 1 circle) --&gt;
+    &lt;line x1="50" y1="35" x2="50" y2="25" stroke="hsl(0, 0%, 100%)" stroke-width="2" /&gt;
+    &lt;circle cx="50" cy="25" r="3" fill="hsl(32, 76%, 63%)" /&gt;
+
+    &lt;!-- Text --&gt;
+    &lt;text x="50" y="78" text-anchor="middle" fill="hsl(0, 0%, 100%)" font-size="14" font-weight="bold"&gt;BOT&lt;/text&gt;
+&lt;/svg&gt;</code></pre>
+                    </div>
+
+                    <div class="warning-box mt-2">
+                        <h3>✅ Solution Breakdown:</h3>
+                        <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li><strong>Shapes count:</strong> 5 circles total (background, 2 eyes, antenna tip, and we count those!) + 1 rectangle (robot head) = 6 basic shapes</li>
+                            <li><strong>Antenna:</strong> The `&lt;line&gt;` element creates the antenna stick, and a small circle creates the tip</li>
+                            <li><strong>Text:</strong> The `&lt;text&gt;` element at the bottom says "BOT" with white fill</li>
+                            <li><strong>To make it orange:</strong> Change the background circle's fill from `hsl(172, 45%, 55%)` (teal) to `hsl(32, 76%, 63%)` (orange)</li>
+                        </ol>
+
+                        <p class="mt-1 code-comment">Did you get them all? When I first tried this exercise, I missed the small circles for the eyes! Prof. Teeters reminded me to read through ALL the code, not just scan it. Now I'm much better at spotting every element! 🟠</p>
+                    </div>
+                </div>
+
+                <script>
+                    (function() {
+                        const toggleButton = document.getElementById('toggleChallengeSolution');
+                        const solutionContent = document.getElementById('challengeSolutionContent');
+
+                        toggleButton.addEventListener('click', function() {
+                            const isHidden = solutionContent.style.display === 'none';
+                            solutionContent.style.display = isHidden ? 'block' : 'none';
+                            toggleButton.textContent = isHidden ? 'Hide Solution' : 'Show Solution & Code';
+                            toggleButton.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+                        });
+                    })();
+                </script>
+            </div>
+        </section>
+
+        <!-- SECTION 7: Quick Reference -->
+        <section class="content-section">
+            <div class="tips-container">
+                <h2 class="section-heading-centered">🎓 HyBit's Quick Reference</h2>
+
+                <div class="tip-card">
+                    <div class="tip-number">1</div>
+                    <div>
+                        <h3>Start With What You Recognize</h3>
+                        <p>When I open an SVG file, I scan for element names I know: `circle`, `rect`, `text`, `path`. Prof. Teeters taught me not to get overwhelmed by the whole file—just find one familiar element and start there. Understanding grows from recognition, not memorization!</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">2</div>
+                    <div>
+                        <h3>Basic Shapes Are Your Friends</h3>
+                        <p>Circle, rect, and ellipse elements have the most obvious attributes. When I see `cx`, `cy`, `r`, I know I can safely change those numbers. These are the EASY wins that build confidence. Don't skip past them looking for complex stuff—master the simple stuff first!</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">3</div>
+                    <div>
+                        <h3>You Don't Need To Understand Paths</h3>
+                        <p>I used to think I needed to learn path syntax to work with SVG. Prof. Teeters showed me that's not true! I can copy paths, style them, and reuse them without understanding every command. When I need to modify a path's shape, I use a tool like Figma. That's totally okay!</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">4</div>
+                    <div>
+                        <h3>Text Elements Are The Gateway</h3>
+                        <p>If you're nervous about modifying SVG, start with text elements. They're the EASIEST! Find the `&lt;text&gt;` tag, change the words between the tags, and boom—you've customized an SVG. This gave me so much confidence when I was starting out. Prof. Teeters says: "Easy wins matter!" 🟠</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">5</div>
+                    <div>
+                        <h3>Test Changes On A Copy</h3>
+                        <p>I learned this the hard way! Always duplicate your SVG file before experimenting. Prof. Teeters showed me I can try anything on the copy—if it breaks, I still have the original. This freedom to experiment without fear helped me learn SO much faster!</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">6</div>
+                    <div>
+                        <h3>Use The 🟢🟡🔴 System</h3>
+                        <p>Remember the "Safe to Modify" categories I learned? Green (easy), Yellow (careful), Red (use tools). This system helps me quickly assess any SVG. When I see a `fill` attribute, I know it's green—change it! When I see `d` in a path, I know it's red—don't hand-edit! This saves me so much time and frustration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HAP's Mistake Museum -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>🔬 HAP's Mistake Museum: Learn From My Failures!</h2>
+
+                <p class="mb-2">Prof. Teeters always says, "Mistakes are the best teachers!" So I'm sharing my biggest SVG reading mistakes with visual examples. If you're making similar mistakes, you're not alone—I made them all! 🟠</p>
+
+                <div class="hap-note-callout">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                        alt="HAP looking confused while trying to understand SVG code" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>Mistake #1: "The Disappearing Circle"</h3>
+                        <p><strong>What I did:</strong> I changed a circle's `cx` from 50 to 5000, thinking it would just move it somewhere on the screen.</p>
+                        <p class="mt-1"><strong>What happened:</strong> The circle completely disappeared! I panicked and thought I'd broken the SVG.</p>
+                        <p class="mt-1"><strong>What Prof. Teeters taught me:</strong> "HAP, remember the viewBox from Station 1? If your shape is at coordinates outside the viewBox, it won't be visible. It's like putting furniture outside your window—it's still there, you just can't see it!"</p>
+
+                        <div class="interactive-demo mt-2">
+                            <p><strong>Visual example:</strong></p>
+                            <div style="border: 2px solid hsl(0, 0%, 80%); padding: 1rem; margin-top: 0.5rem; border-radius: 8px; background: hsl(0, 0%, 100%); display: flex; gap: 2rem; align-items: center; justify-content: center;">
+                                <div style="text-align: center;">
+                                    <svg viewBox="0 0 100 100" width="150" height="150" style="border: 1px dashed hsl(32, 76%, 63%);" role="img" aria-label="SVG with circle at normal position cx=50">
+                                        <circle cx="50" cy="50" r="20" fill="hsl(32, 76%, 63%)" />
+                                    </svg>
+                                    <p style="font-size: 0.875rem; margin-top: 0.5rem; color: hsl(0, 0%, 40%);">✅ cx="50" (visible!)</p>
+                                </div>
+                                <div style="text-align: center;">
+                                    <svg viewBox="0 0 100 100" width="150" height="150" style="border: 1px dashed hsl(0, 70%, 50%);" role="img" aria-label="SVG with circle at position cx=5000, outside viewBox">
+                                        <circle cx="5000" cy="50" r="20" fill="hsl(32, 76%, 63%)" />
+                                    </svg>
+                                    <p style="font-size: 0.875rem; margin-top: 0.5rem; color: hsl(0, 0%, 40%);">❌ cx="5000" (outside viewBox!)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warning-box mt-2">
+                    <h3>Mistake #2: "The Path Catastrophe"</h3>
+                    <p><strong>What I did:</strong> I saw a path with `d="M 50 20 L 80 80 L 20 80 Z"` and thought, "I'll just change that 50 to 100..."</p>
+                    <p class="mt-1"><strong>What happened:</strong> The triangle turned into a weird stretched polygon that looked nothing like the original!</p>
+                    <p class="mt-1"><strong>What Prof. Teeters taught me:</strong> "HAP, those letters (M, L, Z) are commands. They tell the computer how to draw the shape. Changing random numbers breaks the shape. If you need to modify a path, use a tool like Figma—don't hand-edit the `d` attribute!"</p>
+                    <p class="mt-1 code-comment">Lesson learned: I can style paths, copy paths, and move entire paths—but I leave the `d` attribute alone! 🔴</p>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <h3>Mistake #3: "The Great Defs Deletion"</h3>
+                    <p><strong>What I did:</strong> I saw a `&lt;defs&gt;` section in an SVG and thought, "This looks like extra code I don't need," so I deleted it.</p>
+                    <p class="mt-1"><strong>What happened:</strong> All the gradients and reused elements disappeared! The SVG looked completely broken.</p>
+                    <p class="mt-1"><strong>What Prof. Teeters taught me:</strong> "HAP, the `&lt;defs&gt;` section is like a toolbox of reusable pieces. If you delete it, everything that references those pieces breaks. We'll learn more about this in Station 5!"</p>
+                    <p class="mt-1 code-comment">Now I know: if I see `&lt;defs&gt;`, I leave it alone unless I understand what's inside! 🔧</p>
+                </div>
+
+                <div class="interactive-demo mt-2">
+                    <h3>Mistake #4: "Text Element Hide-and-Seek"</h3>
+                    <p><strong>What I did:</strong> I spent 20 minutes looking for a `&lt;text&gt;` element to change the words in an icon, but couldn't find it anywhere!</p>
+                    <p class="mt-1"><strong>What was actually happening:</strong> The text was drawn using `&lt;path&gt;` elements! AI tools and design software sometimes convert text to paths for consistency.</p>
+                    <p class="mt-1"><strong>What Prof. Teeters taught me:</strong> "If you can't find a text element, the text might be drawn as paths. You can tell because paths have those complex `d` attributes instead of readable words between tags."</p>
+                    <p class="mt-1 code-comment">Now I check: Is there a `&lt;text&gt;` tag? No? Then the text is probably paths, and I'll need to replace the whole thing or use a vector editor. 🔍</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Objectives Checklist -->
+        <section class="content-section">
+            <div class="warning-box">
+                <h3>✅ Learning Objectives Checklist</h3>
+                <p>Before moving to Station 3, make sure you've mastered these Station 2 skills! Can you confidently say:</p>
+                <div style="margin-left: 1.5rem; margin-top: 1rem;">
+                    <label style="display: block; margin-bottom: 0.75rem; cursor: pointer;">
+                        <input type="checkbox" style="margin-right: 0.5rem;" aria-label="I can open an SVG file in a code editor and recognize the basic structure">
+                        <strong>I can open an SVG file in a code editor</strong> and recognize the basic structure (not just "alphabet soup" anymore!)
+                    </label>
+                    <label style="display: block; margin-bottom: 0.75rem; cursor: pointer;">
+                        <input type="checkbox" style="margin-right: 0.5rem;" aria-label="I can identify basic shapes in SVG code">
+                        <strong>I can identify basic shapes</strong> (circle, rect, ellipse) by looking at the element names and attributes
+                    </label>
+                    <label style="display: block; margin-bottom: 0.75rem; cursor: pointer;">
+                        <input type="checkbox" style="margin-right: 0.5rem;" aria-label="I understand what path elements are and what I can safely do with them">
+                        <strong>I understand paths</strong> and know what I can safely do with them (style, copy) vs. what's risky (modifying the d attribute)
+                    </label>
+                    <label style="display: block; margin-bottom: 0.75rem; cursor: pointer;">
+                        <input type="checkbox" style="margin-right: 0.5rem;" aria-label="I can find and modify text elements in SVG code">
+                        <strong>I can find and modify text elements</strong> (my favorite easy win!)
+                    </label>
+                    <label style="display: block; margin-bottom: 0.75rem; cursor: pointer;">
+                        <input type="checkbox" style="margin-right: 0.5rem;" aria-label="I can categorize attributes as safe, careful, or complex to modify">
+                        <strong>I can categorize attributes</strong> using the 🟢🟡🔴 system (safe, careful, complex)
+                    </label>
+                    <label style="display: block; margin-bottom: 0.75rem; cursor: pointer;">
+                        <input type="checkbox" style="margin-right: 0.5rem;" aria-label="I understand which parts of SVG to leave alone and which to modify confidently">
+                        <strong>I know which parts to leave alone</strong> (like defs sections and path d attributes) and which I can modify confidently
+                    </label>
+                </div>
+                <p class="mt-1 code-comment">Prof. Teeters says: "If you can check all these boxes, you're ready to learn about styling and organization in Station 3! Remember, understanding beats memorization." 🟠 — HAP</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bottom navigation -->
+    <nav aria-label="Station pagination" class="page-navigation bottom-nav">
+        <a href="../index.html" class="nav-link hub-link">🏠 Hub</a>
+        <a href="station1.html" class="nav-link prev-link">← Station 1</a>
+        <a href="station3.html" class="nav-link next-link">Next: Station 3 - Styling & Organization →</a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p><strong>HAP's Learning Lab</strong> | An AI-Enhanced Educational Experience by Prof. Cynthia Teeters</p>
+
+        <p class="footer-reminder">
+            You don't need to understand everything to modify something—start with what you recognize, and understanding will grow! 🟠 — HAP
+        </p>
+
+        <div class="footer-copyright">
+            <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_80,c_limit/v1759497938/HAP-learner_dvehmt.jpg"
+                alt="HAP the apprentice learner with his study book and tools" class="footer-hybit" width="80"
+                height="80" decoding="async" loading="lazy">
+            <div>
+                <p>HAP&trade; Educational Content &copy; 2025 Cynthia Teeters. All rights reserved.</p>
+                <p>HyBit A. ProtoBot&trade; (HAP&trade;) character and the apprentice learning methodology are
+                    proprietary educational innovations.</p>
+                <p>Character concept, teaching methodology, and all written content created by Prof. Cynthia Teeters.
+                    Visual elements created with AI assistance.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Easter egg system -->
+    <script src="../js/easter-egg.js"></script>
+
+    <!-- Syntax highlighting -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"
+        integrity="sha384-MXybTpajaBV0AkcBaCPT4KIvo0FzoCiWXgcihYsw4FUkEz0Pv3JGV6tk2G8vJtDc"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"
+        integrity="sha384-HkMr0bZB9kBW4iVtXn6nd35kO/L/dQtkkUBkL9swzTEDMdIe5ExJChVDSnC79aNA"
+        crossorigin="anonymous"></script>
+
+    <!-- Copy button functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add copy buttons to all code blocks in .prompt-box
+            document.querySelectorAll('.prompt-box pre').forEach(pre => {
+                const button = document.createElement('button');
+                button.className = 'copy-button';
+                button.textContent = 'Copy';
+                button.setAttribute('aria-label', 'Copy code to clipboard');
+                button.setAttribute('type', 'button');
+
+                button.addEventListener('click', async () => {
+                    const code = pre.querySelector('code').textContent;
+                    try {
+                        await navigator.clipboard.writeText(code);
+                        button.classList.add('copied');
+                        button.textContent = 'Copied!';
+                        setTimeout(() => {
+                            button.classList.remove('copied');
+                            button.textContent = 'Copy';
+                        }, 2000);
+                    } catch (err) {
+                        console.error('Failed to copy:', err);
+                    }
+                });
+
+                pre.appendChild(button);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+
+<!--
+HAP™ Educational Content © 2025 Cynthia Teeters. All rights reserved.
+HyBit A. ProtoBot™ (HAP™) character and the apprentice learning methodology are proprietary educational innovations.
+Character concept, teaching methodology, and all written content created by Prof. Cynthia Teeters.
+Visual elements created with AI assistance.
+-->
