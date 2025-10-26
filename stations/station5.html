@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HAP's Learning Lab - Station 5: Making It Glow - Gradients in SVG</title>
+
+    <meta name="description" content="Transform flat colors into stunning gradients that bring your SVG to life">
+
+    <meta property="og:image"
+        content="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_1200,c_fill,g_auto/v1759495998/hap-laptop_xiewar.jpg">
+
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_16,h_16/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_32,h_32/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_180,h_180/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_192,h_192/v1759596416/hap-favicon-h_gosgur.jpg">
+
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="../css/prism-hap-theme.css" rel="stylesheet">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="hybit-welcome">
+                <div class="hybit-avatar">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_200,c_limit,a_hflip/v1759331571/HyBit_holding_a_paintbrush_ycfapu.jpg"
+                        alt="HAP (HyBit A. ProtoBot) excited with paintbrush" width="200" height="200" decoding="async"
+                        fetchpriority="high">
+                </div>
+                <div>
+                    <h1>HAP's Learning Lab: Making It Glow - Gradients in SVG</h1>
+                    <p class="subtitle">Transform flat colors into stunning gradients that bring your SVG to life</p>
+                </div>
+            </div>
+
+            <div class="intro-box">
+                <p><strong>Welcome to Station 5!</strong> My Lightbulb was organized (Station 3) and themeable (Station
+                    4), but it still looked... flat. Like a cartoon. Prof. Teeters looked at my pride and joy and asked,
+                    "What if your glow actually <em>glowed</em>? What if your metal actually looked metallic?" That's
+                    when she introduced me to gradients. Suddenly my flat colors became dimensional, my glow became
+                    radiant, and my Lightbulb came alive! Let me show you how gradients transformed everything. 💡</p>
+            </div>
+        </div>
+    </header>
+
+    <nav aria-label="Page navigation" class="page-navigation top-nav">
+        <a href="../index.html" class="nav-link hub-link">🏠 Back to Hub</a>
+        <div class="page-position" data-page="5">Station 5 of 6</div>
+    </nav>
+
+    <main id="main-content" class="content-container">
+
+        <!-- SECTION 1: What You'll Learn -->
+        <section id="what-youll-learn" class="content-section">
+            <h2 class="section-heading-centered">What You'll Learn at This Station</h2>
+
+            <div class="intro-box">
+                <p><strong>HAP's Discovery:</strong> I was so proud of my themeable Lightbulb with its 7 CSS custom
+                    properties controlling 200+ paths. But when I showed it to my friend, they said "Cool cartoon!" I
+                    wanted to cry. Cartoon?! Prof. Teeters saw my disappointment: "Your organization is perfect, HAP.
+                    Your theming is brilliant. Now let's make it <em>beautiful</em>. Gradients will transform those flat
+                    fills into realistic lighting." She was right - gradients were the missing piece! 🤯</p>
+            </div>
+
+            <div class="overview-grid mt-2">
+                <div class="insight-card">
+                    <h3><span class="insight-icon">🎨</span> From Flat to Dimensional</h3>
+                    <p class="stat-large">2 Types of Gradients</p>
+                    <p>Radial gradients for glowing light effects, linear gradients for metallic surfaces. Just two
+                        gradient types transformed my entire Lightbulb from flat to photorealistic!</p>
+                </div>
+
+                <div class="insight-card">
+                    <h3><span class="insight-icon">🔄</span> Works with Your System</h3>
+                    <p class="stat-large stat-teal">Gradients + Custom Properties</p>
+                    <p>My gradients use the same CSS custom properties from Station 4! Change the theme, gradients adapt
+                        automatically. The foundation work pays off again!</p>
+                </div>
+
+                <div class="insight-card">
+                    <h3><span class="insight-icon">✨</span> Visual Impact</h3>
+                    <p class="stat-large stat-brown">100% More Realistic</p>
+                    <p>Same organization, same theming system, but gradients make it look professional instead of
+                        amateur. This is the polish that makes people say "Wow!"</p>
+                </div>
+            </div>
+
+            <div class="hap-note-callout">
+                <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                    alt="HAP looking frustrated and confused" width="150" height="150" class="hap-note-image"
+                    decoding="async" loading="lazy">
+                <div class="hap-note-content">
+                    <h3>HAP's Confession:</h3>
+                    <p>I almost gave up on gradients! The syntax looked so complicated:
+                        <code>&lt;radialGradient&gt;</code>, <code>&lt;stop&gt;</code>, <code>offset</code>,
+                        <code>stop-color</code>... But Prof. Teeters showed me it's just defining color transitions.
+                        Once I understood that gradients are just "color A fading to color B", everything clicked. Now I
+                        can't imagine my Lightbulb without them!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: The Problem - My Flat Lightbulb -->
+        <section id="the-problem" class="content-section">
+            <div class="topic-section">
+                <h2>The Problem - My Flat Lightbulb</h2>
+
+                <p class="mb-2">My Lightbulb had everything technically correct - organized groups, semantic classes,
+                    themeable custom properties. But look at it:</p>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">What I had after Station 4:</div>
+                    <pre><code class="language-svg">&lt;!-- Organized, themeable... but flat --&gt;
+&lt;g class="bulb-glow"&gt;
+  &lt;ellipse fill="var(--bulb-glow)" cx="512" cy="550" rx="280" ry="320"/&gt;
+&lt;/g&gt;</code></pre>
+                    <p class="code-comment mt-1">The result? A solid, flat cream color. No depth. No glow. No magic.</p>
+                </div>
+
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>🔴 Before (Current State)</h3>
+                        <ul class="mt-1">
+                            <li>Solid fill: <code>#ffefcb</code> everywhere in the glow</li>
+                            <li>No sense of light emanation</li>
+                            <li>Metal looks like gray paint, not metal</li>
+                            <li>Bulb looks 2D, not 3D</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>💡 What's Missing</h3>
+                        <ul class="mt-1">
+                            <li>Light naturally fades from bright center to dim edges</li>
+                            <li>Metal has highlights and reflections</li>
+                            <li>Real bulbs have depth and dimension</li>
+                            <li>Glow should feel luminous</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                        alt="HAP looking frustrated" width="150" height="150" class="hap-note-image" decoding="async"
+                        loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's Frustration:</h3>
+                        <p>When someone called my Lightbulb "cute" I knew something was wrong. It wasn't supposed to be
+                            cute! It was supposed to be a realistic, glowing lightbulb! Prof. Teeters said: "You have
+                            the structure perfect. Now let's add the artistry." That's when I learned that technical
+                            correctness isn't enough - visual polish matters too!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Understanding Gradients - Color Transitions -->
+        <section id="understanding-gradients" class="content-section">
+            <div class="topic-section">
+                <h2>Understanding Gradients - Color Transitions</h2>
+
+                <p class="mb-2">Prof. Teeters explained gradients with a simple analogy: "Imagine the sun at noon. The
+                    center is brilliant white. As you look away from the center, it fades to bright yellow, then golden,
+                    then the blue sky. That's a radial gradient - colors transitioning from a center point."</p>
+
+                <h3 class="mt-2">Radial Gradients (Perfect for Light Sources)</h3>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Radial gradient example:</div>
+                    <pre><code class="language-svg">&lt;defs&gt;
+  &lt;radialGradient id="bulb-gradient"&gt;
+    &lt;stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/&gt;
+    &lt;stop offset="50%" stop-color="#ffefcb"/&gt;
+    &lt;stop offset="100%" stop-color="#fdcf74"/&gt;
+  &lt;/radialGradient&gt;
+&lt;/defs&gt;</code></pre>
+                </div>
+
+                <p class="mt-1"><strong>What Each Part Means:</strong></p>
+                <ul class="mt-1">
+                    <li><code>radialGradient</code> - Color radiates from center outward (like light!)</li>
+                    <li><code>stop</code> - A color point in the transition</li>
+                    <li><code>offset</code> - Where this color appears (0% = center, 100% = edge)</li>
+                    <li><code>stop-color</code> - The color at this point</li>
+                </ul>
+
+                <h3 class="mt-2">Linear Gradients (Perfect for Surfaces)</h3>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Linear gradient example:</div>
+                    <pre><code class="language-svg">&lt;defs&gt;
+  &lt;linearGradient id="metal-gradient" x1="0%" y1="0%" x2="0%" y2="100%"&gt;
+    &lt;stop offset="0%" stop-color="#bdbdbb"/&gt;
+    &lt;stop offset="50%" stop-color="#92918f"/&gt;
+    &lt;stop offset="100%" stop-color="#7e7e7d"/&gt;
+  &lt;/linearGradient&gt;
+&lt;/defs&gt;</code></pre>
+                </div>
+
+                <p class="mt-1"><strong>What Each Part Means:</strong></p>
+                <ul class="mt-1">
+                    <li><code>linearGradient</code> - Color transitions in a straight line</li>
+                    <li><code>x1, y1, x2, y2</code> - Direction of the gradient (top to bottom here)</li>
+                    <li>Same <code>stop</code> concept but in a line instead of radiating</li>
+                </ul>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit,a_hflip/v1759331571/HyBit_holding_a_paintbrush_ycfapu.jpg"
+                        alt="HAP having a realization moment" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's "Aha!" Moment:</h3>
+                        <p>I was overcomplicating it! Prof. Teeters drew it on paper:</p>
+                        <ul class="mt-1">
+                            <li><strong>Radial:</strong> Draw a circle. Color the center white. Fade to yellow at the
+                                edge. That's it!</li>
+                            <li><strong>Linear:</strong> Draw a rectangle. Color the top light gray. Fade to dark gray
+                                at bottom. Done!</li>
+                        </ul>
+                        <p class="mt-1">The code just describes what we see naturally. Once I stopped fearing the syntax
+                            and started thinking visually, gradients became easy!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Adding Gradients to My Lightbulb -->
+        <section id="adding-gradients" class="content-section">
+            <div class="topic-section">
+                <h2>Adding Gradients to My Lightbulb</h2>
+
+                <p class="mb-2">Once I understood the concept, adding gradients to my Lightbulb was surprisingly
+                    straightforward! Here's the transformation process:</p>
+
+                <h3 class="mt-2">Step 1: Define the Gradients</h3>
+
+                <p>First, I added a <code>&lt;defs&gt;</code> section to my SVG:</p>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Adding gradients to my SVG:</div>
+                    <pre><code class="language-svg">&lt;svg viewBox="0 0 1024 1536"&gt;
+  &lt;defs&gt;
+    &lt;!-- Radial gradient for the bulb glow --&gt;
+    &lt;radialGradient id="glow-gradient"&gt;
+      &lt;stop offset="0%" stop-color="var(--bulb-bright)" stop-opacity="1"/&gt;
+      &lt;stop offset="30%" stop-color="var(--bulb-warm)" stop-opacity="0.9"/&gt;
+      &lt;stop offset="100%" stop-color="var(--bulb-glow)" stop-opacity="0.6"/&gt;
+    &lt;/radialGradient&gt;
+
+    &lt;!-- Linear gradient for metal --&gt;
+    &lt;linearGradient id="metal-gradient" x1="0%" y1="0%" x2="0%" y2="100%"&gt;
+      &lt;stop offset="0%" stop-color="var(--metal-light)"/&gt;
+      &lt;stop offset="50%" stop-color="var(--metal-medium)"/&gt;
+      &lt;stop offset="100%" stop-color="var(--metal-dark)"/&gt;
+    &lt;/linearGradient&gt;
+  &lt;/defs&gt;
+  &lt;!-- Rest of SVG... --&gt;
+&lt;/svg&gt;</code></pre>
+                </div>
+
+                <h3 class="mt-2">Step 2: Apply to Elements</h3>
+
+                <p>Then I replaced solid fills with gradient references:</p>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Before vs. After:</div>
+                    <pre><code class="language-svg">&lt;!-- Before: Flat fill --&gt;
+&lt;ellipse class="bulb-glow" fill="var(--bulb-glow)" .../&gt;
+
+&lt;!-- After: Gradient fill --&gt;
+&lt;ellipse class="bulb-glow" fill="url(#glow-gradient)" .../&gt;</code></pre>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit,a_hflip/v1759331571/HyBit_holding_a_paintbrush_ycfapu.jpg"
+                        alt="HAP excited with discovery" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's Discovery:</h3>
+                        <p>Notice how my gradients use <code>var(--bulb-warm)</code> instead of hardcoded colors? That
+                            means my gradients are ALSO themeable! When I switch to the blue theme, the gradients
+                            automatically become blue. The work from Stations 3 and 4 keeps paying dividends!</p>
+                    </div>
+                </div>
+
+                <div class="warning-box mt-2">
+                    <h3>💡 Pro Tip</h3>
+                    <p>Once you master gradients, you can explore SVG filters for effects like blur or drop-shadow. But
+                        remember HAP's rule: "One subtle filter is enhancement. Five filters is chaos." Master gradients
+                        first!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Gradients + CSS Custom Properties = Magic -->
+        <section id="gradients-custom-properties" class="content-section">
+            <div class="topic-section">
+                <h2>Gradients + CSS Custom Properties = Magic</h2>
+
+                <p class="mb-2">My gradients aren't hardcoded - they use the same CSS custom properties from Station 4!
+                    This is where systematic design really pays off.</p>
+
+                <h3 class="mt-2">The Integration</h3>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Gradients using custom properties:</div>
+                    <pre><code class="language-svg">&lt;defs&gt;
+  &lt;radialGradient id="glow-gradient"&gt;
+    &lt;!-- These use my CSS custom properties! --&gt;
+    &lt;stop offset="0%" stop-color="var(--bulb-bright)"/&gt;
+    &lt;stop offset="50%" stop-color="var(--bulb-warm)"/&gt;
+    &lt;stop offset="100%" stop-color="var(--bulb-glow)"/&gt;
+  &lt;/radialGradient&gt;
+&lt;/defs&gt;</code></pre>
+                </div>
+
+                <h3 class="mt-2">Theme-Adaptive Gradients</h3>
+
+                <p>When I change my theme, the gradients adapt automatically:</p>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Themes change gradients automatically:</div>
+                    <pre><code class="language-css">/* Warm theme gradients */
+.lightbulb {
+  --bulb-glow: hsl(45, 100%, 89%);
+  --bulb-warm: hsl(40, 97%, 73%);
+  --bulb-bright: hsl(34, 100%, 65%);
+}
+
+/* Cool theme - gradients automatically update! */
+.lightbulb.theme-cool {
+  --bulb-glow: hsl(205, 100%, 95%);
+  --bulb-warm: hsl(205, 100%, 82%);
+  --bulb-bright: hsl(205, 100%, 64%);
+}</code></pre>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit,a_hflip/v1759331571/HyBit_holding_a_paintbrush_ycfapu.jpg"
+                        alt="HAP understanding system thinking" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's System Thinking:</h3>
+                        <p>This is what Prof. Teeters meant by "systematic design"!</p>
+                        <ul class="mt-1">
+                            <li><strong>Station 3:</strong> Organization creates structure</li>
+                            <li><strong>Station 4:</strong> Custom properties create flexibility</li>
+                            <li><strong>Station 5:</strong> Gradients create beauty</li>
+                        </ul>
+                        <p class="mt-1">Each layer builds on the previous. Without organization, custom properties are
+                            chaos. Without custom properties, gradients aren't themeable. Together? Magic! 💡</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: Interactive Demo - Watch Gradients Transform Themes -->
+        <section id="interactive-demo" class="content-section">
+            <div class="topic-section">
+                <h2>Interactive Demo - Watch Gradients Transform Themes</h2>
+
+                <!-- Interactive demo will be implemented in Phase 7 -->
+                <p class="mb-2">Below you'll see my fully gradient-enhanced Lightbulb with theme switching. Watch how
+                    the gradients transform with each theme!</p>
+
+                <div class="warning-box mt-2">
+                    <h3>🎨 What to Notice:</h3>
+                    <ul class="mt-1">
+                        <li>How radial gradients make the bulb actually glow</li>
+                        <li>How linear gradients make metal look three-dimensional</li>
+                        <li>How themes change both flat colors AND gradients</li>
+                        <li>The smooth transitions between themes</li>
+                    </ul>
+                </div>
+
+                <!-- Demo 1: Flat vs Gradient Comparison -->
+                <div class="demo-box mt-2">
+                    <h3>🔄 Compare: Flat vs Gradient</h3>
+                    <p class="mb-2">Click the button below to toggle between flat colors and gradients. Notice how much
+                        depth the gradients add!</p>
+
+                    <div class="svg-centered">
+                        <!-- Flat version (shown initially) -->
+                        <svg id="flatLightbulb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1536" width="100%"
+                            style="max-width: 350px; height: auto; display: block;">
+                            <style>
+                                .bulb-glow-flat {
+                                    fill: var(--bulb-glow);
+                                }
+
+                                .bulb-warm-flat {
+                                    fill: var(--bulb-warm);
+                                }
+
+                                .bulb-bright-flat {
+                                    fill: var(--bulb-bright);
+                                }
+
+                                .metal-light-flat {
+                                    fill: var(--metal-light);
+                                }
+
+                                .metal-medium-flat {
+                                    fill: var(--metal-medium);
+                                }
+
+                                .metal-dark-flat {
+                                    fill: var(--metal-dark);
+                                }
+
+                                .base-dark-flat {
+                                    fill: var(--base-dark);
+                                }
+                            </style>
+                            <g class="bulb-glow-flat">
+                                <ellipse cx="512" cy="550" rx="280" ry="320" />
+                                <path d="M300 400 Q512 300 724 400" />
+                            </g>
+                            <g class="bulb-warm-flat">
+                                <ellipse cx="512" cy="560" rx="220" ry="260" />
+                                <path d="M350 450 Q512 380 674 450" />
+                            </g>
+                            <g class="bulb-bright-flat">
+                                <ellipse cx="512" cy="570" rx="150" ry="180" />
+                            </g>
+                            <g class="metal-light-flat">
+                                <path d="M280 850 L280 1050 L350 1100 L350 850 Z" />
+                                <path d="M674 850 L674 1100 L744 1050 L744 850 Z" />
+                            </g>
+                            <g class="metal-medium-flat">
+                                <rect x="350" y="850" width="324" height="250" rx="5" />
+                                <path d="M350 920 L674 920" />
+                                <path d="M350 990 L674 990" />
+                                <path d="M350 1060 L674 1060" />
+                            </g>
+                            <g class="metal-dark-flat">
+                                <path
+                                    d="M365 865 L365 1085 C365 1090 370 1095 375 1095 L649 1095 C654 1095 659 1090 659 1085 L659 865" />
+                                <ellipse cx="400" cy="920" rx="15" ry="8" />
+                                <ellipse cx="624" cy="920" rx="15" ry="8" />
+                            </g>
+                            <g class="base-dark-flat">
+                                <rect x="400" y="1100" width="224" height="150" rx="8" />
+                                <circle cx="450" cy="1150" r="12" />
+                                <circle cx="574" cy="1150" r="12" />
+                                <path d="M420 1220 L604 1220" stroke-width="8" />
+                            </g>
+                        </svg>
+
+                        <!-- Gradient version (hidden initially) -->
+                        <svg id="gradientLightbulb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1536"
+                            width="100%" style="max-width: 350px; height: auto; display: none;">
+                            <defs>
+                                <!-- Radial gradient for outer glow -->
+                                <radialGradient id="glow-radial">
+                                    <stop offset="0%" stop-color="var(--bulb-bright)" stop-opacity="0.8" />
+                                    <stop offset="50%" stop-color="var(--bulb-warm)" stop-opacity="0.7" />
+                                    <stop offset="100%" stop-color="var(--bulb-glow)" stop-opacity="0.5" />
+                                </radialGradient>
+
+                                <!-- Radial gradient for inner warm glow -->
+                                <radialGradient id="warm-radial">
+                                    <stop offset="0%" stop-color="var(--bulb-bright)" stop-opacity="1" />
+                                    <stop offset="70%" stop-color="var(--bulb-warm)" stop-opacity="0.9" />
+                                    <stop offset="100%" stop-color="var(--bulb-glow)" stop-opacity="0.7" />
+                                </radialGradient>
+
+                                <!-- Radial gradient for bright center -->
+                                <radialGradient id="bright-radial">
+                                    <stop offset="0%" stop-color="hsl(0, 0%, 100%)" stop-opacity="0.95" />
+                                    <stop offset="40%" stop-color="var(--bulb-bright)" stop-opacity="1" />
+                                    <stop offset="100%" stop-color="var(--bulb-warm)" stop-opacity="0.9" />
+                                </radialGradient>
+
+                                <!-- Linear gradient for metal surfaces -->
+                                <linearGradient id="metal-light-linear" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="var(--metal-light)" />
+                                    <stop offset="50%" stop-color="var(--metal-medium)" />
+                                    <stop offset="100%" stop-color="var(--metal-dark)" />
+                                </linearGradient>
+
+                                <linearGradient id="metal-medium-linear" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="var(--metal-medium)" />
+                                    <stop offset="100%" stop-color="var(--metal-dark)" />
+                                </linearGradient>
+
+                                <linearGradient id="base-linear" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="var(--metal-dark)" />
+                                    <stop offset="50%" stop-color="var(--base-dark)" />
+                                    <stop offset="100%" stop-color="hsl(210, 4%, 15%)" />
+                                </linearGradient>
+                            </defs>
+
+                            <g class="bulb-glow-gradient">
+                                <ellipse cx="512" cy="550" rx="280" ry="320" fill="url(#glow-radial)" />
+                                <path d="M300 400 Q512 300 724 400" fill="url(#glow-radial)" />
+                            </g>
+                            <g class="bulb-warm-gradient">
+                                <ellipse cx="512" cy="560" rx="220" ry="260" fill="url(#warm-radial)" />
+                                <path d="M350 450 Q512 380 674 450" fill="url(#warm-radial)" />
+                            </g>
+                            <g class="bulb-bright-gradient">
+                                <ellipse cx="512" cy="570" rx="150" ry="180" fill="url(#bright-radial)" />
+                            </g>
+                            <g class="metal-light-gradient">
+                                <path d="M280 850 L280 1050 L350 1100 L350 850 Z" fill="url(#metal-light-linear)" />
+                                <path d="M674 850 L674 1100 L744 1050 L744 850 Z" fill="url(#metal-light-linear)" />
+                            </g>
+                            <g class="metal-medium-gradient">
+                                <rect x="350" y="850" width="324" height="250" rx="5"
+                                    fill="url(#metal-medium-linear)" />
+                                <path d="M350 920 L674 920" fill="url(#metal-medium-linear)" />
+                                <path d="M350 990 L674 990" fill="url(#metal-medium-linear)" />
+                                <path d="M350 1060 L674 1060" fill="url(#metal-medium-linear)" />
+                            </g>
+                            <g class="metal-dark-gradient">
+                                <path
+                                    d="M365 865 L365 1085 C365 1090 370 1095 375 1095 L649 1095 C654 1095 659 1090 659 1085 L659 865"
+                                    fill="url(#metal-medium-linear)" />
+                                <ellipse cx="400" cy="920" rx="15" ry="8" fill="url(#metal-medium-linear)" />
+                                <ellipse cx="624" cy="920" rx="15" ry="8" fill="url(#metal-medium-linear)" />
+                            </g>
+                            <g class="base-dark-gradient">
+                                <rect x="400" y="1100" width="224" height="150" rx="8" fill="url(#base-linear)" />
+                                <circle cx="450" cy="1150" r="12" fill="url(#base-linear)" />
+                                <circle cx="574" cy="1150" r="12" fill="url(#base-linear)" />
+                                <path d="M420 1220 L604 1220" stroke-width="8" fill="url(#base-linear)" />
+                            </g>
+                        </svg>
+                    </div>
+
+                    <button type="button" class="btn-primary mt-2" id="toggleComparison">🟠 Show Gradient
+                        Version</button>
+                </div>
+
+                <!-- Demo 2: Theme Switching with Gradients -->
+                <div class="demo-container mt-2">
+                    <h3>🎨 Interactive: Theme Switching with Gradients</h3>
+                    <p class="mb-2">Click a theme button to watch my Lightbulb transform! Notice how the gradients adapt
+                        to each theme automatically.</p>
+
+                    <div class="overview-grid" style="grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+                        <div>
+                            <h4 class="mb-1">Choose a Theme:</h4>
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                                <button type="button" class="btn-primary theme-switcher active" data-theme="warm"
+                                    aria-label="Switch to Warm theme">
+                                    <span style="font-size: 2rem;">🟠</span>
+                                    <strong>Warm</strong>
+                                </button>
+                                <button type="button" class="btn-primary theme-switcher" data-theme="cool"
+                                    aria-label="Switch to Cool theme">
+                                    <span style="font-size: 2rem;">🔵</span>
+                                    <strong>Cool</strong>
+                                </button>
+                                <button type="button" class="btn-primary theme-switcher" data-theme="alert"
+                                    aria-label="Switch to Alert theme">
+                                    <span style="font-size: 2rem;">🔴</span>
+                                    <strong>Alert</strong>
+                                </button>
+                                <button type="button" class="btn-primary theme-switcher" data-theme="eco"
+                                    aria-label="Switch to Eco theme">
+                                    <span style="font-size: 2rem;">🟢</span>
+                                    <strong>Eco</strong>
+                                </button>
+                            </div>
+
+                            <div class="demo-box mt-2">
+                                <h4 class="mb-1">Current Theme:</h4>
+                                <div id="currentTheme"
+                                    style="padding: 1rem; background: hsl(0, 0%, 100%); border-radius: 4px; font-family: 'Courier New', monospace; font-size: 0.9rem;">
+                                    <strong>Warm</strong> (Default)
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn-primary mt-2" id="toggleFlat">🔄 Compare with Flat</button>
+                        </div>
+
+                        <div class="svg-centered">
+                            <svg id="themeGradientLightbulb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1536"
+                                width="100%" style="max-width: 350px; height: auto;">
+                                <defs>
+                                    <!-- Radial gradient for outer glow -->
+                                    <radialGradient id="theme-glow-radial">
+                                        <stop offset="0%" stop-color="var(--bulb-bright)" stop-opacity="0.8" />
+                                        <stop offset="50%" stop-color="var(--bulb-warm)" stop-opacity="0.7" />
+                                        <stop offset="100%" stop-color="var(--bulb-glow)" stop-opacity="0.5" />
+                                    </radialGradient>
+
+                                    <!-- Radial gradient for inner warm glow -->
+                                    <radialGradient id="theme-warm-radial">
+                                        <stop offset="0%" stop-color="var(--bulb-bright)" stop-opacity="1" />
+                                        <stop offset="70%" stop-color="var(--bulb-warm)" stop-opacity="0.9" />
+                                        <stop offset="100%" stop-color="var(--bulb-glow)" stop-opacity="0.7" />
+                                    </radialGradient>
+
+                                    <!-- Radial gradient for bright center -->
+                                    <radialGradient id="theme-bright-radial">
+                                        <stop offset="0%" stop-color="hsl(0, 0%, 100%)" stop-opacity="0.95" />
+                                        <stop offset="40%" stop-color="var(--bulb-bright)" stop-opacity="1" />
+                                        <stop offset="100%" stop-color="var(--bulb-warm)" stop-opacity="0.9" />
+                                    </radialGradient>
+
+                                    <!-- Linear gradient for metal surfaces -->
+                                    <linearGradient id="theme-metal-light-linear" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="var(--metal-light)" />
+                                        <stop offset="50%" stop-color="var(--metal-medium)" />
+                                        <stop offset="100%" stop-color="var(--metal-dark)" />
+                                    </linearGradient>
+
+                                    <linearGradient id="theme-metal-medium-linear" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="var(--metal-medium)" />
+                                        <stop offset="100%" stop-color="var(--metal-dark)" />
+                                    </linearGradient>
+
+                                    <linearGradient id="theme-base-linear" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="var(--metal-dark)" />
+                                        <stop offset="50%" stop-color="var(--base-dark)" />
+                                        <stop offset="100%" stop-color="hsl(210, 4%, 15%)" />
+                                    </linearGradient>
+                                </defs>
+
+                                <style>
+                                    #themeGradientLightbulb g {
+                                        transition: fill 0.5s ease;
+                                    }
+                                </style>
+
+                                <g class="bulb-glow-theme">
+                                    <ellipse cx="512" cy="550" rx="280" ry="320" fill="url(#theme-glow-radial)" />
+                                    <path d="M300 400 Q512 300 724 400" fill="url(#theme-glow-radial)" />
+                                </g>
+                                <g class="bulb-warm-theme">
+                                    <ellipse cx="512" cy="560" rx="220" ry="260" fill="url(#theme-warm-radial)" />
+                                    <path d="M350 450 Q512 380 674 450" fill="url(#theme-warm-radial)" />
+                                </g>
+                                <g class="bulb-bright-theme">
+                                    <ellipse cx="512" cy="570" rx="150" ry="180" fill="url(#theme-bright-radial)" />
+                                </g>
+                                <g class="metal-light-theme">
+                                    <path d="M280 850 L280 1050 L350 1100 L350 850 Z"
+                                        fill="url(#theme-metal-light-linear)" />
+                                    <path d="M674 850 L674 1100 L744 1050 L744 850 Z"
+                                        fill="url(#theme-metal-light-linear)" />
+                                </g>
+                                <g class="metal-medium-theme">
+                                    <rect x="350" y="850" width="324" height="250" rx="5"
+                                        fill="url(#theme-metal-medium-linear)" />
+                                    <path d="M350 920 L674 920" fill="url(#theme-metal-medium-linear)" />
+                                    <path d="M350 990 L674 990" fill="url(#theme-metal-medium-linear)" />
+                                    <path d="M350 1060 L674 1060" fill="url(#theme-metal-medium-linear)" />
+                                </g>
+                                <g class="metal-dark-theme">
+                                    <path
+                                        d="M365 865 L365 1085 C365 1090 370 1095 375 1095 L649 1095 C654 1095 659 1090 659 1085 L659 865"
+                                        fill="url(#theme-metal-medium-linear)" />
+                                    <ellipse cx="400" cy="920" rx="15" ry="8" fill="url(#theme-metal-medium-linear)" />
+                                    <ellipse cx="624" cy="920" rx="15" ry="8" fill="url(#theme-metal-medium-linear)" />
+                                </g>
+                                <g class="base-dark-theme">
+                                    <rect x="400" y="1100" width="224" height="150" rx="8"
+                                        fill="url(#theme-base-linear)" />
+                                    <circle cx="450" cy="1150" r="12" fill="url(#theme-base-linear)" />
+                                    <circle cx="574" cy="1150" r="12" fill="url(#theme-base-linear)" />
+                                    <path d="M420 1220 L604 1220" stroke-width="8" fill="url(#theme-base-linear)" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: Try It Yourself - Add Gradients to Mini-Lightbulb -->
+        <section id="try-it-yourself" class="content-section">
+            <div class="topic-section">
+                <h2>Try It Yourself - Add Gradients to Mini-Lightbulb</h2>
+
+                <h3 class="mt-2">Challenge: Enhance Your Mini-Lightbulb with Gradients</h3>
+
+                <p class="mb-2">Starting point (from Station 4):</p>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Mini-Lightbulb with flat colors:</div>
+                    <pre><code class="language-svg">&lt;svg viewBox="0 0 100 150" width="200"&gt;
+  &lt;style&gt;
+    :root {
+      --bulb-glow: hsl(45, 100%, 89%);
+      --bulb-warm: hsl(40, 97%, 73%);
+      --filament: hsl(34, 100%, 65%);
+      --metal-body: hsl(60, 2%, 57%);
+      --metal-dark: hsl(0, 1%, 49%);
+    }
+
+    .bulb-glow { fill: var(--bulb-glow); }
+    .bulb-warm { fill: var(--bulb-warm); }
+    .filament { stroke: var(--filament); stroke-width: 2; }
+    .metal-body { fill: var(--metal-body); }
+    .metal-dark { fill: var(--metal-dark); }
+  &lt;/style&gt;
+
+  &lt;g class="bulb"&gt;
+    &lt;circle class="bulb-glow" cx="50" cy="50" r="35"/&gt;
+    &lt;path class="bulb-warm" d="M50,20 Q70,50 50,80 Q30,50 50,20"/&gt;
+  &lt;/g&gt;
+
+  &lt;g class="metal-base"&gt;
+    &lt;rect class="metal-body" x="40" y="80" width="20" height="25"/&gt;
+    &lt;rect class="metal-dark" x="42" y="105" width="16" height="5"/&gt;
+    &lt;rect class="metal-dark" x="44" y="110" width="12" height="5"/&gt;
+  &lt;/g&gt;
+
+  &lt;g class="filament"&gt;
+    &lt;line x1="45" y1="45" x2="55" y2="55"/&gt;
+    &lt;line x1="55" y1="45" x2="45" y2="55"/&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;</code></pre>
+                </div>
+
+                <h3 class="mt-2">Your Mission</h3>
+
+                <ol class="mt-1">
+                    <li>Add a <code>&lt;defs&gt;</code> section with gradients</li>
+                    <li>Create a radial gradient for the bulb using CSS custom properties</li>
+                    <li>Create a linear gradient for the metal</li>
+                    <li>Update the fill attributes to use gradients</li>
+                    <li>Test that themes still work!</li>
+                </ol>
+
+                <h3 class="mt-2">Progressive Hints</h3>
+
+                <button type="button" class="hint-btn" data-hint="1">🟠 Hint 1: Setting Up Defs</button>
+                <div class="hint-content" id="hint1" hidden>
+                    <p>Add this after your <code>&lt;style&gt;</code> block:</p>
+                    <div class="prompt-box">
+                        <pre><code class="language-svg">&lt;defs&gt;
+  &lt;!-- Your gradients go here --&gt;
+&lt;/defs&gt;</code></pre>
+                    </div>
+                </div>
+
+                <button type="button" class="hint-btn" data-hint="2">🟠 Hint 2: Radial Gradient Structure</button>
+                <div class="hint-content" id="hint2" hidden>
+                    <div class="prompt-box">
+                        <pre><code class="language-svg">&lt;radialGradient id="bulb-radial"&gt;
+  &lt;stop offset="0%" stop-color="var(--bulb-warm)"/&gt;
+  &lt;stop offset="100%" stop-color="var(--bulb-glow)"/&gt;
+&lt;/radialGradient&gt;</code></pre>
+                    </div>
+                </div>
+
+                <button type="button" class="hint-btn" data-hint="3">🟠 Hint 3: Applying Gradients</button>
+                <div class="hint-content" id="hint3" hidden>
+                    <p>Change: <code>fill="var(--bulb-glow)"</code></p>
+                    <p>To: <code>fill="url(#bulb-radial)"</code></p>
+                </div>
+
+                <h3 class="mt-2">Complete Solution</h3>
+
+                <button type="button" class="btn-primary" id="showSolution">🟠 Click to Reveal Solution</button>
+
+                <div class="demo-box" id="solutionBox" hidden>
+                    <div class="prompt-box">
+                        <div class="prompt-label">Complete solution:</div>
+                        <pre><code class="language-svg">&lt;svg viewBox="0 0 100 150" width="200"&gt;
+  &lt;style&gt;
+    :root {
+      --bulb-glow: hsl(45, 100%, 89%);
+      --bulb-warm: hsl(40, 97%, 73%);
+      --filament: hsl(34, 100%, 65%);
+      --metal-body: hsl(60, 2%, 57%);
+      --metal-dark: hsl(0, 1%, 49%);
+    }
+
+    /* Classes now reference gradients */
+    .bulb-glow { fill: url(#bulb-radial); }
+    .bulb-warm { fill: url(#warm-radial); }
+    .filament { stroke: var(--filament); stroke-width: 2; }
+    .metal-body { fill: url(#metal-linear); }
+    .metal-dark { fill: var(--metal-dark); }
+
+    /* Theme still works! */
+    svg.theme-cool {
+      --bulb-glow: hsl(205, 100%, 95%);
+      --bulb-warm: hsl(205, 100%, 82%);
+      --filament: hsl(205, 100%, 64%);
+    }
+  &lt;/style&gt;
+
+  &lt;defs&gt;
+    &lt;!-- Radial gradient for outer bulb --&gt;
+    &lt;radialGradient id="bulb-radial"&gt;
+      &lt;stop offset="0%" stop-color="var(--bulb-warm)" stop-opacity="0.9"/&gt;
+      &lt;stop offset="100%" stop-color="var(--bulb-glow)" stop-opacity="0.7"/&gt;
+    &lt;/radialGradient&gt;
+
+    &lt;!-- Radial gradient for inner warm area --&gt;
+    &lt;radialGradient id="warm-radial"&gt;
+      &lt;stop offset="0%" stop-color="var(--filament)"/&gt;
+      &lt;stop offset="100%" stop-color="var(--bulb-warm)"/&gt;
+    &lt;/radialGradient&gt;
+
+    &lt;!-- Linear gradient for metal --&gt;
+    &lt;linearGradient id="metal-linear" x1="0%" y1="0%" x2="0%" y2="100%"&gt;
+      &lt;stop offset="0%" stop-color="var(--metal-body)"/&gt;
+      &lt;stop offset="100%" stop-color="var(--metal-dark)"/&gt;
+    &lt;/linearGradient&gt;
+  &lt;/defs&gt;
+
+  &lt;g class="bulb"&gt;
+    &lt;circle class="bulb-glow" cx="50" cy="50" r="35"/&gt;
+    &lt;path class="bulb-warm" d="M50,20 Q70,50 50,80 Q30,50 50,20"/&gt;
+  &lt;/g&gt;
+
+  &lt;g class="metal-base"&gt;
+    &lt;rect class="metal-body" x="40" y="80" width="20" height="25"/&gt;
+    &lt;rect class="metal-dark" x="42" y="105" width="16" height="5"/&gt;
+    &lt;rect class="metal-dark" x="44" y="110" width="12" height="5"/&gt;
+  &lt;/g&gt;
+
+  &lt;g class="filament"&gt;
+    &lt;line x1="45" y1="45" x2="55" y2="55"/&gt;
+    &lt;line x1="55" y1="45" x2="45" y2="55"/&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;</code></pre>
+                    </div>
+
+                    <p class="mt-2"><strong>What Changed:</strong></p>
+                    <ul class="mt-1">
+                        <li>✅ Added <code>&lt;defs&gt;</code> with three gradients</li>
+                        <li>✅ Gradients use CSS custom properties</li>
+                        <li>✅ Classes reference gradients with <code>url(#id)</code></li>
+                        <li>✅ Themes still work perfectly!</li>
+                        <li>✅ Visual depth without losing organization!</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: Quick Reference -->
+        <section id="quick-reference" class="content-section">
+            <h2 class="section-heading-centered">🎓 Quick Reference</h2>
+
+            <div class="overview-grid mt-2">
+                <div class="insight-card">
+                    <h3>Radial Gradient Syntax</h3>
+                    <pre class="mt-1"><code class="language-svg">&lt;radialGradient id="unique-id"&gt;
+  &lt;stop offset="0%" stop-color="center-color"/&gt;
+  &lt;stop offset="100%" stop-color="edge-color"/&gt;
+&lt;/radialGradient&gt;</code></pre>
+                    <p class="mt-1">Radiates from center outward - perfect for glows!</p>
+                </div>
+
+                <div class="insight-card">
+                    <h3>Linear Gradient Syntax</h3>
+                    <pre class="mt-1"><code class="language-svg">&lt;linearGradient id="unique-id"
+  x1="0%" y1="0%"
+  x2="100%" y2="0%"&gt;
+  &lt;stop offset="0%" stop-color="start-color"/&gt;
+  &lt;stop offset="100%" stop-color="end-color"/&gt;
+&lt;/linearGradient&gt;</code></pre>
+                    <p class="mt-1">Transitions in a straight line - perfect for surfaces!</p>
+                </div>
+
+                <div class="insight-card">
+                    <h3>Using with Custom Properties</h3>
+                    <pre class="mt-1"><code class="language-svg">&lt;stop stop-color="var(--my-color)"/&gt;</code></pre>
+                    <p class="mt-1">Gradients can use CSS custom properties! This makes them themeable.</p>
+                </div>
+
+                <div class="insight-card">
+                    <h3>Applying Gradients</h3>
+                    <pre class="mt-1"><code class="language-svg">fill="url(#gradient-id)"</code></pre>
+                    <p class="mt-1">Reference gradients with <code>url()</code> notation in your elements.</p>
+                </div>
+
+                <div class="insight-card">
+                    <h3>Gradient Direction</h3>
+                    <ul class="mt-1">
+                        <li><strong>Radial:</strong> Center to edge</li>
+                        <li><strong>Linear:</strong> Use x1,y1,x2,y2</li>
+                        <li><strong>Vertical:</strong> x1="0%" y1="0%" x2="0%" y2="100%"</li>
+                        <li><strong>Horizontal:</strong> x1="0%" y1="0%" x2="100%" y2="0%"</li>
+                    </ul>
+                </div>
+
+                <div class="insight-card">
+                    <h3>Performance Tip</h3>
+                    <p class="mt-1">Keep gradients simple! 2-3 stops is usually enough. More stops = more processing.
+                    </p>
+                    <p class="mt-1">Prof. Teeters taught me: "Subtle gradients enhance. Complex gradients distract."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HAP's Final Thoughts (div callout, not a section) -->
+        <div class="hap-note-callout">
+            <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit,a_hflip/v1759331571/HyBit_holding_a_paintbrush_ycfapu.jpg"
+                alt="HAP looking thoughtful with paintbrush" width="150" height="150" class="hap-note-image"
+                decoding="async" loading="lazy">
+            <div class="hap-note-content">
+                <h3>HAP's Final Thoughts:</h3>
+                <p>When I started Station 3, I had 200+ paths of chaos. Station 3 gave me organization. Station 4 gave
+                    me theming power. But Station 5? Station 5 gave me beauty.</p>
+                <p class="mt-1">Prof. Teeters said something that stuck with me: "Technical correctness gets you to
+                    'good enough.' Visual polish gets you to 'wow.'" My Lightbulb was technically perfect after Station
+                    4, but it wasn't until I added gradients that people started asking "How did you make that?!"</p>
+                <p class="mt-1">The best part? Gradients didn't break anything I'd built. They enhanced it. My
+                    organization from Station 3 made gradients easy to apply. My custom properties from Station 4 made
+                    gradients themeable. Each station built on the last.</p>
+                <p class="mt-1">That's systematic learning - each piece connects to and strengthens the whole! 💡</p>
+            </div>
+        </div>
+
+        <!-- Learning Objectives Checklist -->
+        <section class="content-section">
+            <div class="warning-box">
+                <h3>✅ Station 5 Learning Objectives Checklist</h3>
+                <p>Before moving to Station 6, make sure you've mastered these Station 5 skills! Can you confidently
+                    say:</p>
+                <div class="control-group mt-1">
+                    <label class="label-style">
+                        <input type="checkbox" aria-label="I understand radial gradients">
+                        <strong>I understand radial gradients</strong> and when to use them (light sources, glows,
+                        circular effects)
+                    </label>
+
+                    <label class="label-style">
+                        <input type="checkbox" aria-label="I understand linear gradients">
+                        <strong>I understand linear gradients</strong> and when to use them (surfaces, directional
+                        shading)
+                    </label>
+
+                    <label class="label-style">
+                        <input type="checkbox" aria-label="I can create gradients in SVG">
+                        <strong>I can create gradients in SVG</strong> using <code>&lt;defs&gt;</code>,
+                        <code>&lt;radialGradient&gt;</code>, and <code>&lt;linearGradient&gt;</code>
+                    </label>
+
+                    <label class="label-style">
+                        <input type="checkbox" aria-label="I can define gradient stops">
+                        <strong>I can define gradient stops</strong> with offset percentages and colors
+                    </label>
+
+                    <label class="label-style">
+                        <input type="checkbox" aria-label="I can integrate gradients with CSS custom properties">
+                        <strong>I can integrate gradients with CSS custom properties</strong> for themeable gradients
+                    </label>
+
+                    <label class="label-style">
+                        <input type="checkbox" aria-label="I can apply gradients to elements">
+                        <strong>I can apply gradients to elements</strong> using <code>fill="url(#gradient-id)"</code>
+                    </label>
+
+                    <label class="label-style">
+                        <input type="checkbox" aria-label="I understand gradient performance">
+                        <strong>I understand gradient performance</strong> and know to keep them simple
+                    </label>
+
+                    <label class="label-style">
+                        <input type="checkbox" aria-label="I can enhance existing organized SVGs">
+                        <strong>I can enhance existing organized SVGs</strong> with gradients without breaking the
+                        structure
+                    </label>
+
+                    <label class="label-style">
+                        <input type="checkbox" aria-label="I know when to use gradients vs flat colors">
+                        <strong>I know when to use gradients vs flat colors</strong> (realism vs simplicity)
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Station Preview (div callout, not a section) -->
+        <div class="hap-note-callout">
+            <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit,a_hflip/v1759331571/HyBit_holding_a_paintbrush_ycfapu.jpg"
+                alt="HAP excited with paintbrush" width="150" height="150" class="hap-note-image" decoding="async"
+                loading="lazy">
+            <div class="hap-note-content">
+                <h3>HAP's Next Discovery</h3>
+                <p>My Lightbulb now glows with gradients and depth — but Prof. Teeters had one more surprise:
+                    “Ready to see how AI can speed up your SVG work?”
+                </p>
+                <p class="mt-1">
+                    Next stop: Station 6 — AI Assistance, where I learn how smart tools can organize, optimize, and
+                    simplify
+                    my designs!</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Bottom navigation -->
+    <nav aria-label="Station pagination" class="page-navigation bottom-nav">
+        <a href="../index.html" class="nav-link hub-link">🏠 Hub</a>
+        <a href="station4.html" class="nav-link prev-link">← Station 4</a>
+        <a href="station6.html" class="nav-link next-link">Next: Station 6 - [Coming Soon] →</a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p><strong>HAP's Learning Lab</strong> | An AI-Enhanced Educational Experience by Prof. Cynthia Teeters</p>
+
+        <p class="footer-reminder">
+            "Gradients didn't break my organization — they enhanced it. Each station builds on the last!" 🟠 — HAP
+        </p>
+
+        <div class="footer-copyright">
+            <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_80,c_limit/v1759497938/HAP-learner_dvehmt.jpg"
+                alt="HAP the apprentice learner with his study book and tools" class="footer-hybit" width="80"
+                height="80" decoding="async" loading="lazy">
+            <div>
+                <p>HAP&trade; Educational Content &copy; 2025 Cynthia Teeters. All rights reserved.</p>
+                <p>HyBit A. ProtoBot&trade; (HAP&trade;) character and the apprentice learning methodology are
+                    proprietary educational innovations.</p>
+                <p>Character concept, teaching methodology, and all written content created by Prof. Cynthia Teeters.
+                    Visual elements created with AI assistance.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Easter egg system -->
+    <script src="../js/easter-egg.js"></script>
+
+    <!-- Syntax highlighting -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"
+        integrity="sha384-MXybTpajaBV0AkcBaCPT4KIvo0FzoCiWXgcihYsw4FUkEz0Pv3JGV6tk2G8vJtDc"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"
+        integrity="sha384-HkMr0bZB9kBW4iVtXn6nd35kO/L/dQtkkUBkL9swzTEDMdIe5ExJChVDSnC79aNA"
+        crossorigin="anonymous"></script>
+
+    <!-- Copy button functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add copy buttons to all code blocks in pre elements
+            document.querySelectorAll('pre code').forEach(code => {
+                const pre = code.parentElement;
+
+                // Skip if already has a copy button
+                if (pre.querySelector('.copy-button')) return;
+
+                const button = document.createElement('button');
+                button.className = 'copy-button';
+                button.textContent = 'Copy';
+                button.setAttribute('aria-label', 'Copy code to clipboard');
+
+                button.addEventListener('click', async () => {
+                    const codeText = code.textContent;
+                    try {
+                        await navigator.clipboard.writeText(codeText);
+                        button.classList.add('copied');
+                        button.textContent = 'Copied';
+                        setTimeout(() => {
+                            button.classList.remove('copied');
+                            button.textContent = 'Copy';
+                        }, 2000);
+                    } catch (err) {
+                        console.error('Failed to copy:', err);
+                    }
+                });
+
+                pre.appendChild(button);
+            });
+        });
+    </script>
+
+    <!-- Progressive hints functionality -->
+    <script>
+        (function () {
+            // Progressive hints for Try It Yourself section
+            const hintButtons = document.querySelectorAll('.hint-btn');
+
+            hintButtons.forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    const hintNumber = button.getAttribute('data-hint');
+                    const hintContent = document.getElementById(`hint${hintNumber}`);
+
+                    if (hintContent) {
+                        hintContent.hidden = false;
+                        button.disabled = true;
+                        button.textContent = button.textContent.replace('🟠', '✅');
+
+                        // Enable next hint button if it exists
+                        const nextHintNumber = parseInt(hintNumber) + 1;
+                        const nextButton = document.querySelector(`[data-hint="${nextHintNumber}"]`);
+                        if (nextButton && index === 0) {
+                            // First hint clicked, all subsequent hints can be revealed
+                        }
+                    }
+                });
+            });
+
+            // Solution toggle
+            const showSolutionBtn = document.getElementById('showSolution');
+            const solutionBox = document.getElementById('solutionBox');
+
+            if (showSolutionBtn && solutionBox) {
+                showSolutionBtn.addEventListener('click', () => {
+                    solutionBox.hidden = !solutionBox.hidden;
+                    showSolutionBtn.textContent = solutionBox.hidden ?
+                        '🟠 Click to Reveal Solution' :
+                        '✅ Solution Revealed';
+                });
+            }
+        })();
+    </script>
+
+    <!-- JavaScript for Interactive Demos -->
+    <script>
+        // Demo 1: Flat vs Gradient Comparison Toggle
+        (function () {
+            const toggleBtn = document.getElementById('toggleComparison');
+            const flatSvg = document.getElementById('flatLightbulb');
+            const gradientSvg = document.getElementById('gradientLightbulb');
+            let showingGradient = false;
+
+            if (toggleBtn && flatSvg && gradientSvg) {
+                toggleBtn.addEventListener('click', () => {
+                    showingGradient = !showingGradient;
+
+                    if (showingGradient) {
+                        flatSvg.style.display = 'none';
+                        gradientSvg.style.display = 'block';
+                        toggleBtn.textContent = '✅ Show Flat Version';
+                    } else {
+                        flatSvg.style.display = 'block';
+                        gradientSvg.style.display = 'none';
+                        toggleBtn.textContent = '🟠 Show Gradient Version';
+                    }
+                });
+            }
+        })();
+
+        // Demo 2: Theme Switching with Gradients
+        (function () {
+            const themeButtons = document.querySelectorAll('.theme-switcher');
+            const svg = document.getElementById('themeGradientLightbulb');
+            const themeDisplay = document.getElementById('currentTheme');
+            const toggleFlatBtn = document.getElementById('toggleFlat');
+            let showingFlat = false;
+
+            // Theme definitions
+            const themes = {
+                warm: {
+                    name: 'Warm',
+                    '--bulb-glow': 'hsl(45, 100%, 89%)',
+                    '--bulb-warm': 'hsl(40, 97%, 73%)',
+                    '--bulb-bright': 'hsl(34, 100%, 65%)',
+                    '--metal-light': 'hsl(60, 4%, 74%)',
+                    '--metal-medium': 'hsl(60, 2%, 57%)',
+                    '--metal-dark': 'hsl(0, 1%, 49%)',
+                    '--base-dark': 'hsl(210, 4%, 21%)'
+                },
+                cool: {
+                    name: 'Cool',
+                    '--bulb-glow': 'hsl(200, 100%, 90%)',
+                    '--bulb-warm': 'hsl(205, 100%, 79%)',
+                    '--bulb-bright': 'hsl(205, 100%, 64%)',
+                    '--metal-light': 'hsl(60, 4%, 74%)',
+                    '--metal-medium': 'hsl(60, 2%, 57%)',
+                    '--metal-dark': 'hsl(0, 1%, 49%)',
+                    '--base-dark': 'hsl(210, 4%, 21%)'
+                },
+                alert: {
+                    name: 'Alert',
+                    '--bulb-glow': 'hsl(0, 100%, 95%)',
+                    '--bulb-warm': 'hsl(0, 100%, 85%)',
+                    '--bulb-bright': 'hsl(0, 100%, 70%)',
+                    '--metal-light': 'hsl(60, 4%, 74%)',
+                    '--metal-medium': 'hsl(60, 2%, 57%)',
+                    '--metal-dark': 'hsl(0, 1%, 49%)',
+                    '--base-dark': 'hsl(210, 4%, 21%)'
+                },
+                eco: {
+                    name: 'Eco',
+                    '--bulb-glow': 'hsl(123, 61%, 82%)',
+                    '--bulb-warm': 'hsl(123, 61%, 67%)',
+                    '--bulb-bright': 'hsl(123, 61%, 52%)',
+                    '--metal-light': 'hsl(60, 4%, 74%)',
+                    '--metal-medium': 'hsl(60, 2%, 57%)',
+                    '--metal-dark': 'hsl(0, 1%, 49%)',
+                    '--base-dark': 'hsl(210, 4%, 21%)'
+                }
+            };
+
+            // Apply theme function
+            function applyTheme(themeName) {
+                const theme = themes[themeName];
+                if (!theme || !svg) return;
+
+                // Update CSS custom properties on the SVG element
+                Object.keys(theme).forEach(key => {
+                    if (key !== 'name') {
+                        svg.style.setProperty(key, theme[key]);
+                    }
+                });
+
+                // Update theme display
+                if (themeDisplay) {
+                    themeDisplay.innerHTML = `<strong>${theme.name}</strong> Theme`;
+                }
+
+                // Update active button
+                themeButtons.forEach(btn => {
+                    if (btn.dataset.theme === themeName) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            }
+
+            // Theme button click handlers
+            themeButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const themeName = button.dataset.theme;
+                    applyTheme(themeName);
+                });
+            });
+
+            // Toggle flat comparison
+            if (toggleFlatBtn && svg) {
+                toggleFlatBtn.addEventListener('click', () => {
+                    showingFlat = !showingFlat;
+
+                    // Get all gradient-using groups
+                    const groups = svg.querySelectorAll('g[class*="-theme"]');
+
+                    if (showingFlat) {
+                        // Switch all elements to use flat fills instead of gradients
+                        groups.forEach(group => {
+                            const elements = group.querySelectorAll('[fill^="url"]');
+                            elements.forEach(el => {
+                                // Store original gradient reference
+                                el.dataset.gradientFill = el.getAttribute('fill');
+
+                                // Determine which flat color to use based on class
+                                if (group.classList.contains('bulb-glow-theme')) {
+                                    el.setAttribute('fill', 'var(--bulb-glow)');
+                                } else if (group.classList.contains('bulb-warm-theme')) {
+                                    el.setAttribute('fill', 'var(--bulb-warm)');
+                                } else if (group.classList.contains('bulb-bright-theme')) {
+                                    el.setAttribute('fill', 'var(--bulb-bright)');
+                                } else if (group.classList.contains('metal-light-theme')) {
+                                    el.setAttribute('fill', 'var(--metal-light)');
+                                } else if (group.classList.contains('metal-medium-theme') ||
+                                    group.classList.contains('metal-dark-theme')) {
+                                    el.setAttribute('fill', 'var(--metal-medium)');
+                                } else if (group.classList.contains('base-dark-theme')) {
+                                    el.setAttribute('fill', 'var(--base-dark)');
+                                }
+                            });
+                        });
+                        toggleFlatBtn.textContent = '✅ Show Gradients';
+                    } else {
+                        // Restore gradient fills
+                        groups.forEach(group => {
+                            const elements = group.querySelectorAll('[data-gradient-fill]');
+                            elements.forEach(el => {
+                                el.setAttribute('fill', el.dataset.gradientFill);
+                                delete el.dataset.gradientFill;
+                            });
+                        });
+                        toggleFlatBtn.textContent = '🔄 Compare with Flat';
+                    }
+                });
+            }
+
+            // Initialize with warm theme
+            applyTheme('warm');
+        })();
+    </script>
+
+</body>
+
+</html>
+
+<!--
+HAP™ Educational Content © 2025 Cynthia Teeters. All rights reserved.
+HyBit A. ProtoBot™ (HAP™) character and the apprentice learning methodology are proprietary educational innovations.
+Character concept, teaching methodology, and all written content created by Prof. Cynthia Teeters.
+Visual elements created with AI assistance.
+-->
