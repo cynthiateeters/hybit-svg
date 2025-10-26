@@ -2193,6 +2193,19 @@ pre {
   text-align: center;
 }
 
+.slider-label-for {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: hsl(0, 0%, 30%);
+}
+
+.label-style {
+  display: block;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+}
+
 #base-size-display {
   color: var(--orange-darkest);
   font-family: 'Source Code Pro', monospace;

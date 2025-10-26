@@ -44,8 +44,8 @@
             <div class="hybit-welcome">
                 <div class="hybit-avatar">
                     <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_200,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
-                        alt="HAP looking confused while studying a map of coordinates" width="200" height="200" decoding="async"
-                        fetchpriority="high">
+                        alt="HAP looking confused while studying a map of coordinates" width="200" height="200"
+                        decoding="async" fetchpriority="high">
                 </div>
                 <div>
                     <h1>HAP's Learning Lab: SVG Structure & Coordinate Systems</h1>
@@ -55,7 +55,11 @@
             </div>
 
             <div class="intro-box">
-                <p><strong>Welcome to Station 1!</strong> I'll be honest—when I first looked at SVG code, I thought those numbers in viewBox were just random! Prof. Teeters laughed when I tried to change them "to make the graphic bigger" and everything disappeared. She taught me that SVG has its own coordinate system, and understanding it is like learning the rules of a new game. Once I got viewBox, everything else made sense! 🟠</p>
+                <p><strong>Welcome to Station 1!</strong> I'll be honest—when I first looked at SVG code, I thought
+                    those numbers in viewBox were just random! Prof. Teeters laughed when I tried to change them "to
+                    make the graphic bigger" and everything disappeared. She taught me that SVG has its own coordinate
+                    system, and understanding it is like learning the rules of a new game. Once I got viewBox,
+                    everything else made sense! 🟠</p>
             </div>
         </div>
     </header>
@@ -75,36 +79,52 @@
             <h2 class="section-heading-centered">What You'll Learn at This Station</h2>
 
             <div class="intro-box">
-                <p><strong>HAP's Discovery:</strong> I spent THREE HOURS trying to figure out why my perfectly good circle kept getting cut off! I kept making width and height bigger and bigger, but the circle stayed half-hidden. Prof. Teeters looked at my code and pointed to viewBox—I had it set to "0 0 50 50" when my circle was at coordinates (100, 100). My circle was literally off the map! That's when I learned: viewBox is like the camera view, not the display size. Mind blown! 🤯</p>
+                <p><strong>HAP's Discovery:</strong> I spent THREE HOURS trying to figure out why my perfectly good
+                    circle kept getting cut off! I kept making width and height bigger and bigger, but the circle stayed
+                    half-hidden. Prof. Teeters looked at my code and pointed to viewBox—I had it set to "0 0 50 50" when
+                    my circle was at coordinates (100, 100). My circle was literally off the map! That's when I learned:
+                    viewBox is like the camera view, not the display size. Mind blown! 🤯</p>
             </div>
 
             <div class="overview-grid mt-2">
                 <div class="insight-card">
                     <h3><span class="insight-icon">📐</span> SVG is Math, Not Pixels</h3>
                     <p class="stat-large">Infinitely Scalable</p>
-                    <p>I learned that SVG graphics are defined by mathematical formulas, not pixels. That's why they stay crisp at any size—from a tiny icon to a billboard! Prof. Teeters showed me how one 2KB SVG file could replace six different PNG files I was using.</p>
+                    <p>I learned that SVG graphics are defined by mathematical formulas, not pixels. That's why they
+                        stay crisp at any size—from a tiny icon to a billboard! Prof. Teeters showed me how one 2KB SVG
+                        file could replace six different PNG files I was using.</p>
                 </div>
 
                 <div class="insight-card">
                     <h3><span class="insight-icon">🎯</span> The Coordinate System</h3>
                     <p class="stat-large stat-teal">(0,0) is Top-Left</p>
-                    <p>This confused me so much! In math class, (0,0) was bottom-left. But in SVG, it's top-left, and Y increases going DOWN. Once I drew myself a grid, it clicked. Every shape uses these coordinates to know where to appear.</p>
+                    <p>This confused me so much! In math class, (0,0) was bottom-left. But in SVG, it's top-left, and Y
+                        increases going DOWN. Once I drew myself a grid, it clicked. Every shape uses these coordinates
+                        to know where to appear.</p>
                 </div>
 
                 <div class="insight-card">
                     <h3><span class="insight-icon">📷</span> viewBox is Your Camera</h3>
                     <p class="stat-large stat-brown">The "What You See" Control</p>
-                    <p>Prof. Teeters explained viewBox as a camera looking at your canvas. It defines WHICH part of the coordinate space you see, while width/height define how BIG it displays. This is the secret to responsive SVGs!</p>
+                    <p>Prof. Teeters explained viewBox as a camera looking at your canvas. It defines WHICH part of the
+                        coordinate space you see, while width/height define how BIG it displays. This is the secret to
+                        responsive SVGs!</p>
                 </div>
             </div>
 
             <div class="hap-note-callout">
                 <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
-                    alt="HAP looking confused while studying a coordinate map" width="150" height="150" class="hap-note-image"
-                    decoding="async" loading="lazy">
+                    alt="HAP looking confused while studying a coordinate map" width="150" height="150"
+                    class="hap-note-image" decoding="async" loading="lazy">
                 <div class="hap-note-content">
                     <h3>HAP's Confession:</h3>
-                    <p>I made SO many mistakes when I first started with SVG! I thought width="200" meant "200 units in my coordinate system" (nope—it's the display size, which defaults to pixels but can also use %, em, or other CSS units). I tried to position a circle at negative coordinates and couldn't figure out why it was invisible. I kept changing the wrong numbers trying to make things bigger. I even copied an SVG from online and deleted the viewBox because "it looked unnecessary." Everything broke! Prof. Teeters patiently walked me through all of it, and now I actually understand what I'm doing.</p>
+                    <p>I made SO many mistakes when I first started with SVG! I thought width="200" meant "200 units in
+                        my coordinate system" (nope—it's the display size, which defaults to pixels but can also use %,
+                        em, or other CSS units). I tried to position a circle at negative coordinates and couldn't
+                        figure out why it was invisible. I kept changing the wrong numbers trying to make things bigger.
+                        I even copied an SVG from online and deleted the viewBox because "it looked unnecessary."
+                        Everything broke! Prof. Teeters patiently walked me through all of it, and now I actually
+                        understand what I'm doing.</p>
                 </div>
             </div>
         </section>
@@ -114,19 +134,28 @@
             <div class="topic-section">
                 <h2>What Makes SVG Different from Regular Images?</h2>
 
-                <p class="mb-2">When I first heard about SVG, I thought it was just another image format like JPEG or PNG. Wrong! Prof. Teeters explained that SVG is fundamentally different—it's defined by math, not pixels. That's why you can zoom in infinitely and it stays crisp! 🤯</p>
+                <p class="mb-2">When I first heard about SVG, I thought it was just another image format like JPEG or
+                    PNG. Wrong! Prof. Teeters explained that SVG is fundamentally different—it's defined by math, not
+                    pixels. That's why you can zoom in infinitely and it stays crisp! 🤯</p>
 
                 <div class="analysis-grid">
                     <div class="analysis-point">
                         <h3>📐 Vector vs Raster</h3>
-                        <p><strong>Raster images (JPEG, PNG):</strong> Made of pixels in a grid. Great for photos, but they get blurry when you zoom in or make them bigger. I learned this in the Images lab when I saw pixelation!</p>
-                        <p class="mt-1"><strong>Vector images (SVG):</strong> Defined by mathematical formulas. A circle is just "center point + radius" not thousands of colored pixels. Scales perfectly to any size!</p>
+                        <p><strong>Raster images (JPEG, PNG):</strong> Made of pixels in a grid. Great for photos, but
+                            they get blurry when you zoom in or make them bigger. I learned this in the Images lab when
+                            I saw pixelation!</p>
+                        <p class="mt-1"><strong>Vector images (SVG):</strong> Defined by mathematical formulas. A circle
+                            is just "center point + radius" not thousands of colored pixels. Scales perfectly to any
+                            size!</p>
                     </div>
 
                     <div class="analysis-point">
                         <h3>🎯 When I Use Each</h3>
-                        <p><strong>SVG is perfect for:</strong> Logos, icons, diagrams, illustrations—anything with clean shapes and solid colors. One file works for every screen size!</p>
-                        <p class="mt-1"><strong>Stick with PNG/JPEG for:</strong> Photographs and complex images with lots of colors and gradients. Prof. Teeters showed me that a photo converted to SVG would be HUGE!</p>
+                        <p><strong>SVG is perfect for:</strong> Logos, icons, diagrams, illustrations—anything with
+                            clean shapes and solid colors. One file works for every screen size!</p>
+                        <p class="mt-1"><strong>Stick with PNG/JPEG for:</strong> Photographs and complex images with
+                            lots of colors and gradients. Prof. Teeters showed me that a photo converted to SVG would be
+                            HUGE!</p>
                     </div>
                 </div>
 
@@ -145,20 +174,25 @@
 &lt;/svg&gt;
 &lt;!-- Now it's responsive and stays perfect at any size! --&gt;</code></pre>
 
-                    <p class="mt-1">Notice how I used width="100%" and let viewBox handle the scaling? Prof. Teeters taught me that SVG is smart about sizing when you set it up right!</p>
+                    <p class="mt-1">Notice how I used width="100%" and let viewBox handle the scaling? Prof. Teeters
+                        taught me that SVG is smart about sizing when you set it up right!</p>
                 </div>
 
                 <div class="interactive-demo mt-2">
                     <h3>🟠 See It In Action: Responsive SVG Circle</h3>
-                    <p>Here's the ACTUAL working example from my code above! This circle uses viewBox="0 0 100 100" and width="100%", so it scales perfectly to fit its container:</p>
+                    <p>Here's the ACTUAL working example from my code above! This circle uses viewBox="0 0 100 100" and
+                        width="100%", so it scales perfectly to fit its container:</p>
 
-                    <div style="border: 2px solid hsl(32, 76%, 63%); padding: 1rem; margin-top: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
-                        <svg viewBox="0 0 100 100" width="100%" height="auto" style="max-width: 300px; display: block; margin: 0 auto;">
+                    <div
+                        style="border: 2px solid hsl(32, 76%, 63%); padding: 1rem; margin-top: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
+                        <svg viewBox="0 0 100 100" width="100%" height="auto"
+                            style="max-width: 300px; display: block; margin: 0 auto;">
                             <circle cx="50" cy="50" r="40" fill="hsl(32, 76%, 63%)" />
                         </svg>
                     </div>
 
-                    <p class="mt-1 code-comment">Try resizing your browser window—the circle stays perfectly crisp! That's the magic of SVG. This same code works on a phone screen or a 4K monitor. 🎨</p>
+                    <p class="mt-1 code-comment">Try resizing your browser window—the circle stays perfectly crisp!
+                        That's the magic of SVG. This same code works on a phone screen or a 4K monitor. 🎨</p>
                 </div>
             </div>
         </section>
@@ -168,19 +202,24 @@
             <div class="topic-section">
                 <h2>Understanding the SVG Coordinate System</h2>
 
-                <p class="mb-2">This totally threw me off at first! In math class, I learned that (0,0) was in the bottom-left corner. But in SVG, it's top-left, and Y increases going DOWN instead of up. Prof. Teeters drew me a grid and it finally clicked!</p>
+                <p class="mb-2">This totally threw me off at first! In math class, I learned that (0,0) was in the
+                    bottom-left corner. But in SVG, it's top-left, and Y increases going DOWN instead of up. Prof.
+                    Teeters drew me a grid and it finally clicked!</p>
 
                 <div class="analysis-grid">
                     <div class="analysis-point">
                         <h3>📍 The Origin Point</h3>
-                        <p><strong>(0,0) is at the top-left:</strong> This is where your coordinate system starts. Move right for positive X, move down for positive Y.</p>
-                        <p class="mt-1">I kept trying to put things at negative Y values thinking they'd go "up"—nope! They went off the visible area!</p>
+                        <p><strong>(0,0) is at the top-left:</strong> This is where your coordinate system starts. Move
+                            right for positive X, move down for positive Y.</p>
+                        <p class="mt-1">I kept trying to put things at negative Y values thinking they'd go "up"—nope!
+                            They went off the visible area!</p>
                     </div>
 
                     <div class="analysis-point">
                         <h3>📏 How Coordinates Work</h3>
                         <p><strong>X increases to the right:</strong> This part matched my math class expectations!</p>
-                        <p class="mt-1"><strong>Y increases DOWNWARD:</strong> This is the part that confused me. A circle at cy="100" is BELOW a circle at cy="50".</p>
+                        <p class="mt-1"><strong>Y increases DOWNWARD:</strong> This is the part that confused me. A
+                            circle at cy="100" is BELOW a circle at cy="50".</p>
                     </div>
                 </div>
 
@@ -195,7 +234,8 @@
 
   &lt;!-- Note: Higher cy value = lower on screen! --&gt;
 &lt;/svg&gt;</code></pre>
-                    <p class="code-comment mt-1">I learned to think of coordinates like reading a book: start at top-left, move right and down!</p>
+                    <p class="code-comment mt-1">I learned to think of coordinates like reading a book: start at
+                        top-left, move right and down!</p>
                 </div>
 
                 <div class="interactive-demo mt-2">
@@ -212,15 +252,23 @@
 
                 <div class="interactive-demo mt-2">
                     <h3>🟠 Visual Demonstration: The Coordinate System</h3>
-                    <p>Here's the actual example from my code above, showing two circles at different coordinates. Notice how the orange circle at cy="50" is ABOVE the teal circle at cy="150":</p>
+                    <p>Here's the actual example from my code above, showing two circles at different coordinates.
+                        Notice how the orange circle at cy="50" is ABOVE the teal circle at cy="150":</p>
 
-                    <div style="border: 2px solid hsl(32, 76%, 63%); padding: 1rem; margin-top: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
-                        <svg viewBox="0 0 200 200" width="300" height="300" style="display: block; margin: 0 auto;" role="img" aria-label="SVG coordinate system demonstration showing two circles at different positions">
+                    <div
+                        style="border: 2px solid hsl(32, 76%, 63%); padding: 1rem; margin-top: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
+                        <svg viewBox="0 0 200 200" width="300" height="300" style="display: block; margin: 0 auto;"
+                            role="img"
+                            aria-label="SVG coordinate system demonstration showing two circles at different positions">
                             <!-- Grid lines to show coordinate system -->
-                            <line x1="0" y1="50" x2="200" y2="50" stroke="hsl(0, 0%, 80%)" stroke-width="1" stroke-dasharray="5,5" />
-                            <line x1="0" y1="150" x2="200" y2="150" stroke="hsl(0, 0%, 80%)" stroke-width="1" stroke-dasharray="5,5" />
-                            <line x1="50" y1="0" x2="50" y2="200" stroke="hsl(0, 0%, 80%)" stroke-width="1" stroke-dasharray="5,5" />
-                            <line x1="150" y1="0" x2="150" y2="200" stroke="hsl(0, 0%, 80%)" stroke-width="1" stroke-dasharray="5,5" />
+                            <line x1="0" y1="50" x2="200" y2="50" stroke="hsl(0, 0%, 80%)" stroke-width="1"
+                                stroke-dasharray="5,5" />
+                            <line x1="0" y1="150" x2="200" y2="150" stroke="hsl(0, 0%, 80%)" stroke-width="1"
+                                stroke-dasharray="5,5" />
+                            <line x1="50" y1="0" x2="50" y2="200" stroke="hsl(0, 0%, 80%)" stroke-width="1"
+                                stroke-dasharray="5,5" />
+                            <line x1="150" y1="0" x2="150" y2="200" stroke="hsl(0, 0%, 80%)" stroke-width="1"
+                                stroke-dasharray="5,5" />
 
                             <!-- Coordinate labels on grid lines -->
                             <text x="50" y="10" text-anchor="middle" fill="hsl(0, 0%, 50%)" font-size="10">x=50</text>
@@ -230,19 +278,23 @@
 
                             <!-- Axis arrows showing positive direction -->
                             <!-- X-axis arrow (pointing right) -->
-                            <line x1="10" y1="195" x2="60" y2="195" stroke="hsl(32, 76%, 63%)" stroke-width="2" marker-end="url(#arrowX)" />
+                            <line x1="10" y1="195" x2="60" y2="195" stroke="hsl(32, 76%, 63%)" stroke-width="2"
+                                marker-end="url(#arrowX)" />
                             <text x="70" y="198" fill="hsl(32, 76%, 50%)" font-size="12" font-weight="bold">+X</text>
                             <defs>
-                                <marker id="arrowX" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                                <marker id="arrowX" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"
+                                    markerUnits="strokeWidth">
                                     <path d="M0,0 L0,6 L9,3 z" fill="hsl(32, 76%, 63%)" />
                                 </marker>
                             </defs>
 
                             <!-- Y-axis arrow (pointing down) -->
-                            <line x1="195" y1="10" x2="195" y2="60" stroke="hsl(172, 45%, 55%)" stroke-width="2" marker-end="url(#arrowY)" />
+                            <line x1="195" y1="10" x2="195" y2="60" stroke="hsl(172, 45%, 55%)" stroke-width="2"
+                                marker-end="url(#arrowY)" />
                             <text x="182" y="75" fill="hsl(172, 45%, 45%)" font-size="12" font-weight="bold">+Y</text>
                             <defs>
-                                <marker id="arrowY" markerWidth="10" markerHeight="10" refX="3" refY="9" orient="auto" markerUnits="strokeWidth">
+                                <marker id="arrowY" markerWidth="10" markerHeight="10" refX="3" refY="9" orient="auto"
+                                    markerUnits="strokeWidth">
                                     <path d="M0,0 L6,0 L3,9 z" fill="hsl(172, 45%, 55%)" />
                                 </marker>
                             </defs>
@@ -252,15 +304,19 @@
 
                             <!-- Circle at top-left area -->
                             <circle cx="50" cy="50" r="20" fill="hsl(32, 76%, 63%)" />
-                            <text x="50" y="90" text-anchor="middle" fill="hsl(0, 0%, 30%)" font-size="12" font-weight="bold">(50, 50)</text>
+                            <text x="50" y="90" text-anchor="middle" fill="hsl(0, 0%, 30%)" font-size="12"
+                                font-weight="bold">(50, 50)</text>
 
                             <!-- Circle at bottom-right area -->
                             <circle cx="150" cy="150" r="20" fill="hsl(172, 45%, 55%)" />
-                            <text x="150" y="185" text-anchor="middle" fill="hsl(0, 0%, 30%)" font-size="12" font-weight="bold">(150, 150)</text>
+                            <text x="150" y="185" text-anchor="middle" fill="hsl(0, 0%, 30%)" font-size="12"
+                                font-weight="bold">(150, 150)</text>
                         </svg>
                     </div>
 
-                    <p class="mt-1 code-comment">See how the circle at (150, 150) is LOWER on the screen than (50, 50)? That's because Y increases downward! The dotted grid lines help visualize the invisible coordinate system. This was my "aha!" moment! 📐</p>
+                    <p class="mt-1 code-comment">See how the circle at (150, 150) is LOWER on the screen than (50, 50)?
+                        That's because Y increases downward! The dotted grid lines help visualize the invisible
+                        coordinate system. This was my "aha!" moment! 📐</p>
                 </div>
             </div>
         </section>
@@ -270,24 +326,30 @@
             <div class="topic-section">
                 <h2>The viewBox Attribute: Your SVG Camera</h2>
 
-                <p class="mb-2">This was THE concept that unlocked everything for me! Prof. Teeters explained viewBox as a camera looking at your canvas—it controls WHAT you see, while width and height control HOW BIG it displays. Once I understood this, SVG stopped being confusing!</p>
+                <p class="mb-2">This was THE concept that unlocked everything for me! Prof. Teeters explained viewBox as
+                    a camera looking at your canvas—it controls WHAT you see, while width and height control HOW BIG it
+                    displays. Once I understood this, SVG stopped being confusing!</p>
 
                 <div class="analysis-grid">
                     <div class="analysis-point">
                         <h3>📷 What viewBox Does</h3>
                         <p><strong>Format:</strong> viewBox="min-x min-y width height"</p>
-                        <p class="mt-1">The first two numbers (min-x, min-y) define where your "camera" starts looking. The last two (width, height) define how much of the coordinate space you see.</p>
+                        <p class="mt-1">The first two numbers (min-x, min-y) define where your "camera" starts looking.
+                            The last two (width, height) define how much of the coordinate space you see.</p>
                     </div>
 
                     <div class="analysis-point">
                         <h3>📺 Width/Height vs viewBox</h3>
-                        <p><strong>width and height:</strong> These are the display size on your webpage (in pixels or percentages)</p>
-                        <p class="mt-1"><strong>viewBox:</strong> This is the coordinate system INSIDE your SVG. Think of it as the "world coordinates" your shapes live in!</p>
+                        <p><strong>width and height:</strong> These are the display size on your webpage (in pixels or
+                            percentages)</p>
+                        <p class="mt-1"><strong>viewBox:</strong> This is the coordinate system INSIDE your SVG. Think
+                            of it as the "world coordinates" your shapes live in!</p>
                     </div>
 
                     <div class="analysis-point">
                         <h3>🎯 The Magic of viewBox</h3>
-                        <p><strong>Automatic scaling:</strong> viewBox lets your SVG scale perfectly! Same viewBox, different width/height = responsive graphics.</p>
+                        <p><strong>Automatic scaling:</strong> viewBox lets your SVG scale perfectly! Same viewBox,
+                            different width/height = responsive graphics.</p>
                         <p class="mt-1">This is how one SVG file works on phone screens AND desktop monitors!</p>
                     </div>
                 </div>
@@ -312,7 +374,8 @@
   &lt;circle cx="50" cy="50" r="40" fill="orange" /&gt;
   &lt;!-- Scales to fit any container! --&gt;
 &lt;/svg&gt;</code></pre>
-                    <p class="code-comment mt-1">The viewBox stays the same, but changing width/height or the viewBox numbers themselves creates completely different results!</p>
+                    <p class="code-comment mt-1">The viewBox stays the same, but changing width/height or the viewBox
+                        numbers themselves creates completely different results!</p>
                 </div>
 
                 <div class="hap-note-callout mt-2">
@@ -321,124 +384,151 @@
                         decoding="async" loading="lazy">
                     <div class="hap-note-content">
                         <h3>HAP's Breakthrough Moment:</h3>
-                        <p>My "aha!" moment came when Prof. Teeters made me draw two identical circles with different viewBox settings. The SAME circle code looked totally different! One was zoomed way in, one was zoomed way out. That's when I realized: viewBox doesn't change your shapes—it changes what portion of your coordinate space you're looking at. It's like using a camera zoom! I literally yelled "I GET IT!" in the lab. 🎉</p>
+                        <p>My "aha!" moment came when Prof. Teeters made me draw two identical circles with different
+                            viewBox settings. The SAME circle code looked totally different! One was zoomed way in, one
+                            was zoomed way out. That's when I realized: viewBox doesn't change your shapes—it changes
+                            what portion of your coordinate space you're looking at. It's like using a camera zoom! I
+                            literally yelled "I GET IT!" in the lab. 🎉</p>
                     </div>
                 </div>
 
                 <div class="interactive-demo mt-2">
                     <h3>🟠 The viewBox "Camera" Demonstration</h3>
-                    <p>This is the EXACT demonstration that made me understand! All three SVGs below contain the SAME circle at (50, 50) with radius 40. The ONLY difference is the viewBox. Watch how the "camera view" changes:</p>
+                    <p>This is the EXACT demonstration that made me understand! All three SVGs below contain the SAME
+                        circle at (50, 50) with radius 40. The ONLY difference is the viewBox. Watch how the "camera
+                        view" changes:</p>
 
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
                         <!-- Example 1: Normal view -->
                         <div style="text-align: center;">
-                            <div style="border: 2px solid hsl(32, 76%, 63%); padding: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
-                                <svg viewBox="0 0 100 100" width="100%" height="auto" style="max-width: 200px; display: block; margin: 0 auto;">
+                            <div
+                                style="border: 2px solid hsl(32, 76%, 63%); padding: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
+                                <svg viewBox="0 0 100 100" width="100%" height="auto"
+                                    style="max-width: 200px; display: block; margin: 0 auto;">
                                     <circle cx="50" cy="50" r="40" fill="hsl(32, 76%, 63%)" />
                                 </svg>
                             </div>
                             <p style="margin-top: 0.5rem; font-weight: bold; color: hsl(32, 76%, 40%);">Normal View</p>
                             <p style="margin: 0.25rem 0; font-size: 0.9rem;"><code>viewBox="0 0 100 100"</code></p>
-                            <p style="margin: 0; font-size: 0.85rem; color: hsl(0, 0%, 40%);">Shows the whole 100×100 space</p>
+                            <p style="margin: 0; font-size: 0.85rem; color: hsl(0, 0%, 40%);">Shows the whole 100×100
+                                space</p>
                         </div>
 
                         <!-- Example 2: Zoomed in -->
                         <div style="text-align: center;">
-                            <div style="border: 2px solid hsl(172, 45%, 55%); padding: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
-                                <svg viewBox="25 25 50 50" width="100%" height="auto" style="max-width: 200px; display: block; margin: 0 auto;">
+                            <div
+                                style="border: 2px solid hsl(172, 45%, 55%); padding: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
+                                <svg viewBox="25 25 50 50" width="100%" height="auto"
+                                    style="max-width: 200px; display: block; margin: 0 auto;">
                                     <circle cx="50" cy="50" r="40" fill="hsl(32, 76%, 63%)" />
                                 </svg>
                             </div>
                             <p style="margin-top: 0.5rem; font-weight: bold; color: hsl(172, 45%, 40%);">Zoomed In</p>
                             <p style="margin: 0.25rem 0; font-size: 0.9rem;"><code>viewBox="25 25 50 50"</code></p>
-                            <p style="margin: 0; font-size: 0.85rem; color: hsl(0, 0%, 40%);">Camera "zooms in" to center area</p>
+                            <p style="margin: 0; font-size: 0.85rem; color: hsl(0, 0%, 40%);">Camera "zooms in" to
+                                center area</p>
                         </div>
 
                         <!-- Example 3: Zoomed out -->
                         <div style="text-align: center;">
-                            <div style="border: 2px solid hsl(32, 45%, 45%); padding: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
-                                <svg viewBox="0 0 200 200" width="100%" height="auto" style="max-width: 200px; display: block; margin: 0 auto;">
+                            <div
+                                style="border: 2px solid hsl(32, 45%, 45%); padding: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
+                                <svg viewBox="0 0 200 200" width="100%" height="auto"
+                                    style="max-width: 200px; display: block; margin: 0 auto;">
                                     <circle cx="50" cy="50" r="40" fill="hsl(32, 76%, 63%)" />
                                 </svg>
                             </div>
                             <p style="margin-top: 0.5rem; font-weight: bold; color: hsl(32, 45%, 35%);">Zoomed Out</p>
                             <p style="margin: 0.25rem 0; font-size: 0.9rem;"><code>viewBox="0 0 200 200"</code></p>
-                            <p style="margin: 0; font-size: 0.85rem; color: hsl(0, 0%, 40%);">Camera "zooms out" to show more space</p>
+                            <p style="margin: 0; font-size: 0.85rem; color: hsl(0, 0%, 40%);">Camera "zooms out" to show
+                                more space</p>
                         </div>
                     </div>
 
-                    <p class="mt-2 code-comment">SAME CIRCLE CODE in all three: <code>&lt;circle cx="50" cy="50" r="40" /&gt;</code><br>
-                    The viewBox is like adjusting your camera zoom! This is what Prof. Teeters meant by "viewBox controls WHAT you see, not HOW BIG you see it." Mind = blown! 🤯</p>
+                    <p class="mt-2 code-comment">SAME CIRCLE CODE in all three:
+                        <code>&lt;circle cx="50" cy="50" r="40" /&gt;</code><br>
+                        The viewBox is like adjusting your camera zoom! This is what Prof. Teeters meant by "viewBox
+                        controls WHAT you see, not HOW BIG you see it." Mind = blown! 🤯
+                    </p>
                 </div>
 
                 <div class="interactive-demo mt-2">
                     <h3>🟠 Interactive viewBox Explorer</h3>
-                    <p>This is the tool I wish I had when I was learning! Adjust the viewBox values with the sliders and watch the circle change. Prof. Teeters told me hands-on practice is the best way to learn, so try it yourself!</p>
+                    <p>This is the tool I wish I had when I was learning! Adjust the viewBox values with the sliders and
+                        watch the circle change. Prof. Teeters told me hands-on practice is the best way to learn, so
+                        try it yourself!</p>
 
-                    <div style="border: 2px solid hsl(32, 76%, 63%); padding: 1.5rem; margin-top: 1rem; border-radius: 8px; background: hsl(32, 35%, 95%);">
+                    <div
+                        style="border: 2px solid hsl(32, 76%, 63%); padding: 1.5rem; margin-top: 1rem; border-radius: 8px; background: hsl(32, 35%, 95%);">
 
                         <!-- Current viewBox display -->
                         <div style="text-align: center; margin-bottom: 1rem;">
                             <p style="font-weight: bold; color: hsl(32, 76%, 40%);">Current viewBox:</p>
-                            <code id="viewBoxDisplay" style="font-size: 1.1rem; padding: 0.5rem; background: hsl(0, 0%, 100%); border-radius: 4px; display: inline-block;">"0 0 100 100"</code>
+                            <code id="viewBoxDisplay"
+                                style="font-size: 1.1rem; padding: 0.5rem; background: hsl(0, 0%, 100%); border-radius: 4px; display: inline-block;">"0 0 100 100"</code>
                         </div>
 
                         <!-- SVG display -->
-                        <div style="background: hsl(0, 0%, 100%); padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; border: 1px solid hsl(0, 0%, 80%);">
-                            <svg id="explorerSVG" viewBox="0 0 100 100" width="100%" height="auto" style="max-width: 400px; display: block; margin: 0 auto;" role="img" aria-label="Interactive SVG demonstration with adjustable viewBox">
+                        <div
+                            style="background: hsl(0, 0%, 100%); padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; border: 1px solid hsl(0, 0%, 80%);">
+                            <svg id="explorerSVG" viewBox="0 0 100 100" width="100%" height="auto"
+                                style="max-width: 400px; display: block; margin: 0 auto;" role="img"
+                                aria-label="Interactive SVG demonstration with adjustable viewBox">
                                 <circle cx="50" cy="50" r="40" fill="hsl(32, 76%, 63%)" />
                             </svg>
                         </div>
 
                         <!-- Controls grid -->
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
 
                             <!-- min-x slider -->
                             <div>
-                                <label for="minXSlider" style="display: block; font-weight: bold; margin-bottom: 0.5rem; color: hsl(0, 0%, 30%);">
+                                <label for="minXSlider" class="slider-label-for">
                                     min-x: <span id="minXValue">0</span>
                                 </label>
                                 <input type="range" id="minXSlider" min="-50" max="50" value="0" step="5"
-                                    style="width: 100%;"
-                                    aria-label="Adjust viewBox min-x value"
-                                    aria-valuemin="-50" aria-valuemax="50" aria-valuenow="0">
-                                <p style="font-size: 0.85rem; color: hsl(0, 0%, 40%); margin-top: 0.25rem;">Where the camera starts looking (left edge)</p>
+                                    style="width: 100%;" aria-label="Adjust viewBox min-x value" aria-valuemin="-50"
+                                    aria-valuemax="50" aria-valuenow="0">
+                                <p style="font-size: 0.85rem; color: hsl(0, 0%, 40%); margin-top: 0.25rem;">Where the
+                                    camera starts looking (left edge)</p>
                             </div>
 
                             <!-- min-y slider -->
                             <div>
-                                <label for="minYSlider" style="display: block; font-weight: bold; margin-bottom: 0.5rem; color: hsl(0, 0%, 30%);">
+                                <label for="minYSlider" class="slider-label-for">
                                     min-y: <span id="minYValue">0</span>
                                 </label>
                                 <input type="range" id="minYSlider" min="-50" max="50" value="0" step="5"
-                                    style="width: 100%;"
-                                    aria-label="Adjust viewBox min-y value"
-                                    aria-valuemin="-50" aria-valuemax="50" aria-valuenow="0">
-                                <p style="font-size: 0.85rem; color: hsl(0, 0%, 40%); margin-top: 0.25rem;">Where the camera starts looking (top edge)</p>
+                                    style="width: 100%;" aria-label="Adjust viewBox min-y value" aria-valuemin="-50"
+                                    aria-valuemax="50" aria-valuenow="0">
+                                <p style="font-size: 0.85rem; color: hsl(0, 0%, 40%); margin-top: 0.25rem;">Where the
+                                    camera starts looking (top edge)</p>
                             </div>
 
                             <!-- width slider -->
                             <div>
-                                <label for="widthSlider" style="display: block; font-weight: bold; margin-bottom: 0.5rem; color: hsl(0, 0%, 30%);">
+                                <label for="widthSlider" class="slider-label-for">
                                     width: <span id="widthValue">100</span>
                                 </label>
                                 <input type="range" id="widthSlider" min="50" max="200" value="100" step="10"
-                                    style="width: 100%;"
-                                    aria-label="Adjust viewBox width value"
-                                    aria-valuemin="50" aria-valuemax="200" aria-valuenow="100">
-                                <p style="font-size: 0.85rem; color: hsl(0, 0%, 40%); margin-top: 0.25rem;">How wide the camera view is (zoom out/in)</p>
+                                    style="width: 100%;" aria-label="Adjust viewBox width value" aria-valuemin="50"
+                                    aria-valuemax="200" aria-valuenow="100">
+                                <p style="font-size: 0.85rem; color: hsl(0, 0%, 40%); margin-top: 0.25rem;">How wide the
+                                    camera view is (zoom out/in)</p>
                             </div>
 
                             <!-- height slider -->
                             <div>
-                                <label for="heightSlider" style="display: block; font-weight: bold; margin-bottom: 0.5rem; color: hsl(0, 0%, 30%);">
+                                <label for="heightSlider" class="slider-label-for">
                                     height: <span id="heightValue">100</span>
                                 </label>
                                 <input type="range" id="heightSlider" min="50" max="200" value="100" step="10"
-                                    style="width: 100%;"
-                                    aria-label="Adjust viewBox height value"
-                                    aria-valuemin="50" aria-valuemax="200" aria-valuenow="100">
-                                <p style="font-size: 0.85rem; color: hsl(0, 0%, 40%); margin-top: 0.25rem;">How tall the camera view is (zoom out/in)</p>
+                                    style="width: 100%;" aria-label="Adjust viewBox height value" aria-valuemin="50"
+                                    aria-valuemax="200" aria-valuenow="100">
+                                <p style="font-size: 0.85rem; color: hsl(0, 0%, 40%); margin-top: 0.25rem;">How tall the
+                                    camera view is (zoom out/in)</p>
                             </div>
 
                         </div>
@@ -456,13 +546,16 @@
 
                     </div>
 
-                    <p class="mt-1 code-comment">Prof. Teeters encouraged me to experiment with extreme values to really understand what each parameter does. Try setting width and height to 50 (zoomed in) or 200 (zoomed out). Try negative min-x or min-y values to see what happens when the camera looks "outside" the normal area!</p>
+                    <p class="mt-1 code-comment">Prof. Teeters encouraged me to experiment with extreme values to really
+                        understand what each parameter does. Try setting width and height to 50 (zoomed in) or 200
+                        (zoomed out). Try negative min-x or min-y values to see what happens when the camera looks
+                        "outside" the normal area!</p>
 
                 </div>
 
                 <!-- JavaScript for interactive explorer -->
                 <script>
-                    (function() {
+                    (function () {
                         const minXSlider = document.getElementById('minXSlider');
                         const minYSlider = document.getElementById('minYSlider');
                         const widthSlider = document.getElementById('widthSlider');
@@ -516,14 +609,18 @@
             <div class="topic-section">
                 <h2>🟠 Try It Yourself: HAP's Challenge</h2>
 
-                <p class="mb-2">Prof. Teeters always gives me little challenges to practice what I learned. Here's one I made for you! Try to create this SVG before looking at the solution—I promise it's easier than it looks once you understand viewBox and coordinates!</p>
+                <p class="mb-2">Prof. Teeters always gives me little challenges to practice what I learned. Here's one I
+                    made for you! Try to create this SVG before looking at the solution—I promise it's easier than it
+                    looks once you understand viewBox and coordinates!</p>
 
                 <div class="prompt-box">
                     <div class="prompt-label">Your Challenge:</div>
                     <p class="mt-1">Create an SVG that meets these requirements:</p>
                     <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
-                        <li style="margin-bottom: 0.5rem;">Use a viewBox that creates a 200×200 coordinate space starting at (0,0)</li>
-                        <li style="margin-bottom: 0.5rem;">Make the SVG responsive using width="100%" and height="auto"</li>
+                        <li style="margin-bottom: 0.5rem;">Use a viewBox that creates a 200×200 coordinate space
+                            starting at (0,0)</li>
+                        <li style="margin-bottom: 0.5rem;">Make the SVG responsive using width="100%" and height="auto"
+                        </li>
                         <li style="margin-bottom: 0.5rem;">Draw three circles:
                             <ul style="margin-left: 1.5rem; margin-top: 0.25rem;">
                                 <li>Orange circle at coordinates (50, 50) with radius 30</li>
@@ -533,7 +630,8 @@
                         </li>
                         <li>Set a max-width of 400px so it doesn't get too large on big screens</li>
                     </ol>
-                    <p class="mt-1"><strong>Tip from HAP:</strong> Remember that Y increases downward! The circles at cy="50" will be at the TOP, and the circle at cy="150" will be at the BOTTOM.</p>
+                    <p class="mt-1"><strong>Tip from HAP:</strong> Remember that Y increases downward! The circles at
+                        cy="50" will be at the TOP, and the circle at cy="150" will be at the BOTTOM.</p>
                 </div>
 
                 <div class="interactive-demo mt-2">
@@ -543,7 +641,8 @@
                         <li>Start with the <code>&lt;svg&gt;</code> tag and set viewBox="0 0 200 200"</li>
                         <li>Add width="100%", height="auto", and style="max-width: 400px"</li>
                         <li>For each circle, use <code>&lt;circle cx="?" cy="?" r="?" fill="?" /&gt;</code></li>
-                        <li>Use hsl() colors: orange = hsl(32, 76%, 63%), teal = hsl(172, 45%, 55%), brown = hsl(32, 45%, 45%)</li>
+                        <li>Use hsl() colors: orange = hsl(32, 76%, 63%), teal = hsl(172, 45%, 55%), brown = hsl(32,
+                            45%, 45%)</li>
                     </ol>
                 </div>
 
@@ -553,8 +652,7 @@
                     <button type="button" id="toggleSolution"
                         style="padding: 0.75rem 1.5rem; background: hsl(32, 76%, 63%); color: hsl(0, 0%, 100%); border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin-bottom: 1rem; transition: background 0.2s;"
                         onmouseover="this.style.background='hsl(32, 76%, 55%)'"
-                        onmouseout="this.style.background='hsl(32, 76%, 63%)'"
-                        aria-expanded="false"
+                        onmouseout="this.style.background='hsl(32, 76%, 63%)'" aria-expanded="false"
                         aria-controls="solutionContent">
                         Show Solution
                     </button>
@@ -573,8 +671,11 @@
 &lt;/svg&gt;</code></pre>
 
                         <p class="mt-1"><strong>Here's what it looks like:</strong></p>
-                        <div style="border: 2px solid hsl(32, 76%, 63%); padding: 1rem; margin-top: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
-                            <svg viewBox="0 0 200 200" width="100%" height="auto" style="max-width: 400px; display: block; margin: 0 auto;" role="img" aria-label="Solution showing three circles in a triangle formation">
+                        <div
+                            style="border: 2px solid hsl(32, 76%, 63%); padding: 1rem; margin-top: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
+                            <svg viewBox="0 0 200 200" width="100%" height="auto"
+                                style="max-width: 400px; display: block; margin: 0 auto;" role="img"
+                                aria-label="Solution showing three circles in a triangle formation">
                                 <!-- Top-left orange circle -->
                                 <circle cx="50" cy="50" r="30" fill="hsl(32, 76%, 63%)" />
 
@@ -586,16 +687,19 @@
                             </svg>
                         </div>
 
-                        <p class="mt-1 code-comment">See how the two circles with cy="50" are at the same height (top of the graphic), and the circle at cy="150" is lower? That's the coordinate system working perfectly! The viewBox="0 0 200 200" creates a 200×200 space, and the circles position themselves within that coordinate system. 🎯</p>
+                        <p class="mt-1 code-comment">See how the two circles with cy="50" are at the same height (top of
+                            the graphic), and the circle at cy="150" is lower? That's the coordinate system working
+                            perfectly! The viewBox="0 0 200 200" creates a 200×200 space, and the circles position
+                            themselves within that coordinate system. 🎯</p>
                     </div>
                 </div>
 
                 <script>
-                    (function() {
+                    (function () {
                         const toggleButton = document.getElementById('toggleSolution');
                         const solutionContent = document.getElementById('solutionContent');
 
-                        toggleButton.addEventListener('click', function() {
+                        toggleButton.addEventListener('click', function () {
                             const isHidden = solutionContent.style.display === 'none';
                             solutionContent.style.display = isHidden ? 'block' : 'none';
                             toggleButton.textContent = isHidden ? 'Hide Solution' : 'Show Solution';
@@ -615,7 +719,9 @@
                     <div class="tip-number">1</div>
                     <div>
                         <h3>Start with a Simple viewBox</h3>
-                        <p>I learned to always use nice round numbers like viewBox="0 0 100 100" or "0 0 200 200" when starting. Makes positioning so much easier! You can always adjust it later once your shapes are in place.</p>
+                        <p>I learned to always use nice round numbers like viewBox="0 0 100 100" or "0 0 200 200" when
+                            starting. Makes positioning so much easier! You can always adjust it later once your shapes
+                            are in place.</p>
                     </div>
                 </div>
 
@@ -623,7 +729,8 @@
                     <div class="tip-number">2</div>
                     <div>
                         <h3>Remember: Y Goes Down!</h3>
-                        <p>This trips everyone up at first. In SVG, increasing Y moves DOWN the screen, not up like in math class. When positioning goes wrong, check your Y values first!</p>
+                        <p>This trips everyone up at first. In SVG, increasing Y moves DOWN the screen, not up like in
+                            math class. When positioning goes wrong, check your Y values first!</p>
                     </div>
                 </div>
 
@@ -631,7 +738,8 @@
                     <div class="tip-number">3</div>
                     <div>
                         <h3>Use width="100%" for Responsive SVGs</h3>
-                        <p>Prof. Teeters taught me to use width="100%" and height="auto" with a proper viewBox. This makes SVGs automatically resize to fit their container—perfect for responsive designs!</p>
+                        <p>Prof. Teeters taught me to use width="100%" and height="auto" with a proper viewBox. This
+                            makes SVGs automatically resize to fit their container—perfect for responsive designs!</p>
                     </div>
                 </div>
 
@@ -639,7 +747,9 @@
                     <div class="tip-number">4</div>
                     <div>
                         <h3>Don't Delete the viewBox!</h3>
-                        <p>I made this mistake when cleaning up AI-generated SVGs. The viewBox might look "optional" but it's usually critical! Without it, your SVG might not scale properly. Test before you delete!</p>
+                        <p>I made this mistake when cleaning up AI-generated SVGs. The viewBox might look "optional" but
+                            it's usually critical! Without it, your SVG might not scale properly. Test before you
+                            delete!</p>
                     </div>
                 </div>
             </div>
@@ -651,32 +761,39 @@
                 <h3>✅ Common Mistakes Checklist</h3>
                 <p>Before moving to Station 2, make sure you understand these key concepts:</p>
                 <div style="margin-left: 1.5rem; margin-top: 1rem;">
-                    <label style="display: block; margin-bottom: 0.5rem; cursor: pointer;">
-                        <input type="checkbox" style="margin-right: 0.5rem;" aria-label="I understand that (0,0) is at the top-left, not bottom-left">
+                    <label class="label-style">
+                        <input type="checkbox" style="margin-right: 0.5rem;"
+                            aria-label="I understand that (0,0) is at the top-left, not bottom-left">
                         I understand that (0,0) is at the top-left, not bottom-left
                     </label>
-                    <label style="display: block; margin-bottom: 0.5rem; cursor: pointer;">
-                        <input type="checkbox" style="margin-right: 0.5rem;" aria-label="I know Y increases downward, not upward like in math class">
+                    <label class="label-style">
+                        <input type="checkbox" style="margin-right: 0.5rem;"
+                            aria-label="I know Y increases downward, not upward like in math class">
                         I know Y increases downward, not upward like in math class
                     </label>
-                    <label style="display: block; margin-bottom: 0.5rem; cursor: pointer;">
-                        <input type="checkbox" style="margin-right: 0.5rem;" aria-label="I understand viewBox controls the viewing window (what I see), not the display size">
+                    <label class="label-style">
+                        <input type="checkbox" style="margin-right: 0.5rem;"
+                            aria-label="I understand viewBox controls the viewing window (what I see), not the display size">
                         I understand viewBox controls the viewing window (what I see), not the display size
                     </label>
-                    <label style="display: block; margin-bottom: 0.5rem; cursor: pointer;">
-                        <input type="checkbox" style="margin-right: 0.5rem;" aria-label="I know that width/height control display size, not the coordinate space">
+                    <label class="label-style">
+                        <input type="checkbox" style="margin-right: 0.5rem;"
+                            aria-label="I know that width/height control display size, not the coordinate space">
                         I know that width/height control display size, not the coordinate space
                     </label>
-                    <label style="display: block; margin-bottom: 0.5rem; cursor: pointer;">
-                        <input type="checkbox" style="margin-right: 0.5rem;" aria-label="I won't delete viewBox from SVG code without understanding its purpose">
+                    <label class="label-style">
+                        <input type="checkbox" style="margin-right: 0.5rem;"
+                            aria-label="I won't delete viewBox from SVG code without understanding its purpose">
                         I won't delete viewBox from SVG code without understanding its purpose
                     </label>
-                    <label style="display: block; margin-bottom: 0.5rem; cursor: pointer;">
-                        <input type="checkbox" style="margin-right: 0.5rem;" aria-label="I understand that shapes outside the viewBox area won't be visible">
+                    <label class="label-style">
+                        <input type="checkbox" style="margin-right: 0.5rem;"
+                            aria-label="I understand that shapes outside the viewBox area won't be visible">
                         I understand that shapes outside the viewBox area won't be visible
                     </label>
                 </div>
-                <p class="mt-1 code-comment">Prof. Teeters says: "If you can check all these boxes with confidence, you're ready for Station 2!"</p>
+                <p class="mt-1 code-comment">Prof. Teeters says: "If you can check all these boxes with confidence,
+                    you're ready for Station 2!"</p>
             </div>
         </section>
 
@@ -693,7 +810,8 @@
         <p><strong>HAP's Learning Lab</strong> | An AI-Enhanced Educational Experience by Prof. Cynthia Teeters</p>
 
         <p class="footer-reminder">
-            Remember: viewBox is your camera, width/height is your display size. Once you get this, everything else makes sense! 🟠 — HAP
+            Remember: viewBox is your camera, width/height is your display size. Once you get this, everything else
+            makes sense! 🟠 — HAP
         </p>
 
         <div class="footer-copyright">
