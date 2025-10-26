@@ -147,6 +147,19 @@
 
                     <p class="mt-1">Notice how I used width="100%" and let viewBox handle the scaling? Prof. Teeters taught me that SVG is smart about sizing when you set it up right!</p>
                 </div>
+
+                <div class="interactive-demo mt-2">
+                    <h3>🟠 See It In Action: Responsive SVG Circle</h3>
+                    <p>Here's the ACTUAL working example from my code above! This circle uses viewBox="0 0 100 100" and width="100%", so it scales perfectly to fit its container:</p>
+
+                    <div style="border: 2px solid hsl(32, 76%, 63%); padding: 1rem; margin-top: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
+                        <svg viewBox="0 0 100 100" width="100%" height="auto" style="max-width: 300px; display: block; margin: 0 auto;">
+                            <circle cx="50" cy="50" r="40" fill="hsl(32, 76%, 63%)" />
+                        </svg>
+                    </div>
+
+                    <p class="mt-1 code-comment">Try resizing your browser window—the circle stays perfectly crisp! That's the magic of SVG. This same code works on a phone screen or a 4K monitor. 🎨</p>
+                </div>
             </div>
         </section>
 
@@ -195,6 +208,34 @@
                         <li>Try cx="50" cy="50"—right in the center!</li>
                     </ul>
                     <p class="mt-1">Once I visualized this grid, positioning shapes became so much easier!</p>
+                </div>
+
+                <div class="interactive-demo mt-2">
+                    <h3>🟠 Visual Demonstration: The Coordinate System</h3>
+                    <p>Here's the actual example from my code above, showing two circles at different coordinates. Notice how the orange circle at cy="50" is ABOVE the teal circle at cy="150":</p>
+
+                    <div style="border: 2px solid hsl(32, 76%, 63%); padding: 1rem; margin-top: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
+                        <svg viewBox="0 0 200 200" width="300" height="300" style="display: block; margin: 0 auto;">
+                            <!-- Grid lines to show coordinate system -->
+                            <line x1="0" y1="50" x2="200" y2="50" stroke="hsl(0, 0%, 80%)" stroke-width="1" stroke-dasharray="5,5" />
+                            <line x1="0" y1="150" x2="200" y2="150" stroke="hsl(0, 0%, 80%)" stroke-width="1" stroke-dasharray="5,5" />
+                            <line x1="50" y1="0" x2="50" y2="200" stroke="hsl(0, 0%, 80%)" stroke-width="1" stroke-dasharray="5,5" />
+                            <line x1="150" y1="0" x2="150" y2="200" stroke="hsl(0, 0%, 80%)" stroke-width="1" stroke-dasharray="5,5" />
+
+                            <!-- Origin marker -->
+                            <text x="5" y="15" fill="hsl(0, 0%, 40%)" font-size="12" font-weight="bold">(0,0)</text>
+
+                            <!-- Circle at top-left area -->
+                            <circle cx="50" cy="50" r="20" fill="hsl(32, 76%, 63%)" />
+                            <text x="50" y="85" text-anchor="middle" fill="hsl(0, 0%, 30%)" font-size="12" font-weight="bold">(50, 50)</text>
+
+                            <!-- Circle at bottom-right area -->
+                            <circle cx="150" cy="150" r="20" fill="hsl(172, 45%, 55%)" />
+                            <text x="150" y="185" text-anchor="middle" fill="hsl(0, 0%, 30%)" font-size="12" font-weight="bold">(150, 150)</text>
+                        </svg>
+                    </div>
+
+                    <p class="mt-1 code-comment">See how the circle at (150, 150) is LOWER on the screen than (50, 50)? That's because Y increases downward! The dotted grid lines help visualize the invisible coordinate system. This was my "aha!" moment! 📐</p>
                 </div>
             </div>
         </section>
@@ -257,6 +298,52 @@
                         <h3>HAP's Breakthrough Moment:</h3>
                         <p>My "aha!" moment came when Prof. Teeters made me draw two identical circles with different viewBox settings. The SAME circle code looked totally different! One was zoomed way in, one was zoomed way out. That's when I realized: viewBox doesn't change your shapes—it changes what portion of your coordinate space you're looking at. It's like using a camera zoom! I literally yelled "I GET IT!" in the lab. 🎉</p>
                     </div>
+                </div>
+
+                <div class="interactive-demo mt-2">
+                    <h3>🟠 The viewBox "Camera" Demonstration</h3>
+                    <p>This is the EXACT demonstration that made me understand! All three SVGs below contain the SAME circle at (50, 50) with radius 40. The ONLY difference is the viewBox. Watch how the "camera view" changes:</p>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                        <!-- Example 1: Normal view -->
+                        <div style="text-align: center;">
+                            <div style="border: 2px solid hsl(32, 76%, 63%); padding: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
+                                <svg viewBox="0 0 100 100" width="100%" height="auto" style="max-width: 200px; display: block; margin: 0 auto;">
+                                    <circle cx="50" cy="50" r="40" fill="hsl(32, 76%, 63%)" />
+                                </svg>
+                            </div>
+                            <p style="margin-top: 0.5rem; font-weight: bold; color: hsl(32, 76%, 40%);">Normal View</p>
+                            <p style="margin: 0.25rem 0; font-size: 0.9rem;"><code>viewBox="0 0 100 100"</code></p>
+                            <p style="margin: 0; font-size: 0.85rem; color: hsl(0, 0%, 40%);">Shows the whole 100×100 space</p>
+                        </div>
+
+                        <!-- Example 2: Zoomed in -->
+                        <div style="text-align: center;">
+                            <div style="border: 2px solid hsl(172, 45%, 55%); padding: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
+                                <svg viewBox="25 25 50 50" width="100%" height="auto" style="max-width: 200px; display: block; margin: 0 auto;">
+                                    <circle cx="50" cy="50" r="40" fill="hsl(32, 76%, 63%)" />
+                                </svg>
+                            </div>
+                            <p style="margin-top: 0.5rem; font-weight: bold; color: hsl(172, 45%, 40%);">Zoomed In</p>
+                            <p style="margin: 0.25rem 0; font-size: 0.9rem;"><code>viewBox="25 25 50 50"</code></p>
+                            <p style="margin: 0; font-size: 0.85rem; color: hsl(0, 0%, 40%);">Camera "zooms in" to center area</p>
+                        </div>
+
+                        <!-- Example 3: Zoomed out -->
+                        <div style="text-align: center;">
+                            <div style="border: 2px solid hsl(32, 45%, 45%); padding: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
+                                <svg viewBox="0 0 200 200" width="100%" height="auto" style="max-width: 200px; display: block; margin: 0 auto;">
+                                    <circle cx="50" cy="50" r="40" fill="hsl(32, 76%, 63%)" />
+                                </svg>
+                            </div>
+                            <p style="margin-top: 0.5rem; font-weight: bold; color: hsl(32, 45%, 35%);">Zoomed Out</p>
+                            <p style="margin: 0.25rem 0; font-size: 0.9rem;"><code>viewBox="0 0 200 200"</code></p>
+                            <p style="margin: 0; font-size: 0.85rem; color: hsl(0, 0%, 40%);">Camera "zooms out" to show more space</p>
+                        </div>
+                    </div>
+
+                    <p class="mt-2 code-comment">SAME CIRCLE CODE in all three: <code>&lt;circle cx="50" cy="50" r="40" /&gt;</code><br>
+                    The viewBox is like adjusting your camera zoom! This is what Prof. Teeters meant by "viewBox controls WHAT you see, not HOW BIG you see it." Mind = blown! 🤯</p>
                 </div>
             </div>
         </section>
