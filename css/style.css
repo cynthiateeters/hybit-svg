@@ -1459,6 +1459,242 @@ pre {
   margin-bottom: 2rem;
 }
 
+/* ==============================================
+   DEMO UTILITIES
+   Added: 2025-01 to reduce inline styles
+   See: reports/inline-styles-analysis.md
+   ============================================== */
+
+/* Demo Container */
+.demo-box {
+  border: 2px solid var(--warm-orange);
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  background: hsl(0, 0%, 100%);
+}
+
+.demo-box-teal {
+  border-color: var(--teal);
+}
+
+.demo-box-brown {
+  border-color: var(--medium-brown);
+}
+
+.demo-box-peach-bg {
+  background: var(--background-peach);
+}
+
+/* Centered SVG */
+.svg-centered {
+  display: block;
+  margin: 0 auto;
+}
+
+.svg-sm {
+  max-width: 200px;
+}
+
+.svg-md {
+  max-width: 300px;
+}
+
+.svg-lg {
+  max-width: 400px;
+}
+
+/* Color Swatches */
+.color-swatch {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--medium-brown);
+}
+
+.color-swatch-sm {
+  width: 20px;
+  height: 20px;
+}
+
+.color-swatch-lg {
+  width: 32px;
+  height: 32px;
+}
+
+.color-swatch-square {
+  border-radius: 4px;
+}
+
+/* Interactive Buttons */
+.btn-interactive {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid transparent;
+  background: var(--background-peach);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-interactive:hover {
+  background: hsl(32, 35%, 82%);
+}
+
+.btn-interactive.active {
+  border-color: var(--warm-orange);
+  box-shadow: 0 4px 8px hsla(32, 76%, 63%, 0.3);
+}
+
+/* Layout Utilities */
+.flex-wrap-gap {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.flex-wrap-gap-sm {
+  gap: 1rem;
+}
+
+.flex-wrap-gap-md {
+  gap: 1.5rem;
+}
+
+.flex-wrap-gap-lg {
+  gap: 2rem;
+}
+
+.demo-grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.demo-grid-responsive-sm {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.demo-grid-responsive-lg {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* ==============================================
+   PHASE 3 UTILITIES
+   Added: 2025-10 for final cleanup
+   See: reports/phase3-complete-summary.md
+   ============================================== */
+
+/* Primary Buttons */
+.btn-primary {
+  padding: 0.75rem 1.5rem;
+  background: var(--warm-orange);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: hsl(32, 76%, 55%);
+}
+
+.btn-primary:active {
+  background: hsl(32, 76%, 50%);
+}
+
+/* Reset Buttons */
+.btn-reset {
+  padding: 0.75rem 1.5rem;
+  background: var(--warm-orange);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 1rem;
+}
+
+.btn-reset:hover {
+  background: hsl(32, 76%, 55%);
+}
+
+/* Progressive Disclosure Pattern */
+.hint-btn {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 1rem;
+  background: var(--background-peach);
+  border: 2px solid var(--warm-orange);
+  color: var(--text-dark);
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.hint-btn:hover {
+  background: hsl(32, 35%, 82%);
+}
+
+.hint-btn.solution-btn {
+  background: hsl(172, 45%, 75%);
+  border-color: var(--teal);
+}
+
+.hint-btn.solution-btn:hover {
+  background: hsl(172, 45%, 65%);
+}
+
+.hint-content {
+  padding: 1.5rem;
+  background: white;
+  border-left: 4px solid var(--warm-orange);
+  margin: 1rem 0;
+}
+
+/* List Utilities */
+.list-indented {
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.list-indented li {
+  margin-bottom: 0.5rem;
+}
+
+.list-nested {
+  margin-left: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+/* Form Controls */
+.control-group {
+  margin-bottom: 1rem;
+}
+
+.control-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+.control-group input[type="range"] {
+  width: 100%;
+}
+
 /* Fonts */
 
 .text-bold {

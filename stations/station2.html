@@ -150,8 +150,7 @@
                         an SVG file in your editor—not scary, just patterns to recognize!</p>
 
                     <!-- The actual SVG visual -->
-                    <div
-                        style="border: 2px solid hsl(32, 76%, 63%); padding: 1rem; margin-top: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
+                    <div class="demo-box">
                         <svg viewBox="0 0 200 100" width="400" height="200" role="img"
                             aria-label="Example SVG showing circle, rectangle, and text elements">
                             <circle cx="50" cy="50" r="30" fill="hsl(32, 76%, 63%)" />
@@ -229,8 +228,7 @@
                     <h3>🟠 Basic Shapes Side-by-Side</h3>
                     <p>Here are the three shapes I see most often in SVG files. Look how simple their code is!</p>
 
-                    <div
-                        style="border: 2px solid hsl(32, 76%, 63%); padding: 1.5rem; margin-top: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
+                    <div class="demo-box">
                         <svg viewBox="0 0 300 100" width="600" height="200" role="img"
                             aria-label="Comparison of three basic SVG shapes: circle, rectangle, and ellipse">
                             <!-- Circle -->
@@ -349,8 +347,7 @@
                         <p>Here's the same triangle drawn two ways. As a user/modifier of SVG, I care about the RESULT,
                             not how it's coded!</p>
 
-                        <div
-                            style="border: 2px solid hsl(172, 45%, 55%); padding: 1rem; margin-top: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
+                        <div class="demo-box demo-box-teal">
                             <svg viewBox="0 0 400 150" width="400" height="150" role="img"
                                 aria-label="Comparison showing a triangle drawn with polygon (simple) versus path (complex)">
                                 <!-- Simple way: polygon -->
@@ -470,10 +467,9 @@
                         practiced recognizing what each attribute does.</p>
 
                     <!-- SVG to modify -->
-                    <div
-                        style="border: 2px solid hsl(32, 76%, 63%); padding: 1rem; margin-top: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
-                        <svg id="liveEditorSVG" viewBox="0 0 200 200" width="300" height="300"
-                            style="display: block; margin: 0 auto;" role="img"
+                    <div class="demo-box">
+                        <svg id="liveEditorSVG" viewBox="0 0 200 200" width="300" height="300" class="svg-centered"
+                            role="img"
                             aria-label="Interactive SVG for experimenting with circle and text attributes">
                             <circle id="liveCircle" cx="100" cy="80" r="40" fill="hsl(32, 76%, 63%)" />
                             <text id="liveText" x="100" y="150" text-anchor="middle" font-size="20" font-weight="bold"
@@ -629,8 +625,7 @@
                 </div>
 
                 <!-- The challenge SVG -->
-                <div
-                    style="border: 2px solid hsl(172, 45%, 55%); padding: 1.5rem; margin-top: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%); text-align: center;">
+                <div class="demo-box demo-box-teal" style="text-align: center;">
                     <svg viewBox="0 0 100 100" width="200" height="200" style="display: inline-block;" role="img"
                         aria-label="Robot badge SVG for detective challenge">
                         <!-- Badge background -->
@@ -667,8 +662,7 @@
                 </div>
 
                 <!-- Revealable solution -->
-                <button type="button" id="toggleChallengeSolution"
-                    style="padding: 0.75rem 1.5rem; background: hsl(32, 76%, 63%); color: hsl(0, 0%, 100%); border: none; border-radius: 4px; font-weight: bold; cursor: pointer; margin-top: 1rem; font-size: 1rem;"
+                <button type="button" id="toggleChallengeSolution" class="btn-primary"
                     aria-expanded="false" aria-controls="challengeSolutionContent">
                     Show Solution & Code
                 </button>
@@ -830,8 +824,7 @@
 
                         <div class="interactive-demo mt-2">
                             <p><strong>Visual example:</strong></p>
-                            <div
-                                style="border: 2px solid hsl(0, 0%, 80%); padding: 1rem; margin-top: 0.5rem; border-radius: 8px; background: hsl(0, 0%, 100%); display: flex; gap: 2rem; align-items: center; justify-content: center;">
+                            <div class="demo-box" style="display: flex; gap: 2rem; align-items: center; justify-content: center; border-color: hsl(0, 0%, 80%);">
                                 <div style="text-align: center;">
                                     <svg viewBox="0 0 100 100" width="150" height="150"
                                         style="border: 1px dashed hsl(32, 76%, 63%);" role="img"

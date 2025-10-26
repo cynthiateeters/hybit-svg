@@ -322,50 +322,43 @@
                     <p>Hover over the buttons to highlight each group. Click to toggle visibility and see how my
                         Lightbulb is built layer by layer!</p>
 
-                    <div class="lightbulb-demo" style="display: flex; gap: 2rem; flex-wrap: wrap; margin: 2rem 0;">
+                    <div class="lightbulb-demo flex-wrap-gap">
                         <div class="demo-controls" style="flex: 1; min-width: 300px;">
                             <h4 style="margin-bottom: 1rem;">Group Controls:</h4>
                             <div style="display: flex; flex-direction: column; gap: 0.5rem;">
                                 <button class="group-btn" data-group="bulb-glow"
                                     style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1rem; border: 2px solid transparent; background: var(--background-peach); cursor: pointer; border-radius: 4px; transition: all 0.3s ease;">
-                                    <span class="color-swatch"
-                                        style="width: 24px; height: 24px; border-radius: 50%; border: 1px solid hsl(32, 45%, 45%); background: hsl(45, 100%, 89%);"></span>
+                                    <span class="color-swatch color-swatch-md" style="background: hsl(45, 100%, 89%);"></span>
                                     <span style="flex: 1;"><strong>Bulb Glow</strong> (40+ paths)</span>
                                 </button>
                                 <button class="group-btn" data-group="bulb-warm"
                                     style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1rem; border: 2px solid transparent; background: var(--background-peach); cursor: pointer; border-radius: 4px; transition: all 0.3s ease;">
-                                    <span class="color-swatch"
-                                        style="width: 24px; height: 24px; border-radius: 50%; border: 1px solid hsl(32, 45%, 45%); background: hsl(40, 97%, 73%);"></span>
+                                    <span class="color-swatch color-swatch-md" style="background: hsl(40, 97%, 73%);"></span>
                                     <span style="flex: 1;"><strong>Bulb Warm</strong> (30+ paths)</span>
                                 </button>
                                 <button class="group-btn" data-group="bulb-bright"
                                     style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1rem; border: 2px solid transparent; background: var(--background-peach); cursor: pointer; border-radius: 4px; transition: all 0.3s ease;">
-                                    <span class="color-swatch"
-                                        style="width: 24px; height: 24px; border-radius: 50%; border: 1px solid hsl(32, 45%, 45%); background: hsl(34, 100%, 65%);"></span>
+                                    <span class="color-swatch color-swatch-md" style="background: hsl(34, 100%, 65%);"></span>
                                     <span style="flex: 1;"><strong>Bulb Bright</strong> (8 paths)</span>
                                 </button>
                                 <button class="group-btn" data-group="metal-light"
                                     style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1rem; border: 2px solid transparent; background: var(--background-peach); cursor: pointer; border-radius: 4px; transition: all 0.3s ease;">
-                                    <span class="color-swatch"
-                                        style="width: 24px; height: 24px; border-radius: 50%; border: 1px solid hsl(32, 45%, 45%); background: hsl(60, 4%, 74%);"></span>
+                                    <span class="color-swatch color-swatch-md" style="background: hsl(60, 4%, 74%);"></span>
                                     <span style="flex: 1;"><strong>Metal Light</strong> (43 paths)</span>
                                 </button>
                                 <button class="group-btn" data-group="metal-medium"
                                     style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1rem; border: 2px solid transparent; background: var(--background-peach); cursor: pointer; border-radius: 4px; transition: all 0.3s ease;">
-                                    <span class="color-swatch"
-                                        style="width: 24px; height: 24px; border-radius: 50%; border: 1px solid hsl(32, 45%, 45%); background: hsl(60, 2%, 57%);"></span>
+                                    <span class="color-swatch color-swatch-md" style="background: hsl(60, 2%, 57%);"></span>
                                     <span style="flex: 1;"><strong>Metal Medium</strong> (93 paths)</span>
                                 </button>
                                 <button class="group-btn" data-group="metal-dark"
                                     style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1rem; border: 2px solid transparent; background: var(--background-peach); cursor: pointer; border-radius: 4px; transition: all 0.3s ease;">
-                                    <span class="color-swatch"
-                                        style="width: 24px; height: 24px; border-radius: 50%; border: 1px solid hsl(32, 45%, 45%); background: hsl(0, 1%, 49%);"></span>
+                                    <span class="color-swatch color-swatch-md" style="background: hsl(0, 1%, 49%);"></span>
                                     <span style="flex: 1;"><strong>Metal Dark</strong> (79 paths)</span>
                                 </button>
                                 <button class="group-btn" data-group="base-dark"
                                     style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1rem; border: 2px solid transparent; background: var(--background-peach); cursor: pointer; border-radius: 4px; transition: all 0.3s ease;">
-                                    <span class="color-swatch"
-                                        style="width: 24px; height: 24px; border-radius: 50%; border: 1px solid hsl(32, 45%, 45%); background: hsl(210, 4%, 21%);"></span>
+                                    <span class="color-swatch color-swatch-md" style="background: hsl(210, 4%, 21%);"></span>
                                     <span style="flex: 1;"><strong>Base Dark</strong> (11 paths)</span>
                                 </button>
                             </div>
@@ -724,8 +717,7 @@
                     <p>I created this simplified lightbulb for you to practice on. It has all the same problems I
                         started with! Can you organize it using what you learned?</p>
 
-                    <div
-                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                    <div class="demo-grid-responsive mt-2">
                         <div>
                             <h4>Current Mini-Lightbulb:</h4>
                             <svg viewBox="0 0 100 150" width="200" height="300"
@@ -756,11 +748,9 @@
 
                     <div class="challenge-hints" style="margin-top: 2rem;">
                         <h4>Need Help?</h4>
-                        <button id="hint1Btn" class="hint-btn"
-                            style="display: block; width: 100%; margin: 0.5rem 0; padding: 1rem; background: var(--background-peach); border: 2px solid var(--warm-orange); color: var(--text-dark); cursor: pointer; border-radius: 4px; font-size: 1rem; font-weight: bold; transition: all 0.3s ease;">💡
+                        <button id="hint1Btn" class="hint-btn">💡
                             Hint 1: Identify Element Types</button>
-                        <div id="hint1" class="hint-content" hidden
-                            style="padding: 1.5rem; background: white; border-left: 4px solid var(--warm-orange); margin: 1rem 0;">
+                        <div id="hint1" class="hint-content" hidden>
                             <p><strong>Look at what each element represents:</strong></p>
                             <ul style="margin-top: 0.5rem;">
                                 <li>1 <code>&lt;circle&gt;</code> - outer glow of bulb</li>
@@ -771,11 +761,9 @@
                             <p style="margin-top: 0.5rem;">Think about grouping by visual purpose! 🟠</p>
                         </div>
 
-                        <button id="hint2Btn" class="hint-btn" hidden
-                            style="display: block; width: 100%; margin: 0.5rem 0; padding: 1rem; background: var(--background-peach); border: 2px solid var(--warm-orange); color: var(--text-dark); cursor: pointer; border-radius: 4px; font-size: 1rem; font-weight: bold; transition: all 0.3s ease;">💡
+                        <button id="hint2Btn" class="hint-btn" hidden>💡
                             Hint 2: Group by Purpose</button>
-                        <div id="hint2" class="hint-content" hidden
-                            style="padding: 1.5rem; background: white; border-left: 4px solid var(--warm-orange); margin: 1rem 0;">
+                        <div id="hint2" class="hint-content" hidden>
                             <p><strong>I organized by visual purpose:</strong></p>
                             <ul style="margin-top: 0.5rem;">
                                 <li><strong>Bulb parts:</strong> circle (glow), path (warm area)</li>
@@ -785,11 +773,9 @@
                             <p style="margin-top: 0.5rem;">Use <code>&lt;g class="..."&gt;</code> to group them! 🟠</p>
                         </div>
 
-                        <button id="hint3Btn" class="hint-btn" hidden
-                            style="display: block; width: 100%; margin: 0.5rem 0; padding: 1rem; background: var(--background-peach); border: 2px solid var(--warm-orange); color: var(--text-dark); cursor: pointer; border-radius: 4px; font-size: 1rem; font-weight: bold; transition: all 0.3s ease;">💡
+                        <button id="hint3Btn" class="hint-btn" hidden>💡
                             Hint 3: Semantic Classes</button>
-                        <div id="hint3" class="hint-content" hidden
-                            style="padding: 1.5rem; background: white; border-left: 4px solid var(--warm-orange); margin: 1rem 0;">
+                        <div id="hint3" class="hint-content" hidden>
                             <p><strong>My semantic naming pattern:</strong></p>
                             <ul style="margin-top: 0.5rem;">
                                 <li><code>.bulb-glow</code> not <code>.light-cream</code></li>
@@ -801,11 +787,9 @@
                             <p style="margin-top: 0.5rem;">Name by purpose, not appearance! 🟠</p>
                         </div>
 
-                        <button id="solutionBtn" class="hint-btn solution-btn" hidden
-                            style="display: block; width: 100%; margin: 0.5rem 0; padding: 1rem; background: hsl(172, 45%, 75%); border: 2px solid var(--teal); color: var(--text-dark); cursor: pointer; border-radius: 4px; font-size: 1rem; font-weight: bold; transition: all 0.3s ease;">✅
+                        <button id="solutionBtn" class="hint-btn solution-btn" hidden>✅
                             Show Complete Solution</button>
-                        <div id="solution" class="solution-content" hidden
-                            style="padding: 1.5rem; background: white; border-left: 4px solid var(--teal); margin: 1rem 0;">
+                        <div id="solution" class="solution-content" hidden>
                             <h4>HAP's Organized Solution:</h4>
                             <pre style="margin-top: 1rem;"><code class="language-svg">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150" width="200"&gt;
   &lt;style&gt;

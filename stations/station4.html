@@ -251,7 +251,7 @@
                     <h3>🎨 Interactive: Theme Switching with CSS Custom Properties</h3>
                     <p>Click a theme button to watch my Lightbulb transform! The custom property display shows you exactly what's changing.</p>
 
-                    <div class="theme-demo" style="display: flex; gap: 2rem; flex-wrap: wrap; margin: 2rem 0;">
+                    <div class="theme-demo flex-wrap-gap">
                         <div style="flex: 1; min-width: 300px;">
                             <h4 style="margin-bottom: 1rem;">Choose a Theme:</h4>
                             <div class="theme-buttons" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
@@ -260,9 +260,9 @@
                                     <span style="font-size: 2rem;">🟠</span>
                                     <strong>Warm</strong>
                                     <div style="display: flex; gap: 4px;">
-                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(45, 100%, 89%);"></span>
-                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(40, 97%, 73%);"></span>
-                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(34, 100%, 65%);"></span>
+                                        <span class="color-swatch color-swatch-sm color-swatch-square" style="background: hsl(45, 100%, 89%);"></span>
+                                        <span class="color-swatch color-swatch-sm color-swatch-square" style="background: hsl(40, 97%, 73%);"></span>
+                                        <span class="color-swatch color-swatch-sm color-swatch-square" style="background: hsl(34, 100%, 65%);"></span>
                                     </div>
                                 </button>
                                 <button class="theme-btn" data-theme="cool"
@@ -270,9 +270,9 @@
                                     <span style="font-size: 2rem;">🔵</span>
                                     <strong>Cool</strong>
                                     <div style="display: flex; gap: 4px;">
-                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(205, 100%, 95%);"></span>
-                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(205, 100%, 82%);"></span>
-                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(205, 100%, 64%);"></span>
+                                        <span class="color-swatch color-swatch-sm color-swatch-square" style="background: hsl(205, 100%, 95%);"></span>
+                                        <span class="color-swatch color-swatch-sm color-swatch-square" style="background: hsl(205, 100%, 82%);"></span>
+                                        <span class="color-swatch color-swatch-sm color-swatch-square" style="background: hsl(205, 100%, 64%);"></span>
                                     </div>
                                 </button>
                                 <button class="theme-btn" data-theme="alert"
@@ -280,19 +280,19 @@
                                     <span style="font-size: 2rem;">🔴</span>
                                     <strong>Alert</strong>
                                     <div style="display: flex; gap: 4px;">
-                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(0, 100%, 95%);"></span>
-                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(0, 100%, 85%);"></span>
-                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(0, 100%, 70%);"></span>
+                                        <span class="color-swatch color-swatch-sm color-swatch-square" style="background: hsl(0, 100%, 95%);"></span>
+                                        <span class="color-swatch color-swatch-sm color-swatch-square" style="background: hsl(0, 100%, 85%);"></span>
+                                        <span class="color-swatch color-swatch-sm color-swatch-square" style="background: hsl(0, 100%, 70%);"></span>
                                     </div>
                                 </button>
                                 <button class="theme-btn" data-theme="eco"
-                                    style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 1rem; border: 2px solid transparent; background: var(--background-peach); cursor: pointer; border-radius: 8px; transition: all 0.3s ease;">
+                                    style="display: flex; align-items: center; gap: 0.5rem; padding: 1rem; border: 2px solid transparent; background: var(--background-peach); cursor: pointer; border-radius: 8px; transition: all 0.3s ease; flex-direction: column;">
                                     <span style="font-size: 2rem;">🟢</span>
                                     <strong>Eco</strong>
                                     <div style="display: flex; gap: 4px;">
-                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(120, 100%, 97%);"></span>
-                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(120, 73%, 75%);"></span>
-                                        <span style="width: 20px; height: 20px; border-radius: 4px; border: 1px solid hsl(32, 45%, 45%); background: hsl(123, 61%, 52%);"></span>
+                                        <span class="color-swatch color-swatch-sm color-swatch-square" style="background: hsl(120, 100%, 97%);"></span>
+                                        <span class="color-swatch color-swatch-sm color-swatch-square" style="background: hsl(120, 73%, 75%);"></span>
+                                        <span class="color-swatch color-swatch-sm color-swatch-square" style="background: hsl(123, 61%, 52%);"></span>
                                     </div>
                                 </button>
                             </div>
@@ -524,8 +524,8 @@
 
                     <div class="challenge-hints" style="margin-top: 2rem;">
                         <h4>Need Help?</h4>
-                        <button id="hint1BtnS4" class="hint-btn" style="display: block; width: 100%; margin: 0.5rem 0; padding: 1rem; background: var(--background-peach); border: 2px solid var(--warm-orange); color: var(--text-dark); cursor: pointer; border-radius: 4px; font-size: 1rem; font-weight: bold; transition: all 0.3s ease;">💡 Hint 1: Setting up :root with Custom Properties</button>
-                        <div id="hint1S4" class="hint-content" hidden style="padding: 1.5rem; background: white; border-left: 4px solid var(--warm-orange); margin: 1rem 0;">
+                        <button id="hint1BtnS4" class="hint-btn">💡 Hint 1: Setting up :root with Custom Properties</button>
+                        <div id="hint1S4" class="hint-content" hidden>
                             <p><strong>Add a :root section at the top of your <code>&lt;style&gt;</code> block:</strong></p>
                             <pre style="margin-top: 0.5rem;"><code class="language-css">:root {
   --bulb-glow: hsl(45, 100%, 89%);
@@ -537,8 +537,8 @@
                             <p style="margin-top: 0.5rem;">Notice I'm using <code>hsl()</code> format! Prof. Teeters taught me this makes relationships visible. 🟠</p>
                         </div>
 
-                        <button id="hint2BtnS4" class="hint-btn" hidden style="display: block; width: 100%; margin: 0.5rem 0; padding: 1rem; background: var(--background-peach); border: 2px solid var(--warm-orange); color: var(--text-dark); cursor: pointer; border-radius: 4px; font-size: 1rem; font-weight: bold; transition: all 0.3s ease;">💡 Hint 2: Using var() in Class Definitions</button>
-                        <div id="hint2S4" class="hint-content" hidden style="padding: 1.5rem; background: white; border-left: 4px solid var(--warm-orange); margin: 1rem 0;">
+                        <button id="hint2BtnS4" class="hint-btn" hidden>💡 Hint 2: Using var() in Class Definitions</button>
+                        <div id="hint2S4" class="hint-content" hidden>
                             <p><strong>Replace the hardcoded hex colors with <code>var()</code>:</strong></p>
                             <pre style="margin-top: 0.5rem;"><code class="language-css">/* OLD - hardcoded */
 .bulb-glow { fill: #ffefcb; }
@@ -548,8 +548,8 @@
                             <p style="margin-top: 0.5rem;">Do this for all 5 classes! The classes stay the same, only the value source changes. 🟠</p>
                         </div>
 
-                        <button id="hint3BtnS4" class="hint-btn" hidden style="display: block; width: 100%; margin: 0.5rem 0; padding: 1rem; background: var(--background-peach); border: 2px solid var(--warm-orange); color: var(--text-dark); cursor: pointer; border-radius: 4px; font-size: 1rem; font-weight: bold; transition: all 0.3s ease;">💡 Hint 3: Creating a Theme Class</button>
-                        <div id="hint3S4" class="hint-content" hidden style="padding: 1.5rem; background: white; border-left: 4px solid var(--warm-orange); margin: 1rem 0;">
+                        <button id="hint3BtnS4" class="hint-btn" hidden>💡 Hint 3: Creating a Theme Class</button>
+                        <div id="hint3S4" class="hint-content" hidden>
                             <p><strong>Add a theme class that overrides the custom properties:</strong></p>
                             <pre style="margin-top: 0.5rem;"><code class="language-css">/* Cool Blue Theme */
 svg.theme-cool {
@@ -561,8 +561,8 @@ svg.theme-cool {
                             <p style="margin-top: 0.5rem;">To activate: add <code>class="theme-cool"</code> to the <code>&lt;svg&gt;</code> element. That's it! 🟠</p>
                         </div>
 
-                        <button id="solutionBtnS4" class="hint-btn solution-btn" hidden style="display: block; width: 100%; margin: 0.5rem 0; padding: 1rem; background: hsl(172, 45%, 75%); border: 2px solid var(--teal); color: var(--text-dark); cursor: pointer; border-radius: 4px; font-size: 1rem; font-weight: bold; transition: all 0.3s ease;">✅ Show Complete Solution</button>
-                        <div id="solutionS4" class="solution-content" hidden style="padding: 1.5rem; background: white; border-left: 4px solid var(--teal); margin: 1rem 0;">
+                        <button id="solutionBtnS4" class="hint-btn solution-btn" hidden>✅ Show Complete Solution</button>
+                        <div id="solutionS4" class="solution-content" hidden>
                             <h4>HAP's Themeable Mini-Lightbulb Solution:</h4>
                             <pre style="margin-top: 1rem;"><code class="language-svg">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150" width="200"&gt;
   &lt;style&gt;

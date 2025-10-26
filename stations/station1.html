@@ -183,10 +183,8 @@
                     <p>Here's the ACTUAL working example from my code above! This circle uses viewBox="0 0 100 100" and
                         width="100%", so it scales perfectly to fit its container:</p>
 
-                    <div
-                        style="border: 2px solid hsl(32, 76%, 63%); padding: 1rem; margin-top: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
-                        <svg viewBox="0 0 100 100" width="100%" height="auto"
-                            style="max-width: 300px; display: block; margin: 0 auto;">
+                    <div class="demo-box">
+                        <svg viewBox="0 0 100 100" width="100%" height="auto" class="svg-centered svg-md">
                             <circle cx="50" cy="50" r="40" fill="hsl(32, 76%, 63%)" />
                         </svg>
                     </div>
@@ -255,9 +253,8 @@
                     <p>Here's the actual example from my code above, showing two circles at different coordinates.
                         Notice how the orange circle at cy="50" is ABOVE the teal circle at cy="150":</p>
 
-                    <div
-                        style="border: 2px solid hsl(32, 76%, 63%); padding: 1rem; margin-top: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
-                        <svg viewBox="0 0 200 200" width="300" height="300" style="display: block; margin: 0 auto;"
+                    <div class="demo-box">
+                        <svg viewBox="0 0 200 200" width="300" height="300" class="svg-centered"
                             role="img"
                             aria-label="SVG coordinate system demonstration showing two circles at different positions">
                             <!-- Grid lines to show coordinate system -->
@@ -398,14 +395,11 @@
                         circle at (50, 50) with radius 40. The ONLY difference is the viewBox. Watch how the "camera
                         view" changes:</p>
 
-                    <div
-                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                    <div class="demo-grid-responsive mt-1">
                         <!-- Example 1: Normal view -->
                         <div style="text-align: center;">
-                            <div
-                                style="border: 2px solid hsl(32, 76%, 63%); padding: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
-                                <svg viewBox="0 0 100 100" width="100%" height="auto"
-                                    style="max-width: 200px; display: block; margin: 0 auto;">
+                            <div class="demo-box">
+                                <svg viewBox="0 0 100 100" width="100%" height="auto" class="svg-centered svg-sm">
                                     <circle cx="50" cy="50" r="40" fill="hsl(32, 76%, 63%)" />
                                 </svg>
                             </div>
@@ -417,10 +411,8 @@
 
                         <!-- Example 2: Zoomed in -->
                         <div style="text-align: center;">
-                            <div
-                                style="border: 2px solid hsl(172, 45%, 55%); padding: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
-                                <svg viewBox="25 25 50 50" width="100%" height="auto"
-                                    style="max-width: 200px; display: block; margin: 0 auto;">
+                            <div class="demo-box demo-box-teal">
+                                <svg viewBox="25 25 50 50" width="100%" height="auto" class="svg-centered svg-sm">
                                     <circle cx="50" cy="50" r="40" fill="hsl(32, 76%, 63%)" />
                                 </svg>
                             </div>
@@ -432,10 +424,8 @@
 
                         <!-- Example 3: Zoomed out -->
                         <div style="text-align: center;">
-                            <div
-                                style="border: 2px solid hsl(32, 45%, 45%); padding: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
-                                <svg viewBox="0 0 200 200" width="100%" height="auto"
-                                    style="max-width: 200px; display: block; margin: 0 auto;">
+                            <div class="demo-box demo-box-brown">
+                                <svg viewBox="0 0 200 200" width="100%" height="auto" class="svg-centered svg-sm">
                                     <circle cx="50" cy="50" r="40" fill="hsl(32, 76%, 63%)" />
                                 </svg>
                             </div>
@@ -459,8 +449,7 @@
                         watch the circle change. Prof. Teeters told me hands-on practice is the best way to learn, so
                         try it yourself!</p>
 
-                    <div
-                        style="border: 2px solid hsl(32, 76%, 63%); padding: 1.5rem; margin-top: 1rem; border-radius: 8px; background: hsl(32, 35%, 95%);">
+                    <div class="demo-box demo-box-peach-bg">
 
                         <!-- Current viewBox display -->
                         <div style="text-align: center; margin-bottom: 1rem;">
@@ -472,8 +461,7 @@
                         <!-- SVG display -->
                         <div
                             style="background: hsl(0, 0%, 100%); padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; border: 1px solid hsl(0, 0%, 80%);">
-                            <svg id="explorerSVG" viewBox="0 0 100 100" width="100%" height="auto"
-                                style="max-width: 400px; display: block; margin: 0 auto;" role="img"
+                            <svg id="explorerSVG" viewBox="0 0 100 100" width="100%" height="auto" class="svg-centered svg-lg" role="img"
                                 aria-label="Interactive SVG demonstration with adjustable viewBox">
                                 <circle cx="50" cy="50" r="40" fill="hsl(32, 76%, 63%)" />
                             </svg>
@@ -535,8 +523,7 @@
 
                         <!-- Reset button -->
                         <div style="text-align: center; margin-top: 1.5rem;">
-                            <button type="button" id="resetViewBox"
-                                style="padding: 0.75rem 1.5rem; background: hsl(32, 76%, 63%); color: hsl(0, 0%, 100%); border: none; border-radius: 6px; font-weight: bold; font-size: 1rem; cursor: pointer; transition: background 0.2s;"
+                            <button type="button" id="resetViewBox" class="btn-reset"
                                 onmouseover="this.style.background='hsl(32, 76%, 55%)'"
                                 onmouseout="this.style.background='hsl(32, 76%, 63%)'"
                                 aria-label="Reset viewBox to default values">
@@ -616,13 +603,13 @@
                 <div class="prompt-box">
                     <div class="prompt-label">Your Challenge:</div>
                     <p class="mt-1">Create an SVG that meets these requirements:</p>
-                    <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <ol class="list-indented">
                         <li style="margin-bottom: 0.5rem;">Use a viewBox that creates a 200×200 coordinate space
                             starting at (0,0)</li>
                         <li style="margin-bottom: 0.5rem;">Make the SVG responsive using width="100%" and height="auto"
                         </li>
                         <li style="margin-bottom: 0.5rem;">Draw three circles:
-                            <ul style="margin-left: 1.5rem; margin-top: 0.25rem;">
+                            <ul class="list-nested">
                                 <li>Orange circle at coordinates (50, 50) with radius 30</li>
                                 <li>Teal circle at coordinates (150, 50) with radius 30</li>
                                 <li>Brown circle at coordinates (100, 150) with radius 30</li>
@@ -637,7 +624,7 @@
                 <div class="interactive-demo mt-2">
                     <h3>Need a Hint?</h3>
                     <p>If you're stuck, here are the steps I used when solving this:</p>
-                    <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <ol class="list-indented">
                         <li>Start with the <code>&lt;svg&gt;</code> tag and set viewBox="0 0 200 200"</li>
                         <li>Add width="100%", height="auto", and style="max-width: 400px"</li>
                         <li>For each circle, use <code>&lt;circle cx="?" cy="?" r="?" fill="?" /&gt;</code></li>
@@ -649,8 +636,7 @@
                 <div class="warning-box mt-2">
                     <h3>🟠 Solution: Click to Reveal</h3>
 
-                    <button type="button" id="toggleSolution"
-                        style="padding: 0.75rem 1.5rem; background: hsl(32, 76%, 63%); color: hsl(0, 0%, 100%); border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin-bottom: 1rem; transition: background 0.2s;"
+                    <button type="button" id="toggleSolution" class="btn-primary"
                         onmouseover="this.style.background='hsl(32, 76%, 55%)'"
                         onmouseout="this.style.background='hsl(32, 76%, 63%)'" aria-expanded="false"
                         aria-controls="solutionContent">
@@ -671,10 +657,8 @@
 &lt;/svg&gt;</code></pre>
 
                         <p class="mt-1"><strong>Here's what it looks like:</strong></p>
-                        <div
-                            style="border: 2px solid hsl(32, 76%, 63%); padding: 1rem; margin-top: 1rem; border-radius: 8px; background: hsl(0, 0%, 100%);">
-                            <svg viewBox="0 0 200 200" width="100%" height="auto"
-                                style="max-width: 400px; display: block; margin: 0 auto;" role="img"
+                        <div class="demo-box">
+                            <svg viewBox="0 0 200 200" width="100%" height="auto" class="svg-centered svg-lg" role="img"
                                 aria-label="Solution showing three circles in a triangle formation">
                                 <!-- Top-left orange circle -->
                                 <circle cx="50" cy="50" r="30" fill="hsl(32, 76%, 63%)" />
