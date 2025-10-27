@@ -423,55 +423,33 @@
         <!-- SECTION 9: Prompt Templates -->
         <section class="content-section">
             <div class="topic-section">
-                <h2>Prompt Templates Library</h2>
-
-                <h3 class="mt-2">Basic Prompt Templates</h3>
-                <p class="mb-2">These are the prompts I use most often. Feel free to copy and adapt them for your own
-                    SVG workflow! 📋</p>
-
-                <div class="prompt-box">
-                    <div class="prompt-label">Organization Prompt:</div>
-                    <p class="prompt-text">"Refactor all inline styles into CSS classes. Use hsl() values and CSS custom
-                        properties only."</p>
-                </div>
-
-                <div class="prompt-box mt-2">
-                    <div class="prompt-label">Color System Prompt:</div>
-                    <p class="prompt-text">"Convert all color values to hsl() and create a :root block of CSS custom
-                        properties."</p>
-                </div>
-
-                <div class="prompt-box mt-2">
-                    <div class="prompt-label">Accessibility Prompt:</div>
-                    <p class="prompt-text">"Add a &lt;title&gt; and &lt;desc&gt; with ARIA roles. Ensure text is clear
-                        and readable for screen readers."</p>
-                </div>
-
-                <div class="prompt-box mt-2">
-                    <div class="prompt-label">Optimization Prompt:</div>
-                    <p class="prompt-text">"Reduce file size without altering appearance or removing hsl() definitions,
-                        classes, or IDs."</p>
-                </div>
-
-                <h3 class="mt-2">Advanced Prompt Strategies</h3>
-                <p class="mb-2">Once I got comfortable with basic prompts, Prof. Teeters taught me that real AI workflow involves iteration and refinement, not one-shot perfection. These advanced prompts help me improve AI output, troubleshoot problems, and prevent common mistakes. 🔬</p>
+                <h2>Advanced Prompt Strategies</h2>
+                <p class="mb-2">Once I got comfortable with basic prompts, Prof. Teeters taught me that real AI workflow
+                    involves iteration and refinement, not one-shot perfection. These advanced prompts help me improve
+                    AI output, troubleshoot problems, and prevent common mistakes. 🔬</p>
 
                 <div class="prompt-box">
                     <div class="prompt-label">Iteration Prompt (Refinement):</div>
-                    <p class="prompt-text">"Revise this output. Keep all hsl() colors and CSS classes, but rename generic class names like .group-1 to semantic names that describe their visual purpose."</p>
-                    <p class="code-comment mt-1"><strong>HAP's Use Case:</strong> AI's first pass often works but uses generic names. This prompt helps me add meaning without redoing the whole conversion.</p>
+                    <p class="prompt-text">"Revise this output. Keep all hsl() colors and CSS classes, but rename
+                        generic class names like .group-1 to semantic names that describe their visual purpose."</p>
+                    <p class="code-comment mt-1"><strong>HAP's Use Case:</strong> AI's first pass often works but uses
+                        generic names. This prompt helps me add meaning without redoing the whole conversion.</p>
                 </div>
 
                 <div class="prompt-box mt-2">
                     <div class="prompt-label">Troubleshooting Prompt (Visual Validation):</div>
-                    <p class="prompt-text">"Compare this optimized SVG to the original and identify any visual differences. List what changed and explain why those changes occurred."</p>
-                    <p class="code-comment mt-1"><strong>HAP's Use Case:</strong> When optimization goes wrong, this prompt helps me understand what AI removed and why. Then I can give better instructions.</p>
+                    <p class="prompt-text">"Compare this optimized SVG to the original and identify any visual
+                        differences. List what changed and explain why those changes occurred."</p>
+                    <p class="code-comment mt-1"><strong>HAP's Use Case:</strong> When optimization goes wrong, this
+                        prompt helps me understand what AI removed and why. Then I can give better instructions.</p>
                 </div>
 
                 <div class="prompt-box mt-2">
                     <div class="prompt-label">Safety Prompt (Preserve Critical Elements):</div>
-                    <p class="prompt-text">"Refactor this SVG without altering any ID attributes, class names, or aria-labelledby references. Preserve all accessibility markup exactly as written."</p>
-                    <p class="code-comment mt-1"><strong>HAP's Use Case:</strong> I learned this one the hard way! When my SVG has JavaScript hooks or ARIA connections, this prompt prevents AI from breaking them.</p>
+                    <p class="prompt-text">"Refactor this SVG without altering any ID attributes, class names, or
+                        aria-labelledby references. Preserve all accessibility markup exactly as written."</p>
+                    <p class="code-comment mt-1"><strong>HAP's Use Case:</strong> I learned this one the hard way! When
+                        my SVG has JavaScript hooks or ARIA connections, this prompt prevents AI from breaking them.</p>
                 </div>
 
                 <div class="hap-note-callout mt-2">
@@ -480,7 +458,11 @@
                         decoding="async" loading="lazy">
                     <div class="hap-note-content">
                         <h3>HAP's Workflow Tip:</h3>
-                        <p>I rarely use just one prompt anymore. My typical workflow: (1) Basic prompt to get structure right, (2) Iteration prompt to improve naming, (3) Troubleshooting prompt if something looks wrong, (4) Safety prompt before final optimization. Prof. Teeters calls this "conversational refinement" — treating AI like a colleague I'm collaborating with, not a magic wand I wave once.</p>
+                        <p>I rarely use just one prompt anymore. My typical workflow: (1) Basic prompt to get structure
+                            right, (2) Iteration prompt to improve naming, (3) Troubleshooting prompt if something looks
+                            wrong, (4) Safety prompt before final optimization. Prof. Teeters calls this "conversational
+                            refinement" — treating AI like a colleague I'm collaborating with, not a magic wand I wave
+                            once.</p>
                     </div>
                 </div>
             </div>
