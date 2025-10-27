@@ -251,6 +251,17 @@
                 <div class="prompt-box mt-2">
                     <div class="prompt-label">Adding gradients to my SVG:</div>
                     <pre><code class="language-svg">&lt;svg viewBox="0 0 1024 1536"&gt;
+  &lt;style&gt;
+    :root {
+      --bulb-glow: hsl(45, 100%, 89%);
+      --bulb-warm: hsl(40, 97%, 73%);
+      --bulb-bright: hsl(34, 100%, 65%);
+      --metal-light: hsl(60, 4%, 74%);
+      --metal-medium: hsl(60, 2%, 57%);
+      --metal-dark: hsl(0, 1%, 49%);
+    }
+  &lt;/style&gt;
+
   &lt;defs&gt;
     &lt;!-- Radial gradient for the bulb glow --&gt;
     &lt;radialGradient id="glow-gradient"&gt;
@@ -316,14 +327,25 @@
 
                 <div class="prompt-box mt-2">
                     <div class="prompt-label">Gradients using custom properties:</div>
-                    <pre><code class="language-svg">&lt;defs&gt;
-  &lt;radialGradient id="glow-gradient"&gt;
-    &lt;!-- These use my CSS custom properties! --&gt;
-    &lt;stop offset="0%" stop-color="var(--bulb-bright)"/&gt;
-    &lt;stop offset="50%" stop-color="var(--bulb-warm)"/&gt;
-    &lt;stop offset="100%" stop-color="var(--bulb-glow)"/&gt;
-  &lt;/radialGradient&gt;
-&lt;/defs&gt;</code></pre>
+                    <pre><code class="language-svg">&lt;svg viewBox="0 0 1024 1536"&gt;
+  &lt;style&gt;
+    :root {
+      --bulb-glow: hsl(45, 100%, 89%);
+      --bulb-warm: hsl(40, 97%, 73%);
+      --bulb-bright: hsl(34, 100%, 65%);
+    }
+  &lt;/style&gt;
+
+  &lt;defs&gt;
+    &lt;radialGradient id="glow-gradient"&gt;
+      &lt;!-- These use my CSS custom properties! --&gt;
+      &lt;stop offset="0%" stop-color="var(--bulb-bright)"/&gt;
+      &lt;stop offset="50%" stop-color="var(--bulb-warm)"/&gt;
+      &lt;stop offset="100%" stop-color="var(--bulb-glow)"/&gt;
+    &lt;/radialGradient&gt;
+  &lt;/defs&gt;
+  &lt;!-- Rest of SVG... --&gt;
+&lt;/svg&gt;</code></pre>
                 </div>
 
                 <h3 class="mt-2">Theme-Adaptive Gradients</h3>
@@ -346,6 +368,52 @@
   --bulb-bright: hsl(205, 100%, 64%);
 }</code></pre>
                 </div>
+
+                <h3 class="mt-2">How to Apply Themes to Your SVG</h3>
+
+                <p>Here's the part that confused me at first - Prof. Teeters showed me that the CSS class goes directly on the <code>&lt;svg&gt;</code> element!</p>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Complete example with class applied:</div>
+                    <pre><code class="language-svg">&lt;!-- Warm theme (default) --&gt;
+&lt;svg class="lightbulb" viewBox="0 0 1024 1536"&gt;
+  &lt;style&gt;
+    .lightbulb {
+      --bulb-glow: hsl(45, 100%, 89%);
+      --bulb-warm: hsl(40, 97%, 73%);
+      --bulb-bright: hsl(34, 100%, 65%);
+    }
+
+    .lightbulb.theme-cool {
+      --bulb-glow: hsl(205, 100%, 95%);
+      --bulb-warm: hsl(205, 100%, 82%);
+      --bulb-bright: hsl(205, 100%, 64%);
+    }
+  &lt;/style&gt;
+
+  &lt;defs&gt;
+    &lt;radialGradient id="glow-gradient"&gt;
+      &lt;stop offset="0%" stop-color="var(--bulb-bright)"/&gt;
+      &lt;stop offset="100%" stop-color="var(--bulb-glow)"/&gt;
+    &lt;/radialGradient&gt;
+  &lt;/defs&gt;
+
+  &lt;ellipse fill="url(#glow-gradient)" cx="512" cy="550" rx="280" ry="320"/&gt;
+&lt;/svg&gt;
+
+&lt;!-- To switch to cool theme, just add the theme-cool class --&gt;
+&lt;svg class="lightbulb theme-cool" viewBox="0 0 1024 1536"&gt;
+  &lt;!-- Same defs and elements - colors update automatically! --&gt;
+&lt;/svg&gt;</code></pre>
+                </div>
+
+                <p class="mt-1"><strong>The Magic Connection:</strong></p>
+                <ul class="mt-1">
+                    <li><code>class="lightbulb"</code> on the SVG applies the base theme custom properties</li>
+                    <li><code>class="lightbulb theme-cool"</code> overrides with cool theme colors</li>
+                    <li>The gradients use <code>var(--bulb-glow)</code> etc., so they automatically get the new colors!</li>
+                    <li>No need to change gradient definitions - they adapt to whatever theme is active</li>
+                </ul>
 
                 <div class="hap-note-callout mt-2">
                     <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit,a_hflip/v1759331571/HyBit_holding_a_paintbrush_ycfapu.jpg"
