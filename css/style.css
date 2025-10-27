@@ -1095,6 +1095,16 @@ h4 {
   letter-spacing: 1px;
 }
 
+.prompt-text {
+  font-family: 'Courier New', monospace;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  line-height: 1.6;
+  color: var(--cream-white);
+  white-space: normal;
+  word-wrap: break-word;
+  margin: 0;
+}
+
 /* Interactive Demo */
 
 .interactive-demo {

@@ -847,7 +847,7 @@
     <nav aria-label="Station pagination" class="page-navigation bottom-nav">
         <a href="../index.html" class="nav-link hub-link">🏠 Hub</a>
         <a href="station4.html" class="nav-link prev-link">← Station 4</a>
-        <a href="station6.html" class="nav-link next-link">Next: Station 6 - [Coming Soon] →</a>
+        <a href="station6.html" class="nav-link next-link">Next: Station 6→</a>
     </nav>
 
     <!-- Footer -->
@@ -961,30 +961,6 @@
 
     <!-- JavaScript for Interactive Demos -->
     <script>
-        // Demo 1: Flat vs Gradient Comparison Toggle
-        (function () {
-            const toggleBtn = document.getElementById('toggleComparison');
-            const flatSvg = document.getElementById('flatLightbulb');
-            const gradientSvg = document.getElementById('gradientLightbulb');
-            let showingGradient = false;
-
-            if (toggleBtn && flatSvg && gradientSvg) {
-                toggleBtn.addEventListener('click', () => {
-                    showingGradient = !showingGradient;
-
-                    if (showingGradient) {
-                        flatSvg.style.display = 'none';
-                        gradientSvg.style.display = 'block';
-                        toggleBtn.textContent = '✅ Show Flat Version';
-                    } else {
-                        flatSvg.style.display = 'block';
-                        gradientSvg.style.display = 'none';
-                        toggleBtn.textContent = '🟠 Show Gradient Version';
-                    }
-                });
-            }
-        })();
-
         // Demo 2: Theme Switching with Gradients
         (function () {
             const themeButtons = document.querySelectorAll('.theme-switcher');

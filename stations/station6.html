@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HAP's Learning Lab - Station 6: AI Assistance for SVG Workflow</title>
+
+    <meta name="description"
+        content="Join HAP as he learns to work smarter with AI to clean, organize, and enhance SVG projects without losing creative control.">
+
+    <meta property="og:image"
+        content="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_1200,c_fill,g_auto/v1759495998/hap-laptop_xiewar.jpg">
+
+    <!-- Standard HAP favicon -->
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_16,h_16/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_32,h_32/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_180,h_180/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_192,h_192/v1759596416/hap-favicon-h_gosgur.jpg">
+
+    <!-- Preconnect for Cloudinary CDN -->
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+
+    <!-- HAP Design System -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Syntax highlighting theme -->
+    <link href="../css/prism-hap-theme.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Accessibility skip link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header with HAP avatar and introduction -->
+    <header class="header">
+        <div class="header-content">
+            <div class="hybit-welcome">
+                <div class="hybit-avatar">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_200,c_limit/v1759495998/hap-laptop_xiewar.jpg"
+                        alt="HAP (HyBit A. ProtoBot) working on his laptop, learning about AI-assisted workflows"
+                        width="200" height="200" decoding="async" fetchpriority="high">
+                </div>
+                <div>
+                    <h1>HAP's Learning Lab: AI Assistance for SVG Workflow</h1>
+
+                    <p class="subtitle">Working smarter with AI to clean, organize, and enhance SVG projects without
+                        losing creative control</p>
+                </div>
+            </div>
+
+            <div class="intro-box">
+                <p><strong>Welcome to Station 6!</strong> After spending hours organizing my Lightbulb by hand, Prof.
+                    Teeters smiled and asked, "HAP, what if AI helped you with that?" I was skeptical until I saw AI
+                    sort hundreds of SVG paths in minutes! But I also learned that speed alone isn't smart — clarity is.
+                    Once I set rules for how AI should work (hsl() colors, CSS custom properties, and no inline styles),
+                    my workflow became cleaner, consistent, and accessible. Let me show you how AI can save time when
+                    you stay in charge. 🤖</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top navigation -->
+    <nav aria-label="Page navigation" class="page-navigation top-nav">
+        <a href="../index.html" class="nav-link hub-link">🏠 Back to Hub</a>
+
+        <div class="page-position" data-page="6">Station 6 of 6</div>
+    </nav>
+
+    <!-- Main content area -->
+    <main id="main-content" class="content-container">
+
+        <!-- SECTION 1: What You'll Learn -->
+        <section class="content-section">
+            <h2 class="section-heading-centered">What You'll Learn at This Station</h2>
+
+            <div class="intro-box">
+                <p><strong>HAP's Discovery:</strong> I used to think "efficient workflow" meant finishing faster. Prof.
+                    Teeters taught me that it really means thinking first and automating second. When I first asked AI
+                    to clean my SVG, it added random hex colors and inline styles everywhere! Now I know to say: "Use
+                    hsl() colors, CSS custom properties, and no inline styles." That single instruction turned a chaotic
+                    output into organized, readable code. Efficiency is clarity plus consistency — not just speed. 🤯
+                </p>
+            </div>
+
+            <div class="overview-grid mt-2">
+                <div class="insight-card">
+                    <h3><span class="insight-icon">⚡</span> Time Savings</h3>
+                    <p class="stat-large">6 hours → 6 minutes</p>
+                    <p>AI can handle repetitive tasks like refactoring and optimization in a fraction of the time — as
+                        long as you set clear rules.</p>
+                </div>
+
+                <div class="insight-card">
+                    <h3><span class="insight-icon">🎨</span> Better Color Systems</h3>
+                    <p class="stat-large stat-teal">100% hsl()</p>
+                    <p>All colors converted from hex or rgb() to hsl() for consistency and theme control.</p>
+                </div>
+
+                <div class="insight-card">
+                    <h3><span class="insight-icon">♿</span> Accessibility Assistance</h3>
+                    <p class="stat-large stat-brown">WCAG 2.2 Ready</p>
+                    <p>AI can add <code>&lt;title&gt;</code> and <code>&lt;desc&gt;</code> elements automatically — I
+                        verify the meaning and tone.</p>
+                </div>
+            </div>
+
+            <div class="hap-note-callout">
+                <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                    alt="HAP looking confused while studying a map" width="150" height="150" class="hap-note-image"
+                    decoding="async" loading="lazy">
+                <div class="hap-note-content">
+                    <h3>HAP's Confession:</h3>
+                    <p>The first time I asked AI to clean my SVG, I just said "make it better" and trusted the output
+                        without checking. It replaced my carefully chosen hsl() colors with random hex codes! Then it
+                        added inline styles everywhere, breaking my theme system. I also didn't verify the accessibility
+                        text it generated — the <code>&lt;desc&gt;</code> element was technically correct but didn't
+                        match my project's friendly tone. Prof. Teeters reminded me: "AI is a powerful assistant, but
+                        you're still the designer and decision-maker." Now I give specific instructions and always
+                        review the results.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: What AI Can and Can't Do -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>What AI Can and Can't Do</h2>
+
+                <p class="mb-2">When Prof. Teeters first showed me how AI could help with SVG work, I got excited and
+                    tried to hand everything over to it. That didn't go well! I quickly learned that AI is brilliant at
+                    certain tasks but completely misses the mark on others. Understanding these strengths and
+                    limitations is key to using AI effectively. 🔬</p>
+
+                <div class="analysis-grid">
+                    <div class="analysis-point">
+                        <h3>AI Excels At</h3>
+                        <ul>
+                            <li>Finding patterns in messy SVG code</li>
+                            <li>Converting hex and rgb() to hsl()</li>
+                            <li>Adding accessibility markup</li>
+                            <li>Optimizing paths and reducing file size</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>AI Struggles With</h3>
+                        <ul>
+                            <li>Understanding context or design intent</li>
+                            <li>Choosing semantic names</li>
+                            <li>Judging artistic quality</li>
+                            <li>Knowing when not to simplify</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit,a_hflip/v1759331571/HyBit_holding_a_paintbrush_ycfapu.jpg"
+                        alt="HAP holding a paintbrush, ready to be creative" width="150" height="150"
+                        class="hap-note-image" decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's Takeaway:</h3>
+                        <p>AI is brilliant at precision and pattern work — but you still decide what makes sense. Think
+                            of AI as your assistant who can crunch numbers and find patterns faster than you can, but
+                            needs your guidance on what matters and why.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Converting Inline Styles to CSS Classes -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>Converting Inline Styles to CSS Classes</h2>
+
+                <p class="mb-2">One of the first things I learned to use AI for was converting messy inline SVG styles
+                    into organized CSS classes. This was tedious work when I did it manually, but with the right prompt,
+                    AI handles it perfectly. The key is being specific about what you want. 🎯</p>
+
+                <div class="warning-box">
+                    <h3>🟠 Before AI Help</h3>
+                    <p><strong class="text-error">❌ Messy inline styles with mixed color formats:</strong></p>
+                    <pre><code class="language-html">&lt;path fill="#ffefcb" d="..."/&gt;
+&lt;path fill="rgb(253,207,116)" d="..."/&gt;</code></pre>
+                </div>
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Prompt I Used:</div>
+                    <p class="prompt-text">"Refactor all inline fill and stroke attributes into CSS classes. Use hsl()
+                        colors and CSS custom properties in :root. No inline styles."</p>
+                </div>
+
+                <div class="warning-box mt-2">
+                    <h3>✅ AI Response</h3>
+                    <p><strong class="text-success">Clean CSS with hsl() colors and custom properties:</strong></p>
+                    <pre><code class="language-html">&lt;style&gt;
+  :root {
+    --bulb-glow: hsl(45 100% 89%);
+    --bulb-warm: hsl(40 97% 73%);
+  }
+  .bulb-glow { fill: var(--bulb-glow); }
+  .bulb-warm { fill: var(--bulb-warm); }
+&lt;/style&gt;
+
+&lt;g class="bulb-glow"&gt;
+  &lt;path d="..."/&gt;
+&lt;/g&gt;
+&lt;g class="bulb-warm"&gt;
+  &lt;path d="..."/&gt;
+&lt;/g&gt;</code></pre>
+
+                    <p class="mt-1"><strong>HAP's Note:</strong> AI followed my rules perfectly once I explained them.
+                        My job was to rename the groups semantically and verify that the visual result stayed identical.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Creating Color Systems with AI -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>Creating Color Systems with AI</h2>
+
+                <p class="mb-2">Converting individual colors is good, but AI can also help you build entire color
+                    systems. I learned to ask AI to scan my SVG and create a complete set of CSS custom properties with
+                    consistent naming. This saved me hours of manual color conversion! 🎨</p>
+
+                <div class="prompt-box">
+                    <div class="prompt-label">Prompt I Used:</div>
+                    <p class="prompt-text">"Scan this SVG and convert all hex and rgb() values to hsl(). Generate CSS
+                        custom properties with semantic names and apply them to class selectors."</p>
+                </div>
+
+                <div class="warning-box mt-2">
+                    <h3>✅ AI Suggestion</h3>
+                    <pre><code class="language-css">:root {
+  --bulb-glow: hsl(45 100% 89%);
+  --bulb-warm: hsl(40 97% 73%);
+  --metal-light: hsl(60 4% 74%);
+  --metal-dark: hsl(0 1% 49%);
+}</code></pre>
+
+                    <p class="mt-1"><strong>HAP's Reflection:</strong> The AI handled the math well, but I gave the
+                        colors context and meaning. Semantics still require a human touch.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: AI for Accessibility -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>AI for Accessibility</h2>
+
+                <p class="mb-2">Adding accessibility markup to SVGs was intimidating until I learned AI could help. It
+                    can generate the structure and technical details, but I always review the text to make sure it
+                    matches my project's tone and actually describes what the image shows. ♿</p>
+
+                <div class="prompt-box">
+                    <div class="prompt-label">Prompt I Used:</div>
+                    <p class="prompt-text">"Add a &lt;title&gt; and &lt;desc&gt; element to this SVG for screen readers.
+                        Include ARIA roles and link IDs properly."</p>
+                </div>
+
+                <div class="warning-box mt-2">
+                    <h3>✅ AI Suggestion</h3>
+                    <pre><code class="language-html">&lt;svg role="img" aria-labelledby="title desc"&gt;
+  &lt;title id="title"&gt;Glowing Lightbulb Icon&lt;/title&gt;
+  &lt;desc id="desc"&gt;A stylized lightbulb with warm HSL colors and metallic base.&lt;/desc&gt;
+  &lt;!-- SVG content --&gt;
+&lt;/svg&gt;</code></pre>
+
+                    <p class="mt-1"><strong>HAP's Review:</strong> Nice structure! I added phrasing that matched the
+                        project's tone and checked for valid ARIA references.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: Optimization Without Destruction -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>Optimization Without Destruction</h2>
+
+                <p class="mb-2">File size matters for web performance, but I learned the hard way that aggressive
+                    optimization can break things. Prof. Teeters taught me to be very specific: tell AI exactly what to
+                    preserve while optimizing. 🚀</p>
+
+                <div class="prompt-box">
+                    <div class="prompt-label">Prompt I Used:</div>
+                    <p class="prompt-text">"Optimize this SVG to reduce file size without altering appearance. Keep all
+                        classes, IDs, and hsl() values intact."</p>
+                </div>
+
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>Before Optimization</h3>
+                        <p class="stat-large">89 KB</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>After Optimization</h3>
+                        <p class="stat-large stat-teal">41 KB</p>
+                    </div>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-laptop_xiewar.jpg"
+                        alt="HAP working carefully on his laptop" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's Rule:</h3>
+                        <p>Optimization is only successful if nothing changes visually. Always compare before and after!
+                            I learned this when AI "optimized" my lightbulb by removing gradients that it thought were
+                            unnecessary. They weren't.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: Try It Yourself – AI SVG Challenge -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>Try It Yourself: AI SVG Challenge</h2>
+
+                <p class="mb-2">Ready to try AI-assisted workflow on your own SVG? Here's a challenge that will test
+                    everything you've learned. The key is working with AI methodically, not just asking it to "fix
+                    everything." 🎯</p>
+
+                <div class="interactive-demo">
+                    <h3>Your Mission</h3>
+                    <ol class="mt-1">
+                        <li>Ask AI to replace all hex and rgb() colors with hsl()</li>
+                        <li>Move styles into CSS classes using custom properties</li>
+                        <li>Add <code>&lt;title&gt;</code> and <code>&lt;desc&gt;</code> for accessibility</li>
+                        <li>Request an implementation plan before the AI runs changes</li>
+                        <li>Review its plan for weaknesses and test the final output</li>
+                    </ol>
+
+                    <div class="analysis-grid mt-2">
+                        <div class="analysis-point">
+                            <h3>Success Criteria</h3>
+                            <p>✅ hsl() only<br>
+                                ✅ No inline styles<br>
+                                ✅ Semantic naming<br>
+                                ✅ Accurate a11y</p>
+                        </div>
+
+                        <div class="analysis-point">
+                            <h3>HAP's Tip</h3>
+                            <p>The implementation plan (step 4) is crucial! If AI suggests using hex colors or inline
+                                styles in its plan, stop and revise your prompt before proceeding.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: HAP's Rules for AI -->
+        <section class="content-section">
+            <div class="tips-container">
+                <h2 class="section-heading-centered">🎓 HAP's Rules for Working with AI</h2>
+
+                <div class="tip-card">
+                    <div class="tip-number">1</div>
+                    <div>
+                        <h3>Be Specific</h3>
+                        <p>Tell AI exactly what to do and why. "Clean this SVG" is too vague. "Use hsl() colors and CSS
+                            custom properties" is clear.</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">2</div>
+                    <div>
+                        <h3>Add Format Requirements</h3>
+                        <p>Always say "Use hsl() for colors" and "No inline styles" in your prompts. AI won't know your
+                            standards unless you state them.</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">3</div>
+                    <div>
+                        <h3>Use CSS Custom Properties</h3>
+                        <p>Never allow hard-coded color values. Require AI to create custom properties in
+                            <code>:root</code> for all colors.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">4</div>
+                    <div>
+                        <h3>No Inline Styles</h3>
+                        <p>Everything belongs in CSS classes or <code>:root</code>. Inline styles break theming and make
+                            maintenance harder.</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">5</div>
+                    <div>
+                        <h3>Ask for an Implementation Plan</h3>
+                        <p>Read the plan first and spot flaws before execution. This catches problems before they're
+                            coded.</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">6</div>
+                    <div>
+                        <h3>Stay the Reviewer</h3>
+                        <p>AI assists you — you approve the final code. Never trust output without testing it yourself.
+                            🟠</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 9: Prompt Templates -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>Prompt Templates Library</h2>
+
+                <h3 class="mt-2">Basic Prompt Templates</h3>
+                <p class="mb-2">These are the prompts I use most often. Feel free to copy and adapt them for your own
+                    SVG workflow! 📋</p>
+
+                <div class="prompt-box">
+                    <div class="prompt-label">Organization Prompt:</div>
+                    <p class="prompt-text">"Refactor all inline styles into CSS classes. Use hsl() values and CSS custom
+                        properties only."</p>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Color System Prompt:</div>
+                    <p class="prompt-text">"Convert all color values to hsl() and create a :root block of CSS custom
+                        properties."</p>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Accessibility Prompt:</div>
+                    <p class="prompt-text">"Add a &lt;title&gt; and &lt;desc&gt; with ARIA roles. Ensure text is clear
+                        and readable for screen readers."</p>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Optimization Prompt:</div>
+                    <p class="prompt-text">"Reduce file size without altering appearance or removing hsl() definitions,
+                        classes, or IDs."</p>
+                </div>
+
+                <h3 class="mt-2">Advanced Prompt Strategies</h3>
+                <p class="mb-2">Once I got comfortable with basic prompts, Prof. Teeters taught me that real AI workflow involves iteration and refinement, not one-shot perfection. These advanced prompts help me improve AI output, troubleshoot problems, and prevent common mistakes. 🔬</p>
+
+                <div class="prompt-box">
+                    <div class="prompt-label">Iteration Prompt (Refinement):</div>
+                    <p class="prompt-text">"Revise this output. Keep all hsl() colors and CSS classes, but rename generic class names like .group-1 to semantic names that describe their visual purpose."</p>
+                    <p class="code-comment mt-1"><strong>HAP's Use Case:</strong> AI's first pass often works but uses generic names. This prompt helps me add meaning without redoing the whole conversion.</p>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Troubleshooting Prompt (Visual Validation):</div>
+                    <p class="prompt-text">"Compare this optimized SVG to the original and identify any visual differences. List what changed and explain why those changes occurred."</p>
+                    <p class="code-comment mt-1"><strong>HAP's Use Case:</strong> When optimization goes wrong, this prompt helps me understand what AI removed and why. Then I can give better instructions.</p>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Safety Prompt (Preserve Critical Elements):</div>
+                    <p class="prompt-text">"Refactor this SVG without altering any ID attributes, class names, or aria-labelledby references. Preserve all accessibility markup exactly as written."</p>
+                    <p class="code-comment mt-1"><strong>HAP's Use Case:</strong> I learned this one the hard way! When my SVG has JavaScript hooks or ARIA connections, this prompt prevents AI from breaking them.</p>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-laptop_xiewar.jpg"
+                        alt="HAP working carefully on his laptop" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's Workflow Tip:</h3>
+                        <p>I rarely use just one prompt anymore. My typical workflow: (1) Basic prompt to get structure right, (2) Iteration prompt to improve naming, (3) Troubleshooting prompt if something looks wrong, (4) Safety prompt before final optimization. Prof. Teeters calls this "conversational refinement" — treating AI like a colleague I'm collaborating with, not a magic wand I wave once.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 10: When NOT to Use AI -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>When NOT to Use AI</h2>
+
+                <p class="mb-2">AI is powerful, but it's not always the right tool. Prof. Teeters taught me to recognize
+                    when I need to do the work myself. Here's when I step back from AI assistance: ⚠️</p>
+
+                <div class="hap-info-grid">
+                    <div>
+                        <h3>🔬 When You're Still Learning</h3>
+                        <p>If you don't understand how the feature works, using AI will prevent you from learning. Do it
+                            manually first, then let AI help with repetition.</p>
+                    </div>
+
+                    <div>
+                        <h3>🎨 When Artistic Judgment Matters</h3>
+                        <p>AI doesn't understand emotion or aesthetics. Color harmony, visual balance, and design intent
+                            require human judgment.</p>
+                    </div>
+
+                    <div>
+                        <h3>📝 When Semantic Naming Requires Context</h3>
+                        <p>AI might name a color <code>--color-1</code>, but only you know it should be
+                            <code>--sunset-glow</code> because it represents a specific mood or theme.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="warning-box mt-2">
+                    <p><strong>Prof. Teeters always says:</strong> "Use AI to save time — not to skip understanding." 🟠
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 11: Quick Reference -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2 class="section-heading-centered">🎓 Quick Reference: AI for SVG Tasks</h2>
+
+                <div class="analysis-grid">
+                    <div class="analysis-point">
+                        <h3>Convert to hsl()</h3>
+                        <p><strong>AI Use:</strong> ✅ Excellent</p>
+                        <p><strong>Review Step:</strong> Check color accuracy</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Move styles to classes</h3>
+                        <p><strong>AI Use:</strong> ✅ Essential</p>
+                        <p><strong>Review Step:</strong> Ensure semantic names</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Add accessibility markup</h3>
+                        <p><strong>AI Use:</strong> ✅ Good</p>
+                        <p><strong>Review Step:</strong> Review text tone</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Optimize paths</h3>
+                        <p><strong>AI Use:</strong> ✅ Carefully</p>
+                        <p><strong>Review Step:</strong> Compare before/after</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Creative decisions</h3>
+                        <p><strong>AI Use:</strong> ⚠️ Limited</p>
+                        <p><strong>Review Step:</strong> Do manually</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Choose color palette</h3>
+                        <p><strong>AI Use:</strong> ⚠️ Limited</p>
+                        <p><strong>Review Step:</strong> Follow brand guidelines</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Semantic Names</h3>
+                        <p><strong>AI Use:</strong> ⚠️ Limited</p>
+                        <p><strong>Review Step:</strong> Add project context</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Visual testing</h3>
+                        <p><strong>AI Use:</strong> 🛑 Not recommended</p>
+                        <p><strong>Review Step:</strong> Compare manually</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HAP's Final Thoughts (unnumbered callout) -->
+        <div class="hap-note-callout">
+            <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit,a_hflip/v1759331571/HyBit_holding_a_paintbrush_ycfapu.jpg"
+                alt="HAP holding a paintbrush, ready to create" width="150" height="150" class="hap-note-image"
+                decoding="async" loading="lazy">
+            <div class="hap-note-content">
+                <h3>HAP's Final Reflection:</h3>
+                <p>When I started this station, I thought AI would just make me faster. Now I see it as a partner that
+                    works best when I set clear rules. Prof. Teeters reminds me that automation only works when I
+                    understand each step myself. That's how I turned AI from a shortcut into a skill.</p>
+                <p class="mt-1"><strong>"I don't let AI do my work — I teach it to follow my workflow."</strong> 🟠</p>
+            </div>
+        </div>
+
+        <!-- Learning Objectives (numbered section) -->
+        <section class="topic-section">
+            <h2 class="section-heading-centered">Learning Objectives</h2>
+
+            <div class="checklist-section">
+                <p class="mb-2">By completing this station, you've learned to:</p>
+
+                <ul class="checklist">
+                    <li>Convert hex and rgb() values to hsl() using AI assistance</li>
+                    <li>Move inline styles into CSS classes systematically</li>
+                    <li>Create and apply CSS custom properties for color systems</li>
+                    <li>Add and review accessibility markup for screen readers</li>
+                    <li>Optimize SVGs safely without breaking structure</li>
+                    <li>Request and evaluate AI implementation plans</li>
+                    <li>Apply consistent rules: hsl() format + no inline styles</li>
+                </ul>
+
+                <p class="mt-2"><strong>Remember:</strong> AI amplifies knowledge; it doesn't replace it. 🎓</p>
+            </div>
+        </section>
+
+        <!-- Congratulations (final station celebration - unnumbered callout) -->
+        <section class="topic-section celebration-box">
+            <h3>🎉 Congratulations! You've Completed All 6 Stations! 🎉</h3>
+            <p class="mt-1"><strong>HAP here!</strong> You made it through the entire Learning Lab! From understanding
+                SVG structure
+                to mastering gradients and AI-assisted workflows, you've built real skills that will help you create
+                better, more accessible web graphics.</p>
+
+            <p class="mt-1">🟠 Prof. Teeters taught me that learning isn't about rushing to the finish — it's about
+                understanding each step along the way. You took the time to work through six stations, and that
+                dedication shows.</p>
+
+            <p class="mt-1"><strong>What's next?</strong> Take what you've learned and start using SVGs like a pro!
+                You don't have to draw them — just know how to clean, theme, and optimize the ones you find.
+                Whether you're adding icons, refining AI-generated illustrations, or improving accessibility on your
+                site, you now have the skills to make every SVG web-ready, efficient, and easy to maintain.
+            </p>
+
+            <p class="mt-1">Thank you for learning with me. I'm proud of how far you've come! 🚀</p>
+        </section>
+
+    </main>
+
+    <!-- Bottom navigation -->
+    <nav aria-label="Station pagination" class="page-navigation bottom-nav">
+        <a href="../index.html" class="nav-link hub-link">🏠 Hub</a>
+
+        <!-- No "Next" link - Station 6 is the final station -->
+        <a href="station5.html" class="nav-link prev-link">← Previous: Station 5 - Gradients</a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p><strong>HAP's Learning Lab</strong> | An AI-Enhanced Educational Experience by Prof. Cynthia Teeters</p>
+
+        <p class="footer-reminder">
+            I don't let AI do my work — I teach it to follow my workflow. 🟠 — HAP
+        </p>
+
+        <div class="footer-copyright">
+            <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_80,c_limit/v1759497938/HAP-learner_dvehmt.jpg"
+                alt="HAP the apprentice learner with his study book and tools" class="footer-hybit" width="80"
+                height="80" decoding="async" loading="lazy">
+            <div>
+                <p>HAP&trade; Educational Content &copy; 2025 Cynthia Teeters. All rights reserved.</p>
+                <p>HyBit A. ProtoBot&trade; (HAP&trade;) character and the apprentice learning methodology are
+                    proprietary educational innovations.</p>
+                <p>Character concept, teaching methodology, and all written content created by Prof. Cynthia Teeters.
+                    Visual elements created with AI assistance.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Easter egg system -->
+    <script src="../js/easter-egg.js"></script>
+
+    <!-- Syntax highlighting -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"
+        integrity="sha384-MXybTpajaBV0AkcBaCPT4KIvo0FzoCiWXgcihYsw4FUkEz0Pv3JGV6tk2G8vJtDc"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"
+        integrity="sha384-HkMr0bZB9kBW4iVtXn6nd35kO/L/dQtkkUBkL9swzTEDMdIe5ExJChVDSnC79aNA"
+        crossorigin="anonymous"></script>
+
+    <!-- Copy button functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add copy buttons to all code blocks in .prompt-box
+            document.querySelectorAll('.prompt-box pre').forEach(pre => {
+                const button = document.createElement('button');
+                button.className = 'copy-button';
+                button.textContent = 'Copy';
+                button.setAttribute('aria-label', 'Copy code to clipboard');
+
+                button.addEventListener('click', async () => {
+                    const code = pre.querySelector('code').textContent;
+                    try {
+                        await navigator.clipboard.writeText(code);
+                        button.classList.add('copied');
+                        button.textContent = 'Copied';
+                        setTimeout(() => {
+                            button.classList.remove('copied');
+                            button.textContent = 'Copy';
+                        }, 2000);
+                    } catch (err) {
+                        console.error('Failed to copy:', err);
+                    }
+                });
+
+                pre.appendChild(button);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+
+<!--
+HAP™ Educational Content © 2025 Cynthia Teeters. All rights reserved.
+HyBit A. ProtoBot™ (HAP™) character and the apprentice learning methodology are proprietary educational innovations.
+Character concept, teaching methodology, and all written content created by Prof. Cynthia Teeters.
+Visual elements created with AI assistance.
+-->
