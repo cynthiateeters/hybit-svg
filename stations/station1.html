@@ -169,7 +169,7 @@
 
                     <p><strong class="text-success">✅ RIGHT: What I Learned</strong></p>
                     <pre><code class="language-html">&lt;!-- SVG scales automatically with viewBox! --&gt;
-&lt;svg viewBox="0 0 100 100" width="100%" height="auto"&gt;
+&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="auto"&gt;
   &lt;circle cx="50" cy="50" r="40" fill="orange" /&gt;
 &lt;/svg&gt;
 &lt;!-- Now it's responsive and stays perfect at any size! --&gt;</code></pre>
@@ -223,7 +223,7 @@
 
                 <div class="prompt-box mt-2">
                     <div class="prompt-label">Simple coordinate example:</div>
-                    <pre><code class="language-svg">&lt;svg viewBox="0 0 200 200" width="300" height="300"&gt;
+                    <pre><code class="language-svg">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="300" height="300"&gt;
   &lt;!-- Circle at top-left area --&gt;
   &lt;circle cx="50" cy="50" r="20" fill="orange" /&gt;
 
@@ -355,18 +355,18 @@
                     <pre><code class="language-svg">&lt;!-- Same circle, different viewBox values --&gt;
 
 &lt;!-- Example 1: Normal view --&gt;
-&lt;svg viewBox="0 0 100 100" width="200" height="200"&gt;
+&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="200" height="200"&gt;
   &lt;circle cx="50" cy="50" r="40" fill="orange" /&gt;
 &lt;/svg&gt;
 
 &lt;!-- Example 2: Zoomed in (smaller viewBox) --&gt;
-&lt;svg viewBox="25 25 50 50" width="200" height="200"&gt;
+&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="25 25 50 50" width="200" height="200"&gt;
   &lt;circle cx="50" cy="50" r="40" fill="orange" /&gt;
   &lt;!-- Same circle, but viewBox "zooms in" on it! --&gt;
 &lt;/svg&gt;
 
 &lt;!-- Example 3: Responsive (width="100%") --&gt;
-&lt;svg viewBox="0 0 100 100" width="100%" height="auto"&gt;
+&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="auto"&gt;
   &lt;circle cx="50" cy="50" r="40" fill="orange" /&gt;
   &lt;!-- Scales to fit any container! --&gt;
 &lt;/svg&gt;</code></pre>
@@ -645,7 +645,7 @@
 
                     <div id="solutionContent" style="display: none;">
                         <p><strong class="text-success">✅ HAP's Solution:</strong></p>
-                        <pre><code class="language-html">&lt;svg viewBox="0 0 200 200" width="100%" height="auto" style="max-width: 400px; display: block; margin: 0 auto;"&gt;
+                        <pre><code class="language-html">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="auto" style="max-width: 400px; display: block; margin: 0 auto;"&gt;
   &lt;!-- Top-left orange circle --&gt;
   &lt;circle cx="50" cy="50" r="30" fill="hsl(32, 76%, 63%)" /&gt;
 
