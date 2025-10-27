@@ -1,303 +1,312 @@
-# HAP's Learning Lab Template
+# HAP's Web SVG Images Learning Lab
 
-**Production-ready infrastructure for creating educational web learning labs**
+**Master SVG graphics through HAP's hands-on journey from confusion to confidence**
 
-A complete template system for building 6-station learning experiences featuring HAP (HyBit A. ProtoBot™), Prof. Teeters' apprentice who guides students through hands-on learning with his friendly first-person narrative.
+Join HAP (HyBit A. ProtoBot™), Prof. Teeters' apprentice, as he learns to work with SVG images on the web. Through 6 progressive learning stations, HAP shares his struggles, breakthroughs, and practical techniques for reading, organizing, styling, and enhancing SVG graphics.
 
 ---
 
-## What is this?
+## What you'll learn
 
-This repository contains reusable infrastructure for creating HAP Learning Labs on any topic:
+This learning lab teaches practical SVG skills through HAP's first-person narrative:
 
-- **7 Claude Skills** for progressive validation
-- **4 HTML/JSON templates** for stations, demos, and content
-- **Static assets** (CSS, JS, data) for HAP design system
-- **Zero dependencies** - pure HTML/CSS/JS, no build process
-- **100% Lighthouse scores** - accessibility and performance built-in
+- **Understanding SVG fundamentals** - coordinate systems, viewBox, and how SVG "thinks"
+- **Reading and modifying SVG code** - identifying elements, safe attributes, and working with paths
+- **Organizing chaotic SVG** - transforming 200+ messy paths into logical, semantic groups
+- **CSS custom properties** - creating themeable SVG systems with dynamic color control
+- **Gradient mastery** - adding depth and realism with radial and linear gradients
+- **AI-assisted workflows** - using AI to save time while maintaining creative control
 
 ## Quick start
 
-### 1. Copy this template
+### 1. Clone or download
 
 ```bash
-# Clone or download this repository
-git clone [your-repository-url] my-new-learning-lab
-cd my-new-learning-lab
+git clone [your-repository-url] hybit-svg
+cd hybit-svg
 ```
 
-### 2. Plan your curriculum
+### 2. Open in browser
 
-Open `templates/curriculum-plan-template.md` and fill in all sections:
-
-- Learning lab theme and objectives
-- 6 station topics that build progressively
-- HAP's struggles and learning moments (first-person)
-- Interactive demos for each station
-- Code examples showing "old way" vs "what I learned"
-
-Save as `CONTENT-PLAN.md` in your project root.
-
-### 3. Customize the templates
-
-**For each station (1-6)**:
+Use VS Code Live Server or any static server:
 
 ```bash
-# Copy the station template
-cp templates/station-template.html stations/station1.html
-
-# Fill in [PLACEHOLDER] content using your CONTENT-PLAN.md
-# Maintain HAP's first-person voice
-# Use Claude Skills for validation
+# VS Code: Right-click index.html → Open with Live Server
+# Or use Python's built-in server:
+python3 -m http.server 5500
 ```
 
-**For interactive demos**:
+Then navigate to `http://localhost:5500`
 
-```bash
-# Copy the demo template
-cp templates/demo-template.html demos/demo-name.html
+**Important**: Use a local server (not `file://` protocol) for the easter egg system to work properly.
 
-# Customize with your demo functionality
-# Follow demo-builder Skill patterns
-```
+### 3. Start learning!
 
-**For easter egg insights**:
+Begin at the **Hub page** (`index.html`) and follow HAP's journey through 6 stations:
 
-```bash
-# Copy the easter egg template
-cp templates/hybit-insights-template.json data/hybit-insights.jsonc
+1. **Station 1** - SVG Structure & Coordinate Systems
+2. **Station 2** - Reading SVG Code
+3. **Station 3** - Groups & Semantic Organization
+4. **Station 4** - CSS Custom Properties & Dynamic Theming
+5. **Station 5** - Making It Glow - Gradients in SVG
+6. **Station 6** - AI Assistance for SVG Workflow
 
-# Define parameters for your topic
-# Write messages in HAP's voice
-```
+Each station builds on the previous one, following HAP's learning journey from "confused about viewBox" to "confidently building themeable, gradient-enhanced SVG systems."
 
-### 4. Test locally
+## Learning stations overview
 
-```bash
-# Start local server (required for JSON loading)
-live-server --port=3000
+### Station 1: SVG Structure & Coordinate Systems
 
-# Test in browser
-open http://localhost:3000
-```
+**Focus**: Understanding how SVG "thinks"
 
-### 5. Validate with Lighthouse
+HAP discovers:
+- Why SVG is fundamentally different from raster images (math, not pixels!)
+- How the coordinate system works (0,0 is top-left, Y increases downward)
+- The viewBox as a "camera" controlling what you see vs. how big you see it
+- Creating responsive SVG graphics that scale perfectly
 
-```bash
-# Install dependencies (one-time)
-npm install
+**Key learning moment**: HAP's circle kept getting cut off until he realized viewBox defines the coordinate space, not the display size!
 
-# Run Lighthouse CI on all pages
-npm run lh:ci
+### Station 2: Reading SVG Code
 
-# Target: 99+ performance, 100 accessibility
-```
+**Focus**: Understanding the building blocks
 
-## What's included
+HAP learns to:
+- Open SVG files in a code editor and recognize element patterns
+- Identify basic shapes (circle, rect, ellipse) and their obvious attributes
+- Understand what paths are and what's safe to modify vs. what requires tools
+- Find and modify text elements (the easiest customization win!)
+- Categorize attributes by safety level (🟢 safe, 🟡 careful, 🔴 use tools)
 
-### Claude Skills (`.claude/skills/`)
+**Key learning moment**: Changing a robot badge's text from "Sample" to "HAP" took 2 seconds and made HAP feel like an expert!
 
-7 Skills that enforce HAP Learning Lab standards:
+### Station 3: Groups & Semantic Organization
 
-1. **hap-voice** - HAP's personality and first-person narrative
-2. **accessibility-check** - WCAG 2.2 Level AA compliance
-3. **security-audit** - OWASP Top 10, XSS prevention
-4. **testing-framework** - Chrome DevTools / Lighthouse testing
-5. **station-content** - Station HTML structure patterns
-6. **demo-builder** - Interactive demo patterns
-7. **css-standards** - HSL color format enforcement
+**Focus**: Transforming chaos into organized, maintainable code
 
-### Templates (`templates/`)
+HAP transforms:
+- 200+ chaotic paths with hardcoded colors everywhere
+- Into just 7 logical semantic groups with meaningful names
+- From typing the same color 40+ times to defining it once
+- Learning why `.bulb-glow` beats `.light-yellow` for semantic naming
 
-4 complete templates with [PLACEHOLDER] syntax:
+**Key learning moment**: Organizing by visual purpose (not appearance) made HAP's Lightbulb understandable and set the foundation for theming!
 
-1. **station-template.html** (~375 lines) - Complete station structure
-2. **demo-template.html** (~235 lines) - Interactive demo structure
-3. **curriculum-plan-template.md** (~490 lines) - Content planning guide
-4. **hybit-insights-template.json** (~275 lines) - Easter egg messages
+### Station 4: CSS Custom Properties & Dynamic Theming
 
-### Static assets
+**Focus**: Making organized code dynamic and themeable
 
-**CSS** (`css/`):
+HAP discovers:
+- 7 CSS custom properties controlling his entire 200+ path Lightbulb
+- How Station 3's organization made theming simple and powerful
+- Creating 4 complete themes (warm, cool, alert, eco) with just 7 property changes
+- Why good organization is the foundation that makes custom properties magical
 
-- `style.css` - HAP design system (~2900 lines)
-- `prism-hap-theme.css` - Syntax highlighting theme
+**Key learning moment**: Changing an entire color scheme from 10 minutes of manual editing to 7 seconds by updating custom properties!
 
-**JavaScript** (`js/`):
+### Station 5: Making It Glow - Gradients in SVG
 
-- `easter-egg.js` - HyBit insights system (~189 lines)
+**Focus**: Transforming flat colors into dimensional realism
 
-**Documentation** (`data/`):
+HAP learns:
+- Radial gradients for glowing light effects that actually glow
+- Linear gradients for metallic surfaces that look reflective
+- How gradients work with CSS custom properties to stay themeable
+- The visual impact of adding depth to organized, flat designs
 
-- `README.md` - Easter egg system documentation
+**Key learning moment**: HAP's friend said "Cool cartoon!" before gradients. After gradients: "Wow, that looks professional!"
+
+### Station 6: AI Assistance for SVG Workflow
+
+**Focus**: Working smarter with AI while staying in control
+
+HAP discovers:
+- How to set clear rules for AI (use hsl() colors, CSS custom properties, no inline styles)
+- Converting hex colors to hsl() in bulk without manual work
+- Refactoring inline styles to CSS classes systematically
+- Why clarity beats speed: organized output > fast chaos
+
+**Key learning moment**: AI turned 6 hours of manual refactoring into 6 minutes, but only when HAP gave it clear standards to follow!
 
 ## Features
 
-### Zero dependencies
+### HAP's apprentice learning methodology
 
-- **No build process** - Edit HTML/CSS/JS directly
-- **No frameworks** - Pure vanilla JavaScript
-- **No npm runtime deps** - Only Lighthouse for testing
-- **CDN delivery** - Images via Cloudinary
-- **Progressive enhancement** - Works without JS
+- **First-person narrative** - "I learned from Prof. Teeters that..."
+- **Shares real mistakes** - HAP confesses his errors and breakthroughs
+- **No abstract theory** - Every concept comes from HAP's actual Lightbulb project
+- **Builds progressively** - Each station uses skills from previous stations
+- **Relatable struggles** - If you found it confusing, so did HAP!
 
-### Lighthouse 100s
+### Interactive learning tools
 
-Every page targets:
+- **Live code demos** - Adjust viewBox values, modify circles, change themes
+- **Before/after comparisons** - See HAP's messy code vs. organized solutions
+- **Hover to highlight** - Explore HAP's Lightbulb groups visually
+- **Copy-paste snippets** - All code examples are tested and ready to use
+- **Challenge exercises** - Practice what you learned with HAP's mini-challenges
 
-- Performance: 99-100/100
-- Accessibility: 100/100
-- Best Practices: 100/100
-- SEO: 100/100
+### Production-quality code
 
-### HAP's apprentice voice
+- **Zero dependencies** - Pure HTML/CSS/JS, no build process
+- **Perfect accessibility** - WCAG 2.2 Level AA compliant throughout
+- **Lighthouse 99+** - Performance, accessibility, best practices, SEO
+- **HSL colors only** - Consistent color format, no hex or rgb
+- **Semantic HTML** - Skip links, ARIA labels, keyboard navigation
 
-- First-person narrative ("I learned...")
-- Shares mistakes and learning moments
-- References Prof. Teeters as mentor
-- Makes complex topics relatable
+### Easter egg system
 
-### Accessibility built-in
+- **HyBit insights** - Hidden tips accessible via URL parameters
+- **Contextual help** - Try `?hybit` on any page for page-specific insights
+- **Safe implementation** - Whitelist-based, no XSS vulnerabilities
+- **Educational extras** - Deeper dives into concepts without cluttering the main content
 
-- WCAG 2.2 Level AA compliant
-- Semantic HTML throughout
-- Skip links for keyboard users
-- ARIA labels on all interactive elements
-- Contrast ratios documented
+### Real SVG project included
 
-### Modern CSS patterns
+HAP's **Lightbulb SVG** demonstrates every concept:
+- **Station 1-2**: Understanding basic SVG structure
+- **Station 3**: Organizing 200+ paths into 7 semantic groups
+- **Station 4**: 7 CSS custom properties for theme switching
+- **Station 5**: Radial and linear gradients for realistic lighting
+- **Station 6**: AI-assisted cleanup while maintaining standards
 
-- HSL color format exclusively (no hex/rgb)
-- CSS custom properties for theming
-- Single source of truth for colors
-- BEM-inspired component naming
-
-## Architecture
-
-### File structure
+## Project structure
 
 ```
-/
+hybit-svg/
+├── index.html                 # Hub page - start here!
+├── stations/
+│   ├── station1.html         # SVG Structure & Coordinate Systems
+│   ├── station2.html         # Reading SVG Code
+│   ├── station3.html         # Groups & Semantic Organization
+│   ├── station4.html         # CSS Custom Properties & Dynamic Theming
+│   ├── station5.html         # Making It Glow - Gradients in SVG
+│   └── station6.html         # AI Assistance for SVG Workflow
+├── css/
+│   ├── style.css             # HAP design system (~2900 lines)
+│   └── prism-hap-theme.css   # Syntax highlighting theme
+├── js/
+│   └── easter-egg.js         # HyBit insights system (~189 lines)
+├── data/
+│   ├── hybit-insights.jsonc  # Easter egg content
+│   └── README.md             # Easter egg documentation
 ├── .claude/
-│   └── skills/                # Claude Skills for validation
-├── templates/                 # HTML/JSON/MD templates
-├── css/                       # HAP design system
-├── js/                        # Easter egg system
-├── data/                      # Documentation
-├── CLAUDE.md                  # Claude Code configuration
-└── README.md                  # This file
+│   ├── skills/               # 7 Claude Skills for development
+│   └── CLAUDE.md             # Claude Code configuration
+└── README.md                 # This file
 ```
 
 ### Technology stack
 
-- **HTML5** - Semantic markup
-- **CSS3** - Modern features, no preprocessor
-- **Vanilla JavaScript** - No jQuery, no framework
-- **Native dialog element** - For easter egg modals
-- **Cloudinary CDN** - Image optimization
-- **Prism.js** - Syntax highlighting (optional)
+- **Pure HTML5** - Semantic markup, zero frameworks
+- **Modern CSS3** - Custom properties, Grid, Flexbox
+- **Vanilla JavaScript** - ~189 lines total for easter eggs only
+- **Native `<dialog>`** - For HyBit insight modals
+- **Cloudinary CDN** - Optimized image delivery
+- **Prism.js** - Syntax highlighting for code examples
 
-## Customization workflow
+## How to use this learning lab
 
-### Recommended process
+### For students
 
-1. **Planning phase** (2-4 hours)
-   - Fill out curriculum plan template
-   - Define 6 station topics
-   - Write HAP's learning journey
-   - Plan interactive demos
+1. **Start at the Hub** (`index.html`) - Read HAP's introduction
+2. **Follow the stations in order** - Each builds on previous knowledge
+3. **Try the interactive demos** - Hands-on practice reinforces concepts
+4. **Complete the challenges** - Test your understanding before moving on
+5. **Check learning objectives** - Use the checklists at the end of each station
+6. **Explore easter eggs** - Try `?hybit` on any page for bonus insights
 
-2. **Template customization** (6-12 hours)
-   - Customize station HTML files (6 stations)
-   - Create interactive demos (2-3 per station)
-   - Fill easter egg messages
-   - Test locally
+**Recommended pace**: 1-2 stations per session (about 2-3 hours per station)
 
-3. **Validation phase** (1-2 hours)
-   - Run all Claude Skills
-   - Fix accessibility issues
-   - Optimize performance
-   - Test on mobile/tablet/desktop
+### For educators
 
-4. **Deployment** (30 minutes)
-   - Deploy to static host (Netlify, GitHub Pages, etc.)
-   - Test in production
-   - Run final Lighthouse audits
+This learning lab is ready to use as-is for:
+- **Web development courses** - Integrate into your SVG or graphics unit
+- **Self-paced learning** - Students can work through independently
+- **Flipped classroom** - Assign stations as homework, practice in class
+- **Workshops** - 6-session workshop series on SVG fundamentals
 
-### Time estimate
+**Customization options**:
+- Add your own exercises to station pages
+- Create additional easter egg insights in `data/hybit-insights.jsonc`
+- Modify HAP's Lightbulb examples to fit your curriculum
+- Use the included Claude Skills for maintaining code quality
 
-**First learning lab**: 10-20 hours total (includes learning the system)
-**Subsequent labs**: 6-12 hours (familiar with patterns)
+### For developers
 
-## Claude Skills usage
+The `.claude/skills/` directory contains 7 Claude Code skills used to build this lab:
+- `hap-voice` - Maintain HAP's first-person apprentice narrative
+- `accessibility-check` - WCAG 2.2 Level AA validation
+- `css-standards` - HSL color format enforcement
+- `security-audit` - OWASP Top 10, XSS prevention
+- `station-content` - Station structure validation
+- `demo-builder` - Interactive demo patterns
+- `testing-framework` - Lighthouse testing guidance
 
-### Before writing code
+## HAP's voice and teaching philosophy
 
-Consult `css-standards` Skill - establishes color format rules
+### Why HAP's apprentice approach works
 
-### While creating content
+**First-person vulnerability**: HAP shares his actual mistakes and confusion
+- "I spent THREE HOURS trying to figure out why my circle kept getting cut off!"
+- "I made SO many mistakes when I first started with SVG!"
+- "Prof. Teeters patiently walked me through all of it"
 
-- `hap-voice` - Validate HAP's personality
-- `station-content` - Ensure station structure
-- `demo-builder` - Build interactive demos
+**Progressive revelation**: Concepts build naturally through HAP's journey
+- Station 1: Confused about viewBox → "aha!" moment when it clicked
+- Station 3: Overwhelmed by 200+ paths → organized into 7 groups
+- Station 4: Manual color editing → discovering CSS custom properties
 
-### Before committing
+**Practical context**: Every concept tied to HAP's real Lightbulb project
+- Not "here's how viewBox works" but "here's why my circle disappeared"
+- Not "organize your code" but "I typed the same color 40+ times!"
+- Real problems → real solutions → real understanding
 
-- `accessibility-check` - WCAG compliance
-- `security-audit` - Security patterns
-- `testing-framework` - Performance tests
+### Learning objectives at each station
 
-### How to use Skills
+Every station ends with a checklist:
+- "I can create a responsive SVG using viewBox" (Station 1)
+- "I can find and modify text elements" (Station 2)
+- "I can organize SVG elements into logical groups" (Station 3)
+- "I understand how custom properties enable theming" (Station 4)
+- "I can apply radial and linear gradients" (Station 5)
+- "I can set clear rules for AI assistance" (Station 6)
 
-Claude Code automatically loads Skills from `.claude/skills/`:
+Students check off objectives as they master each skill.
 
-1. Read the Skill's `SKILL.md` file
-2. Follow progressive validation steps
-3. Complete all checklists
-4. Use provided code patterns
+## What students will build
 
-## HAP's voice guidelines
+By the end of this learning lab, students will be able to:
 
-**Always use first-person apprentice voice**:
+### Read and understand SVG code
 
-✅ "I learned from Prof. Teeters that..."
-✅ "This was tricky for me too!"
-✅ "Prof. Teeters showed me..."
+- Open any SVG file and identify basic shapes, paths, and text elements
+- Categorize attributes by safety level (what's safe to modify vs. what needs tools)
+- Recognize patterns in SVG structure without memorizing syntax
 
-❌ "You should learn..."
-❌ "Experts recommend..."
-❌ "This tutorial teaches..."
+### Organize messy SVG files
 
-**Show vulnerability and growth**:
+- Transform chaotic inline-styled SVGs into clean, maintainable code
+- Create semantic groups with meaningful class names
+- Move styles from inline attributes to CSS for better organization
 
-- Reference specific mistakes
-- Share "aha!" moments
-- Credit Prof. Teeters for teaching
-- Make it relatable to students
+### Build themeable SVG systems
 
-See `hap-voice` Skill for complete guidelines.
+- Use CSS custom properties to control color schemes
+- Create multiple themes (warm, cool, alert, eco) from a single organized base
+- Understand the relationship between organization and theming power
 
-## Examples
+### Apply visual polish with gradients
 
-### Completed learning labs using this template
+- Add radial gradients for glowing effects
+- Apply linear gradients for metallic and reflective surfaces
+- Combine gradients with custom properties for theme-aware lighting
 
-1. **Web Colors Learning Lab** - hex → color systems → harmony → accessibility → modern CSS → AI
-2. *(More coming soon)*
+### Work efficiently with AI assistance
 
-### Station topics that work well
-
-- Technical skills (HTML, CSS, JavaScript, accessibility)
-- Design concepts (typography, layout, color theory)
-- Development workflows (Git, testing, deployment)
-- Tools and frameworks (any web development tool)
-
-### Interactive demo ideas
-
-- Calculators (contrast ratios, font sizes, grid systems)
-- Converters (color formats, units, values)
-- Comparisons (before/after, good/bad examples)
-- Visualizers (animations, transformations, effects)
-- Generators (palettes, layouts, code snippets)
+- Set clear standards for AI-generated code (hsl() colors, no inline styles)
+- Use AI to handle repetitive tasks while maintaining control
+- Review and validate AI output against established patterns
 
 ## Browser support
 
@@ -320,75 +329,75 @@ No polyfills required (95%+ browser coverage as of 2024).
 
 ## Deployment
 
-### Recommended hosts
+### Hosting this learning lab
 
-**Static site hosts** (all support this template):
+This is a static site - no server-side processing required. Host it anywhere:
 
-- **Netlify** - Free tier, automatic HTTPS, form handling
-- **GitHub Pages** - Free, integrated with GitHub repos
-- **Cloudflare Pages** - Free, fast CDN, analytics
-- **Vercel** - Free tier, excellent performance
-- **Surge.sh** - Simple CLI deployment
+**Free options**:
+- **GitHub Pages** - Perfect for educational repos
+- **Netlify** - Automatic deploys from Git
+- **Cloudflare Pages** - Fast global CDN
+- **Vercel** - Zero-config deployment
 
-### Deployment steps
+**Self-hosting**:
+- Any web server (Apache, Nginx)
+- University/school web hosting
+- Local development for offline use
 
-1. Build is not required (static HTML/CSS/JS)
-2. Upload entire directory to static host
-3. Configure custom domain (optional)
-4. Test all pages in production
-5. Run Lighthouse audits
-
-### GitHub Pages example
+### GitHub Pages deployment
 
 ```bash
-# Push to GitHub
+# 1. Push to GitHub
 git init
 git add .
-git commit -m "Initial commit"
+git commit -m "Add HAP SVG Learning Lab"
 git remote add origin [your-repo-url]
 git push -u origin main
 
-# Enable GitHub Pages in repo settings
+# 2. Enable GitHub Pages
+# Go to repo Settings → Pages
 # Select main branch, root directory
 # Site will be live at https://username.github.io/repo-name
+
+# 3. Share with students!
+# Send them the URL to start learning
 ```
 
-## Testing
+**Important**: Easter egg system requires a server (won't work with `file://` protocol).
 
-### Local testing
+## Verifying the learning lab
 
-```bash
-# Start local server
-live-server --port=3000
+### Quick verification checklist
 
-# Test all pages manually
-# Test easter egg system with ?hybit= parameters
-# Test on different screen sizes
-```
+After deploying or setting up locally, verify:
 
-### Lighthouse testing
+1. **Hub page loads** (`index.html`) - Shows all 6 stations
+2. **Navigation works** - Can move between stations
+3. **Interactive demos work** - Sliders, buttons, hover effects respond
+4. **Easter eggs work** - Try `?hybit` on any page
+5. **Code copy buttons work** - Click "Copy" on code examples
+6. **Images load** - HAP images, Lightbulb diagrams display
+7. **Mobile responsive** - Test on phone/tablet screen sizes
 
-```bash
-# Run Lighthouse CI
-npm run lh:ci
+### Accessibility verification
 
-# Or test individual pages in browser
-# DevTools → Lighthouse → Run audit
-```
+All pages should meet WCAG 2.2 Level AA:
 
-### Accessibility testing
+- **Keyboard navigation** - Tab through all interactive elements
+- **Screen reader** - Test with VoiceOver (Mac) or NVDA (Windows)
+- **Color contrast** - All text meets 4.5:1 minimum ratio
+- **Skip link** - "Skip to main content" appears on focus
 
-- **Chrome DevTools** - Elements → Accessibility pane
-- **WebAIM Contrast Checker** - Test all text colors
-- **Screen reader** - VoiceOver (Mac) or NVDA (Windows)
-- **Keyboard navigation** - Tab through entire page
+### Performance verification
 
-### Cross-browser testing
+Run Lighthouse in Chrome DevTools on any station:
 
-- Test in Chrome, Firefox, Safari, Edge
-- Test on mobile devices (iOS Safari, Chrome Android)
-- Use DevTools device emulation
-- Test with slow 3G network throttling
+- **Performance**: 99-100/100
+- **Accessibility**: 100/100
+- **Best Practices**: 100/100
+- **SEO**: 100/100
+
+All stations are optimized to meet these targets.
 
 ## Troubleshooting
 
@@ -407,98 +416,102 @@ npm run lh:ci
 - Remove unused CSS/JS
 - Test with network throttling
 
-### Colors showing hex codes
+### Code examples not highlighting
 
-- Run `css-standards` Skill validation
-- Search for hex codes: `grep -r '#[0-9A-Fa-f]' css/`
-- Convert all hex/rgb to hsl() format
-- Use CSS custom properties only
+- Check that Prism.js CDN is loading
+- Verify code blocks have language specified: ```svg or ```html
+- Check browser console for JavaScript errors
 
-### HAP's voice sounds off
+### Interactive demos not responding
 
-- Run `hap-voice` Skill validation
-- Check for second-person ("you should...")
-- Verify first-person ("I learned...")
-- Add Prof. Teeters attributions
-- Reference specific struggles
+- Ensure JavaScript is enabled in browser
+- Check browser console for errors
+- Verify you're using a modern browser (Chrome 90+, Firefox 90+, Safari 15.4+)
+
+### Station content seems incomplete
+
+- Make sure you're viewing the full page (some stations are long!)
+- Check that images loaded (requires internet for Cloudinary CDN)
+- Try refreshing the page
 
 ## Contributing
 
-This template is production-ready and actively maintained. Contributions welcome:
+Contributions welcome! This is an educational project:
 
+**What we'd love to see**:
+- Additional SVG examples or exercises
+- More easter egg insights (`data/hybit-insights.jsonc`)
+- Accessibility improvements
+- Documentation enhancements
+- Bug fixes
+- Translation into other languages
+
+**How to contribute**:
 1. Fork the repository
 2. Create a feature branch
-3. Test thoroughly with all Skills
-4. Submit pull request with description
+3. Make your changes
+4. Test thoroughly (accessibility, performance, mobile)
+5. Submit a pull request with description
 
-**Areas for contribution**:
-
-- New Claude Skills
-- Template improvements
-- Documentation enhancements
-- Example learning labs
-- Bug fixes
+**Maintain HAP's voice**: If adding content, keep HAP's first-person apprentice tone ("I learned..." not "You should...").
 
 ## License
 
 **Multi-license approach**:
 
-- **Template code**: MIT License (free to use)
-- **HAP™ character**: Proprietary (Prof. Teeters)
-- **Educational methodology**: Proprietary (academic use allowed)
+- **Educational code**: MIT License (HTML/CSS/JS are free to use and modify)
+- **HAP™ character**: Proprietary (Prof. Cynthia Teeters)
+- **Educational content**: © 2025 Cynthia Teeters (academic use allowed)
 
-See individual license files for details:
+**You are free to**:
+- Use this learning lab in your courses (with attribution)
+- Modify the code and examples for your students
+- Deploy on your own servers or learning management systems
+- Create derivative works for educational purposes
 
-- `LICENSE.md` - Template code (MIT)
-- `TRADEMARK.md` - HAP™ character usage
-- `CONTENT-LICENSE.md` - Educational content
+**You must**:
+- Attribute Prof. Cynthia Teeters as creator
+- Maintain HAP™ and HyBit A. ProtoBot™ trademark symbols
+- Keep educational content non-commercial
 
-**Using HAP™ character requires**:
+**Commercial use** (e.g., paid courses, commercial training) requires permission.
 
-- Attribution to Prof. Cynthia Teeters
-- Maintaining trademark symbols (HAP™, HyBit A. ProtoBot™)
-- Educational/non-commercial use
-
-Commercial use requires permission. Contact: [contact information]
-
-## Support
-
-### Documentation
-
-- `CLAUDE.md` - Complete Claude Code configuration
-- `data/README.md` - Easter egg system guide
-- Individual Skill `SKILL.md` files - Detailed validation guides
-- Template comments - Inline [PLACEHOLDER] guidance
+## Support and feedback
 
 ### Getting help
 
-- GitHub Issues - Bug reports and questions
-- GitHub Discussions - Usage questions and ideas
-- Documentation - Comprehensive guides included
+- **GitHub Issues** - Report bugs or technical problems
+- **GitHub Discussions** - Ask questions, share ideas, discuss usage
+- **Documentation** - `CLAUDE.md` for technical details, `data/README.md` for easter eggs
 
-### Updates
+### Providing feedback
 
-This template follows semantic versioning:
-
-- **Major** - Breaking changes to structure
-- **Minor** - New Skills, templates, features
-- **Patch** - Bug fixes, documentation updates
+Found something confusing? Have ideas for improvement? We'd love to hear from you:
+- Open a GitHub issue with suggestions
+- Share what worked (or didn't work) in your classroom
+- Contribute additional examples or exercises
 
 ## Credits
 
 **Created by**: Prof. Cynthia Teeters
-**Character design**: HAP™ (HyBit A. ProtoBot™)
-**Visual elements**: Created with AI assistance
+**Character concept**: HAP™ (HyBit A. ProtoBot™)
 **Teaching methodology**: Apprentice learning approach
+**Visual elements**: Created with AI assistance
+**Development**: Claude Code with 7 custom Skills
 
 ---
 
-**Ready to create your HAP Learning Lab?**
+## Ready to start learning?
 
-1. Copy this repository
-2. Fill out `templates/curriculum-plan-template.md`
-3. Customize templates with your content
-4. Validate with Claude Skills
-5. Deploy and share!
+1. Clone or download this repository
+2. Open `index.html` in your browser (use a local server!)
+3. Meet HAP at the Hub page
+4. Follow his journey through 6 SVG learning stations
+5. Build your own themeable, gradient-enhanced SVG graphics!
 
-Happy teaching! 🟠
+**Happy learning!** 🟠
+
+---
+
+*HAP™ Educational Content © 2025 Cynthia Teeters. All rights reserved.*
+*HyBit A. ProtoBot™ (HAP™) character and the apprentice learning methodology are proprietary educational innovations.*
