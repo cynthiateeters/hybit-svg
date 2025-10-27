@@ -304,11 +304,23 @@
                 <div class="prompt-box mt-2">
                     <div class="prompt-label">Before vs. After:</div>
                     <pre><code class="language-svg">&lt;!-- Before: Flat fill --&gt;
-&lt;ellipse class="bulb-glow" fill="var(--bulb-glow)" .../&gt;
+&lt;g class="bulb-glow"&gt;
+  &lt;ellipse class="bulb-glow"
+           fill="var(--bulb-glow)"
+           cx="512" cy="550"
+           rx="280" ry="320"/&gt;
+&lt;/g&gt;
 
 &lt;!-- After: Gradient fill --&gt;
-&lt;ellipse class="bulb-glow" fill="url(#glow-gradient)" .../&gt;</code></pre>
+&lt;g class="bulb-glow"&gt;
+  &lt;ellipse class="bulb-glow"
+           fill="url(#glow-gradient)"
+           cx="512" cy="550"
+           rx="280" ry="320"/&gt;
+&lt;/g&gt;</code></pre>
                 </div>
+
+                <p class="mt-1"><strong>Only the <code>fill</code> attribute changes!</strong> Everything else (position, size, grouping) stays exactly the same. That's why gradients are such an easy enhancement!</p>
 
                 <div class="hap-note-callout mt-2">
                     <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit,a_hflip/v1759331571/HyBit_holding_a_paintbrush_ycfapu.jpg"
