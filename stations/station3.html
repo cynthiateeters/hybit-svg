@@ -668,6 +668,32 @@
                         🟠
                     </p>
                 </div>
+
+                <div class="hap-note-callout" style="margin-top: 2rem;">
+                    <h3><span class="hap-emoji">🟠</span> HAP's Final 7 Groups</h3>
+                    <p>After organizing and consolidating, my Lightbulb uses exactly <strong>7 semantic groups</strong>
+                        that control over 200 paths!</p>
+                    <div style="margin-top: 1rem;">
+                        <p><strong>Bulb groups (glow, warmth, brightness):</strong></p>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li><code>bulb-glow</code> — outer glow (40+ paths)</li>
+                            <li><code>bulb-warm</code> — warm inner area (30+ paths)</li>
+                            <li><code>bulb-bright</code> — brightest filament (8 paths)</li>
+                        </ul>
+                        <p style="margin-top: 1rem;"><strong>Metal groups (base structure):</strong></p>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li><code>metal-light</code> — lightest metal tones (43 paths)</li>
+                            <li><code>metal-medium</code> — medium metal tones (37 paths)</li>
+                            <li><code>metal-dark</code> — darkest metal shadows (35 paths)</li>
+                        </ul>
+                        <p style="margin-top: 1rem;"><strong>Base group:</strong></p>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li><code>base-dark</code> — bottom base cap (12 paths)</li>
+                        </ul>
+                    </div>
+                    <p style="margin-top: 1rem;">These 7 groups make my chaos manageable! In Station 4, you'll see how
+                        7 CSS custom properties make this system fully dynamic and themeable. 🟠</p>
+                </div>
             </div>
         </section>
 
@@ -780,8 +806,8 @@
                             <ul style="margin-top: 0.5rem;">
                                 <li><code>.bulb-glow</code> not <code>.light-cream</code></li>
                                 <li><code>.bulb-warm</code> not <code>.gold</code></li>
-                                <li><code>.filament</code> not <code>.orange-lines</code></li>
-                                <li><code>.metal-body</code> not <code>.gray-rect</code></li>
+                                <li><code>.bulb-bright</code> not <code>.orange-lines</code></li>
+                                <li><code>.metal-medium</code> not <code>.gray-rect</code></li>
                                 <li><code>.metal-dark</code> not <code>.dark-gray</code></li>
                             </ul>
                             <p style="margin-top: 0.5rem;">Name by purpose, not appearance! 🟠</p>
@@ -793,11 +819,11 @@
                             <h4>HAP's Organized Solution:</h4>
                             <pre style="margin-top: 1rem;"><code class="language-svg">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150" width="200"&gt;
   &lt;style&gt;
-    /* Organized with semantic classes */
+    /* Organized with semantic classes - using HAP's final 7 groups */
     .bulb-glow { fill: #ffefcb; }
     .bulb-warm { fill: #fdcf74; }
-    .filament { stroke: #ffb24f; stroke-width: 2; fill: none; }
-    .metal-body { fill: #92918f; }
+    .bulb-bright { stroke: #ffb24f; stroke-width: 2; fill: none; }
+    .metal-medium { fill: #92918f; }
     .metal-dark { fill: #7e7e7d; }
   &lt;/style&gt;
 
@@ -807,17 +833,17 @@
     &lt;path class="bulb-warm" d="M50,20 Q70,50 50,80 Q30,50 50,20"/&gt;
   &lt;/g&gt;
 
-  &lt;!-- Metal base grouped together --&gt;
-  &lt;g class="metal-base"&gt;
-    &lt;rect class="metal-body" x="40" y="80" width="20" height="25"/&gt;
-    &lt;rect class="metal-dark" x="42" y="105" width="16" height="5"/&gt;
-    &lt;rect class="metal-dark" x="44" y="110" width="12" height="5"/&gt;
+  &lt;!-- Filament (brightest part) --&gt;
+  &lt;g class="bulb"&gt;
+    &lt;line class="bulb-bright" x1="45" y1="45" x2="55" y2="55"/&gt;
+    &lt;line class="bulb-bright" x1="55" y1="45" x2="45" y2="55"/&gt;
   &lt;/g&gt;
 
-  &lt;!-- Filament grouped together --&gt;
-  &lt;g class="filament"&gt;
-    &lt;line x1="45" y1="45" x2="55" y2="55"/&gt;
-    &lt;line x1="55" y1="45" x2="45" y2="55"/&gt;
+  &lt;!-- Metal base grouped together --&gt;
+  &lt;g class="metal-base"&gt;
+    &lt;rect class="metal-medium" x="40" y="80" width="20" height="25"/&gt;
+    &lt;rect class="metal-dark" x="42" y="105" width="16" height="5"/&gt;
+    &lt;rect class="metal-dark" x="44" y="110" width="12" height="5"/&gt;
   &lt;/g&gt;
 &lt;/svg&gt;</code></pre>
 

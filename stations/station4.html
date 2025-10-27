@@ -530,11 +530,13 @@
                             <pre style="margin-top: 0.5rem;"><code class="language-css">:root {
   --bulb-glow: hsl(45, 100%, 89%);
   --bulb-warm: hsl(40, 97%, 73%);
-  --filament: hsl(34, 100%, 65%);
-  --metal-body: hsl(60, 2%, 57%);
+  --bulb-bright: hsl(34, 100%, 65%);
+  --metal-light: hsl(60, 4%, 74%);
+  --metal-medium: hsl(60, 2%, 57%);
   --metal-dark: hsl(0, 1%, 49%);
+  --base-dark: hsl(210, 4%, 21%);
 }</code></pre>
-                            <p style="margin-top: 0.5rem;">Notice I'm using <code>hsl()</code> format! Prof. Teeters taught me this makes relationships visible. 🟠</p>
+                            <p style="margin-top: 0.5rem;">Notice I'm using <code>hsl()</code> format! Prof. Teeters taught me this makes relationships visible. These are the same 7 groups from Station 3! 🟠</p>
                         </div>
 
                         <button id="hint2BtnS4" class="hint-btn" hidden>💡 Hint 2: Using var() in Class Definitions</button>
@@ -545,7 +547,7 @@
 
 /* NEW - uses custom properties */
 .bulb-glow { fill: var(--bulb-glow); }</code></pre>
-                            <p style="margin-top: 0.5rem;">Do this for all 5 classes! The classes stay the same, only the value source changes. 🟠</p>
+                            <p style="margin-top: 0.5rem;">Do this for all 7 classes! The classes stay the same, only the value source changes. 🟠</p>
                         </div>
 
                         <button id="hint3BtnS4" class="hint-btn" hidden>💡 Hint 3: Creating a Theme Class</button>
@@ -555,7 +557,7 @@
 svg.theme-cool {
   --bulb-glow: hsl(205, 100%, 95%);
   --bulb-warm: hsl(205, 100%, 82%);
-  --filament: hsl(205, 100%, 64%);
+  --bulb-bright: hsl(205, 100%, 64%);
   /* metal colors can stay the same or change - your choice! */
 }</code></pre>
                             <p style="margin-top: 0.5rem;">To activate: add <code>class="theme-cool"</code> to the <code>&lt;svg&gt;</code> element. That's it! 🟠</p>
@@ -566,27 +568,31 @@ svg.theme-cool {
                             <h4>HAP's Themeable Mini-Lightbulb Solution:</h4>
                             <pre style="margin-top: 1rem;"><code class="language-svg">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150" width="200"&gt;
   &lt;style&gt;
-    /* Custom properties - single source of truth */
+    /* Custom properties - single source of truth (HAP's final 7 groups) */
     :root {
       --bulb-glow: hsl(45, 100%, 89%);
       --bulb-warm: hsl(40, 97%, 73%);
-      --filament: hsl(34, 100%, 65%);
-      --metal-body: hsl(60, 2%, 57%);
+      --bulb-bright: hsl(34, 100%, 65%);
+      --metal-light: hsl(60, 4%, 74%);
+      --metal-medium: hsl(60, 2%, 57%);
       --metal-dark: hsl(0, 1%, 49%);
+      --base-dark: hsl(210, 4%, 21%);
     }
 
     /* Classes connected to custom properties */
     .bulb-glow { fill: var(--bulb-glow); }
     .bulb-warm { fill: var(--bulb-warm); }
-    .filament { stroke: var(--filament); stroke-width: 2; fill: none; }
-    .metal-body { fill: var(--metal-body); }
+    .bulb-bright { stroke: var(--bulb-bright); stroke-width: 2; fill: none; }
+    .metal-light { fill: var(--metal-light); }
+    .metal-medium { fill: var(--metal-medium); }
     .metal-dark { fill: var(--metal-dark); }
+    .base-dark { fill: var(--base-dark); }
 
     /* Alternative theme - just override the properties! */
     svg.theme-eco {
       --bulb-glow: hsl(120, 100%, 97%);
       --bulb-warm: hsl(120, 73%, 75%);
-      --filament: hsl(123, 61%, 52%);
+      --bulb-bright: hsl(123, 61%, 52%);
     }
   &lt;/style&gt;
 
