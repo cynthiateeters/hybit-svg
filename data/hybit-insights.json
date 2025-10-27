@@ -1,0 +1,225 @@
+{
+  "allowedParams": [
+    "stations",
+    "svg-basics",
+    "lightbulb",
+    "viewbox",
+    "coordinates",
+    "responsive",
+    "shapes",
+    "paths",
+    "safe-edits",
+    "groups",
+    "semantic",
+    "organization",
+    "custom-properties",
+    "hsl",
+    "theming",
+    "gradients",
+    "defs",
+    "ai-workflow"
+  ],
+
+  "messages": {
+    "stations": {
+      "title": "🔬 HAP's Learning Journey",
+      "content": "Prof. Teeters organized my learning into 6 progressive stations. Each builds on the last: understand SVG → read code → organize → make dynamic → add effects → optimize with AI. I couldn't skip ahead—each station taught me something I needed for the next one!"
+    },
+    "svg-basics": {
+      "title": "🎨 Why SVG Changed Everything for Me",
+      "content": "I used to screenshot my illustrations and save them as JPG. Then Prof. Teeters showed me SVG—it scales perfectly, I can change colors with CSS, and file sizes are tiny. My Lightbulb illustration is 200+ paths but only 15KB!"
+    },
+    "lightbulb": {
+      "title": "💡 My Lightbulb Story",
+      "content": "This Lightbulb became my project through all 6 stations. I started with chaotic code, organized it into 7 groups, made it themeable with custom properties, added gradients for depth, then learned AI could help optimize it. Watching it transform taught me more than any textbook!"
+    },
+    "viewbox": {
+      "title": "📐 ViewBox: My Biggest 'Aha!' Moment",
+      "content": "I thought <code>viewBox='0 0 100 150'</code> was pixels! Prof. Teeters explained it's an internal coordinate system. Change the SVG's width/height, viewBox stays the same—that's why SVG scales perfectly. Mind blown! 🤯"
+    },
+    "coordinates": {
+      "title": "🎯 Why My Circle Disappeared",
+      "content": "I drew a circle at <code>cx='50' cy='50'</code> with <code>r='60'</code> and it got cut off! Prof. Teeters showed me: if your viewBox is <code>0 0 100 100</code>, and your circle goes from -10 to 110, parts are outside the canvas. The coordinate system is EXACT."
+    },
+    "responsive": {
+      "title": "🚀 One SVG, All Screen Sizes",
+      "content": "Prof. Teeters had me test my Lightbulb on her phone, tablet, and 4K monitor. Perfect on all three! Raster images would need 3 files at different resolutions. SVG? One file, infinite sizes. That's when I understood 'resolution independence.'"
+    },
+    "shapes": {
+      "title": "🔍 I Learned to Read SVG Like HTML",
+      "content": "<code>&lt;circle&gt;</code>, <code>&lt;rect&gt;</code>, <code>&lt;path&gt;</code>—they're just tags with attributes! Once I stopped being scared of them, I could read any SVG. <code>fill</code> is color, <code>stroke</code> is border, <code>d</code> is the path data. Simpler than I thought!"
+    },
+    "paths": {
+      "title": "🗺️ Path Commands: Scary but Learnable",
+      "content": "<code>M</code> = MoveTo, <code>L</code> = LineTo, <code>C</code> = Curve. I don't memorize them—I recognize patterns! Prof. Teeters said 'You don't need to write paths by hand, just understand what you're looking at.' That made it way less scary."
+    },
+    "safe-edits": {
+      "title": "⚠️ What I Broke (And What's Actually Safe)",
+      "content": "Safe to edit: <code>fill</code>, <code>stroke</code>, <code>opacity</code>, sizes. Risky: path <code>d</code> data, <code>viewBox</code> values, complex transforms. Prof. Teeters's rule: 'Change colors and sizes first. Get experience before touching coordinates.'"
+    },
+    "groups": {
+      "title": "🗂️ The Day I Discovered &lt;g&gt; Tags",
+      "content": "I had 200+ paths with no organization. Prof. Teeters showed me <code>&lt;g class='bulb-glow'&gt;</code> to wrap related paths. Now I can hide/show/style whole sections at once! Organization isn't extra work—it's the foundation for everything else."
+    },
+    "semantic": {
+      "title": "🎨 Why I Stopped Using Color Names",
+      "content": "<code>.bulb-glow</code> not <code>.light-yellow</code>. When I change my theme to blue, 'glow' still makes sense but 'light-yellow' is a lie! Prof. Teeters drilled this: name by PURPOSE, not appearance. Game changer for theming."
+    },
+    "organization": {
+      "title": "🟠 200 Paths → 7 Semantic Groups",
+      "content": "I went from typing <code>#ffefcb</code> 40 times to organizing everything into 7 meaningful groups. Prof. Teeters said 'Chaos to system in one afternoon.' Those 7 groups became the foundation for Station 4's dynamic theming!"
+    },
+    "custom-properties": {
+      "title": "🔄 The Power Move: CSS Custom Properties",
+      "content": "I organized my Lightbulb in Station 3. Then Prof. Teeters showed me <code>--bulb-glow: hsl(45, 100%, 89%);</code> and I could change the ENTIRE color scheme by updating 7 variables. Warm, cool, alert, eco—all the same code!"
+    },
+    "hsl": {
+      "title": "🌈 Why Prof. Teeters Makes Me Use hsl()",
+      "content": "I used to copy hex codes from design tools. Prof. Teeters taught me <code>hsl(32, 76%, 63%)</code>—human-readable! Hue is color (0-360°), saturation is intensity, lightness is brightness. Now I can create color variations without a color picker."
+    },
+    "theming": {
+      "title": "🎭 Four Themes = 28 Changed Values",
+      "content": "Warm theme, cool theme, alert theme, eco theme. Each is 7 custom properties. 4 themes × 7 properties = 28 values... controlling 200+ paths! Prof. Teeters showed me how Station 3's organization made this possible. System beats chaos!"
+    },
+    "gradients": {
+      "title": "✨ The Day My Lightbulb Actually Glowed",
+      "content": "Flat colors looked like a cartoon. Prof. Teeters showed me <code>&lt;radialGradient&gt;</code> for the glow and <code>&lt;linearGradient&gt;</code> for the metal. Two gradient types transformed everything! My illustration finally looked professional."
+    },
+    "defs": {
+      "title": "🗃️ Defs: SVG's Reusable Resource Library",
+      "content": "<code>&lt;defs&gt;</code> is where I define gradients once, then use them everywhere with <code>url(#gradient-id)</code>. Prof. Teeters said 'Think of it like CSS—define once, reference many times.' No more copying gradient code!"
+    },
+    "ai-workflow": {
+      "title": "🤖 AI as Assistant, Not Replacement",
+      "content": "I spent hours organizing my Lightbulb manually first (Stations 3-4). THEN Prof. Teeters showed me AI. Now AI converts inline styles, refactors code, adds accessibility—but I'm the one who checks the output. I understand SVG, so I can verify AI didn't break anything!"
+    }
+  },
+
+  "pageHelp": {
+    "index.html": {
+      "title": "🔬 HAP here!",
+      "intro": "I learned so much about SVG on this journey! Try these:",
+      "suggestions": [
+        {
+          "param": "stations",
+          "label": "My 6-station learning path"
+        },
+        {
+          "param": "svg-basics",
+          "label": "Why SVG changed everything for me"
+        },
+        {
+          "param": "lightbulb",
+          "label": "The Lightbulb story"
+        }
+      ]
+    },
+    "station1.html": {
+      "title": "🔬 HAP here!",
+      "intro": "I learned about SVG structure on this page! Try:",
+      "suggestions": [
+        {
+          "param": "viewbox",
+          "label": "ViewBox: My biggest 'aha!' moment"
+        },
+        {
+          "param": "coordinates",
+          "label": "Why my circle disappeared"
+        },
+        {
+          "param": "responsive",
+          "label": "One SVG, all screen sizes"
+        }
+      ]
+    },
+    "station2.html": {
+      "title": "🔬 HAP here!",
+      "intro": "I learned to read SVG code on this page! Try:",
+      "suggestions": [
+        {
+          "param": "shapes",
+          "label": "Reading SVG like HTML"
+        },
+        {
+          "param": "paths",
+          "label": "Path commands: scary but learnable"
+        },
+        {
+          "param": "safe-edits",
+          "label": "What I broke (and what's safe)"
+        }
+      ]
+    },
+    "station3.html": {
+      "title": "🔬 HAP here!",
+      "intro": "I learned about organization on this page! Try:",
+      "suggestions": [
+        {
+          "param": "groups",
+          "label": "The day I discovered &lt;g&gt; tags"
+        },
+        {
+          "param": "semantic",
+          "label": "Why I stopped using color names"
+        },
+        {
+          "param": "organization",
+          "label": "200 paths → 7 semantic groups"
+        }
+      ]
+    },
+    "station4.html": {
+      "title": "🔬 HAP here!",
+      "intro": "I learned about CSS custom properties on this page! Try:",
+      "suggestions": [
+        {
+          "param": "custom-properties",
+          "label": "The power move: CSS custom properties"
+        },
+        {
+          "param": "hsl",
+          "label": "Why Prof. Teeters makes me use hsl()"
+        },
+        {
+          "param": "theming",
+          "label": "Four themes = 28 changed values"
+        }
+      ]
+    },
+    "station5.html": {
+      "title": "🔬 HAP here!",
+      "intro": "I learned about gradients on this page! Try:",
+      "suggestions": [
+        {
+          "param": "gradients",
+          "label": "The day my Lightbulb actually glowed"
+        },
+        {
+          "param": "defs",
+          "label": "Defs: SVG's reusable resource library"
+        }
+      ]
+    },
+    "station6.html": {
+      "title": "🔬 HAP here!",
+      "intro": "I learned about AI workflow on this page! Try:",
+      "suggestions": [
+        {
+          "param": "ai-workflow",
+          "label": "AI as assistant, not replacement"
+        }
+      ]
+    }
+  },
+
+  "defaults": {
+    "unknown": {
+      "title": "🤔 Hmm, I don't recognize that one!",
+      "content": "I haven't learned about that parameter yet. Try clicking me without a parameter to see what insights I have for this page, or visit the Hub to see all my learning stations! 🟠"
+    },
+    "emptyFallback": {
+      "title": "🟠 HAP's Learning Lab",
+      "content": "I'm HAP (HyBit A. ProtoBot), Prof. Teeters' apprentice! Add <code>?hybit=parameter</code> to see specific insights I've learned. Each station has its own easter eggs to discover!"
+    }
+  }
+}
