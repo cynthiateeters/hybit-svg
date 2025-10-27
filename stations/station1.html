@@ -254,8 +254,7 @@
                         Notice how the orange circle at cy="50" is ABOVE the teal circle at cy="150":</p>
 
                     <div class="demo-box">
-                        <svg viewBox="0 0 200 200" width="300" height="300" class="svg-centered"
-                            role="img"
+                        <svg viewBox="0 0 200 200" width="300" height="300" class="svg-centered" role="img"
                             aria-label="SVG coordinate system demonstration showing two circles at different positions">
                             <!-- Grid lines to show coordinate system -->
                             <line x1="0" y1="50" x2="200" y2="50" stroke="hsl(0, 0%, 80%)" stroke-width="1"
@@ -461,7 +460,8 @@
                         <!-- SVG display -->
                         <div
                             style="background: hsl(0, 0%, 100%); padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; border: 1px solid hsl(0, 0%, 80%);">
-                            <svg id="explorerSVG" viewBox="0 0 100 100" width="100%" height="auto" class="svg-centered svg-lg" role="img"
+                            <svg id="explorerSVG" viewBox="0 0 100 100" width="100%" height="auto"
+                                class="svg-centered svg-lg" role="img"
                                 aria-label="Interactive SVG demonstration with adjustable viewBox">
                                 <circle cx="50" cy="50" r="40" fill="hsl(32, 76%, 63%)" />
                             </svg>
@@ -739,45 +739,56 @@
             </div>
         </section>
 
-        <!-- SECTION 7: Common Mistakes Checklist -->
+
+        <!-- Learning Objectives Checklist -->
         <section class="content-section">
             <div class="warning-box">
-                <h3>✅ Common Mistakes Checklist</h3>
-                <p>Before moving to Station 2, make sure you understand these key concepts:</p>
+                <h3>✅ Learning Objectives Checklist</h3>
+                <p>Before moving to Station 2, make sure you've mastered these Station 1 skills! Can you confidently
+                    say:</p>
                 <div style="margin-left: 1.5rem; margin-top: 1rem;">
                     <label class="label-style">
                         <input type="checkbox" style="margin-right: 0.5rem;"
-                            aria-label="I understand that (0,0) is at the top-left, not bottom-left">
-                        I understand that (0,0) is at the top-left, not bottom-left
+                            aria-label="I understand that SVG is vector-based (math formulas) not raster-based (pixels)">
+                        <strong>I understand that SVG is vector-based</strong> (defined by math formulas, not pixels)
+                        and why this makes it infinitely scalable
                     </label>
                     <label class="label-style">
                         <input type="checkbox" style="margin-right: 0.5rem;"
-                            aria-label="I know Y increases downward, not upward like in math class">
-                        I know Y increases downward, not upward like in math class
+                            aria-label="I can explain the SVG coordinate system with (0,0) at top-left and Y increasing downward">
+                        <strong>I can explain the SVG coordinate system</strong> with (0,0) at top-left and Y increasing
+                        downward (not upward like in math class)
                     </label>
                     <label class="label-style">
                         <input type="checkbox" style="margin-right: 0.5rem;"
-                            aria-label="I understand viewBox controls the viewing window (what I see), not the display size">
-                        I understand viewBox controls the viewing window (what I see), not the display size
+                            aria-label="I understand viewBox as a camera that controls what portion of the coordinate space I see">
+                        <strong>I understand viewBox as a camera</strong> that controls WHAT portion of the coordinate
+                        space I see (not HOW BIG it displays)
                     </label>
                     <label class="label-style">
                         <input type="checkbox" style="margin-right: 0.5rem;"
-                            aria-label="I know that width/height control display size, not the coordinate space">
-                        I know that width/height control display size, not the coordinate space
+                            aria-label="I understand that width and height control display size, not the internal coordinate system">
+                        <strong>I understand that width and height control display size</strong> (in pixels or
+                        percentages), not the internal coordinate system
                     </label>
                     <label class="label-style">
                         <input type="checkbox" style="margin-right: 0.5rem;"
-                            aria-label="I won't delete viewBox from SVG code without understanding its purpose">
-                        I won't delete viewBox from SVG code without understanding its purpose
+                            aria-label="I can create a responsive SVG using viewBox with width set to 100% and height set to auto">
+                        <strong>I can create a responsive SVG</strong> using viewBox with width="100%" and height="auto"
                     </label>
                     <label class="label-style">
                         <input type="checkbox" style="margin-right: 0.5rem;"
-                            aria-label="I understand that shapes outside the viewBox area won't be visible">
-                        I understand that shapes outside the viewBox area won't be visible
+                            aria-label="I can position basic shapes using SVG coordinates">
+                        <strong>I can position basic shapes</strong> (circles, rectangles) using SVG coordinates (cx,
+                        cy, x, y)
+                    </label>
+                    <label class="label-style">
+                        <input type="checkbox" style="margin-right: 0.5rem;"
+                            aria-label="I know when to use SVG versus raster formats like PNG or JPEG">
+                        <strong>I know when to use SVG</strong> (logos, icons, illustrations) versus raster formats
+                        (photographs, complex images)
                     </label>
                 </div>
-                <p class="mt-1 code-comment">Prof. Teeters says: "If you can check all these boxes with confidence,
-                    you're ready for Station 2!"</p>
             </div>
         </section>
 
