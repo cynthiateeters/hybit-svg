@@ -277,9 +277,25 @@
       &lt;stop offset="100%" stop-color="var(--metal-dark)"/&gt;
     &lt;/linearGradient&gt;
   &lt;/defs&gt;
-  &lt;!-- Rest of SVG... --&gt;
+
+  &lt;!-- Now apply gradients to elements --&gt;
+  &lt;g class="bulb-glow"&gt;
+    &lt;ellipse fill="url(#glow-gradient)" cx="512" cy="550" rx="280" ry="320"/&gt;
+  &lt;/g&gt;
+
+  &lt;g class="metal-base"&gt;
+    &lt;rect fill="url(#metal-gradient)" x="400" y="850" width="224" height="150"/&gt;
+  &lt;/g&gt;
 &lt;/svg&gt;</code></pre>
                 </div>
+
+                <p class="mt-1"><strong>See How It All Connects?</strong></p>
+                <ul class="mt-1">
+                    <li>The <code>&lt;style&gt;</code> defines custom properties with hsl() colors</li>
+                    <li>The <code>&lt;defs&gt;</code> creates gradients using those custom properties</li>
+                    <li>The elements reference gradients with <code>fill="url(#gradient-id)"</code></li>
+                    <li>Everything is in one SVG - style → definitions → usage!</li>
+                </ul>
 
                 <h3 class="mt-2">Step 2: Apply to Elements</h3>
 
