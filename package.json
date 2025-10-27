@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "HAP Learning Lab template with 6 customizable stations",
   "scripts": {
-    "lh": "lighthouse --view",
-    "lh:desktop": "npm run lh -- --preset=desktop",
-    "lh:mobile": "npm run lh -- --preset=mobile",
-    "lh:html": "npm run lh -- --output html --output-path reports/lh-report.html",
-    "lh:json": "npm run lh -- --output json --output-path reports/lh-report.json",
-    "lh:csv": "npm run lh -- --output csv --output-path reports/lh-report.csv",
-    "lh:ci": "lhci autorun"
+    "lh": "lighthouse http://localhost:5500 --view",
+    "lh:mobile": "lighthouse http://localhost:5500 --preset=mobile --view",
+    "lh:desktop": "lighthouse http://localhost:5500 --preset=desktop --view",
+    "lh:report": "lighthouse http://localhost:5500 --output=html --output-path=./reports/report.html",
+    "lh:json": "lighthouse http://localhost:5500 --output=json --output-path=./reports/data.json",
+    "lh:both": "lighthouse http://localhost:5500 --output=html --output=json --output-path=./reports/audit",
+    "lh:accessibility": "lighthouse http://localhost:5500 --only-categories=accessibility --view",
+    "lh:performance": "lighthouse http://localhost:5500 --only-categories=performance --view"
   },
   "keywords": [
     "education",
