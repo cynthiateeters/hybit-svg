@@ -754,11 +754,13 @@ h4 {
 
 /* HAP Info Grid - Grid-based layout for structured information */
 .hap-info-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   background: linear-gradient(135deg, var(--cream-white) 0%, var(--peach-background) 100%);
   border-radius: var(--radius);
   padding: 1.5rem;
   margin: 2rem auto;
-  border: 2px solid var(--warm-orange);
   max-width: 900px;
 }
 
@@ -962,7 +964,7 @@ h4 {
   padding: 2rem;
   box-shadow: var(--shadow-md);
   transition: all 0.3s ease;
-  border: 2px solid transparent;
+  border: 2px solid var(--soft-orange);
 }
 
 .insight-card:hover {
@@ -971,7 +973,8 @@ h4 {
   transform: translateY(-4px);
 }
 
-.insight-card h3 {
+.insight-card h3,
+.insight-card h4 {
   color: var(--dark-brown);
   margin-bottom: 1rem;
   font-size: clamp(1.2rem, 2.5vw + 0.5rem, 1.5rem);
