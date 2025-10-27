@@ -250,7 +250,7 @@
 
                 <div class="prompt-box mt-2">
                     <div class="prompt-label">Adding gradients to my SVG:</div>
-                    <pre><code class="language-svg">&lt;svg viewBox="0 0 1024 1536"&gt;
+                    <pre><code class="language-svg">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1536"&gt;
   &lt;style&gt;
     :root {
       --bulb-glow: hsl(45, 100%, 89%);
@@ -355,7 +355,7 @@
 
                 <div class="prompt-box mt-2">
                     <div class="prompt-label">Gradients using custom properties:</div>
-                    <pre><code class="language-svg">&lt;svg viewBox="0 0 1024 1536"&gt;
+                    <pre><code class="language-svg">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1536"&gt;
   &lt;style&gt;
     :root {
       --bulb-glow: hsl(45, 100%, 89%);
@@ -404,7 +404,7 @@
                 <div class="prompt-box mt-2">
                     <div class="prompt-label">Complete example with class applied:</div>
                     <pre><code class="language-svg">&lt;!-- Warm theme (default) --&gt;
-&lt;svg class="lightbulb" viewBox="0 0 1024 1536"&gt;
+&lt;svg xmlns="http://www.w3.org/2000/svg" class="lightbulb" viewBox="0 0 1024 1536"&gt;
   &lt;style&gt;
     .lightbulb {
       --bulb-glow: hsl(45, 100%, 89%);
@@ -430,7 +430,7 @@
 &lt;/svg&gt;
 
 &lt;!-- To switch to cool theme, just add the theme-cool class --&gt;
-&lt;svg class="lightbulb theme-cool" viewBox="0 0 1024 1536"&gt;
+&lt;svg xmlns="http://www.w3.org/2000/svg" class="lightbulb theme-cool" viewBox="0 0 1024 1536"&gt;
   &lt;!-- Same defs and elements - colors update automatically! --&gt;
 &lt;/svg&gt;</code></pre>
                 </div>
@@ -631,7 +631,7 @@
 
                 <div class="prompt-box mt-2">
                     <div class="prompt-label">Mini-Lightbulb with flat colors:</div>
-                    <pre><code class="language-svg">&lt;svg viewBox="0 0 100 150" width="200"&gt;
+                    <pre><code class="language-svg">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150" width="200"&gt;
   &lt;style&gt;
     :root {
       --bulb-glow: hsl(45, 100%, 89%);
@@ -723,7 +723,7 @@
                 <div class="demo-box" id="solutionBox" hidden>
                     <div class="prompt-box">
                         <div class="prompt-label">Complete solution:</div>
-                        <pre><code class="language-svg">&lt;svg viewBox="0 0 100 150" width="200"&gt;
+                        <pre><code class="language-svg">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150" width="200"&gt;
   &lt;style&gt;
     :root {
       --bulb-glow: hsl(45, 100%, 89%);
